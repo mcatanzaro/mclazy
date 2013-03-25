@@ -427,9 +427,9 @@ def main():
             else:
                 print_info("Building %s-%s-1.%s" % (pkg, version, pkg_release_tag))
             if args.buildroot:
-                rc = run_command (pkg_cache, ['fedpkg', 'build', '--target', args.buildroot])
+                rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait', '--target', args.buildroot])
             else:
-                rc = run_command (pkg_cache, ['fedpkg', 'build'])
+                rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
             if rc != 0:
                 print_fail("Build")
                 continue
