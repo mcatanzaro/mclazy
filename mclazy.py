@@ -20,6 +20,7 @@
 
 """ A simple script that builds GNOME packages for koji """
 
+import glob
 import os
 import subprocess
 import urllib
@@ -384,6 +385,16 @@ def main():
             rc = run_command (pkg_cache, ['fedpkg', 'prep'])
             if rc != 0:
                 print_fail("to build %s as patches did not apply" % pkg)
+                continue
+
+            rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
+            if rc != 0:
+                print_fail("package %s failed mock test build" % pkg)
+                continue
+
+            resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
+            if not glob.glob(resultsglob):
+                print_fail("package %s failed mock test build: no results" % pkg)
                 continue
 
         # commit the changes
