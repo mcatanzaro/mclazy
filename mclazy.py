@@ -294,7 +294,7 @@ def main():
                 if rc > 0:
                     newest_remote_version = remote_ver
         if newest_remote_version == '0':
-            print_fail("No remote versions matching the gnome branch", gnome_branch)
+            print_fail("No remote versions matching the gnome branch %s" % gnome_branch)
             print_fail("Check modules.xml is looking at the correct branch")
             continue
 
