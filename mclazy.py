@@ -414,8 +414,10 @@ def main():
             pkg_release_tag = 'fc19'
         elif args.fedora_branch == "f20":
             pkg_release_tag = 'fc20'
-        elif args.fedora_branch == "rawhide":
+        elif args.fedora_branch == "f21":
             pkg_release_tag = 'fc21'
+        elif args.fedora_branch == "rawhide":
+            pkg_release_tag = 'fc22'
         else:
             print_fail("Failed to get release tag for", args.fedora_branch)
             continue
@@ -441,8 +443,10 @@ def main():
             pkg_branch_name = 'f19-build'
         elif args.fedora_branch == "f20":
             pkg_branch_name = 'f20-build'
-        elif args.fedora_branch == "rawhide":
+        elif args.fedora_branch == "f21":
             pkg_branch_name = 'f21-build'
+        elif args.fedora_branch == "rawhide":
+            pkg_branch_name = 'f22-build'
         else:
             print_fail("Failed to get repo branch tag for" + args.fedora_branch)
             continue
