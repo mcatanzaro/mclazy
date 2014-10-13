@@ -386,16 +386,17 @@ def main():
                 print_fail("to build %s as patches did not apply" % pkg)
                 continue
 
-        # push the changes
-        if args.simulate:
-            print_debug("Not pushing as simulating")
-            continue
-
         # commit the changes
         rc = run_command (pkg_cache, ['git', 'commit', '-a', "--message=%s" % comment])
         if rc != 0:
             print_fail("commit")
             continue
+
+        # push the changes
+        if args.simulate:
+            print_debug("Not pushing as simulating")
+            continue
+
         rc = run_command (pkg_cache, ['git', 'push'])
         if rc != 0:
             print_fail("push")
