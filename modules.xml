@@ -1555,6 +1555,9 @@
     <dep>totem-pl-parser</dep>
     <dep>tracker</dep>
   </project>
+  <project name="gspell">
+    <release version="f23">0.1.*</release>
+  </project>
   <project name="gucharmap">
     <dep>desktop-file-utils</dep>
     <dep>glib</dep>
