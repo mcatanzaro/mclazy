@@ -45,6 +45,7 @@ class ModulesItem(object):
         self.release_glob['f23'] = "3.17.*,3.18.*,3.18"
         self.release_glob['f24'] = "3.19.*,3.20.*,3.20"
         self.release_glob['f25'] = "3.21.*,3.22.*,3.22"
+        self.release_glob['f26'] = "3.23.*,3.24.*,3.24"
         self.release_glob['rawhide'] = "*"
 
 class ModulesXml(object):
@@ -89,6 +90,7 @@ class ModulesXml(object):
                 item.releases.append('f23')
                 item.releases.append('f24')
                 item.releases.append('f25')
+                item.releases.append('f26')
             self.items.append(item)
 
     def depsolve(self):
