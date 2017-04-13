@@ -314,7 +314,7 @@ def main():
                 if installed_ver == newest_remote_version:
                     print_debug("installed version is up to date")
                 else:
-                    print_debug("installed version is", installed_ver)
+                    print_debug("installed version is %s" % installed_ver)
                     rc = rpm.labelCompare((None, installed_ver, None), (None, newest_remote_version, None))
                     if rc > 0:
                         print_fail("installed version is newer than gnome branch version")
