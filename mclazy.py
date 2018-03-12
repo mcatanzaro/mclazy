@@ -121,7 +121,7 @@ def majorminor(ver):
 def main():
 
     # use the main mirror
-    gnome_ftp = 'http://ftp.gnome.org/pub/GNOME/sources'
+    gnome_ftp = 'https://download.gnome.org/sources'
     lockfile = "mclazy.lock"
 
     # read defaults from command line arguments
