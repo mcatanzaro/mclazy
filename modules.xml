@@ -998,7 +998,7 @@
     <dep>gnome-online-accounts</dep>
     <dep>gtk+</dep>
   </project>
-  <project name="gnome-tweak-tool">
+  <project name="gnome-tweaks">
     <dep>gsettings-desktop-schemas</dep>
     <dep>gtk+</dep>
     <dep>pygobject</dep>
