@@ -49,7 +49,6 @@
   </project>
   <project name="adwaita-icon-theme">
     <dep>librsvg</dep>
-    <dep>gnome-themes-standard</dep> <!-- artificial, to fix dep errors -->
   </project>
   <project name="aisleriot">
     <release version="f26">3.22.*</release>
@@ -171,7 +170,7 @@
     <release version="f25">0.0.*</release>
     <release version="f26">0.0.*</release>
     <release version="f27">0.0.*</release>
-    <release version="f28">0.*</release>
+    <release version="f28">0.0.*</release>
     <release version="rawhide">0.*</release>
   </project>
   <project name="caribou">
@@ -660,7 +659,7 @@
     <dep>libgee</dep>
     <dep>vala</dep>
   </project>
-  <project name="gnome-control-center" pkgname="control-center">
+  <project name="gnome-control-center">
     <dep>cheese</dep>
     <dep>clutter-gtk</dep>
     <dep>gdk-pixbuf</dep>
@@ -987,7 +986,7 @@
     <dep>gtk+</dep>
     <dep>librsvg</dep>
   </project>
-  <project name="gnome-themes-standard">
+  <project name="gnome-themes-extra">
     <release version="f26">3.22.*</release>
     <release version="f27">3.22.*</release>
     <dep>gtk+</dep>
@@ -1814,7 +1813,6 @@
   </project>
   <project name="sushi">
     <release version="f27">3.24.*</release>
-    <release version="f28">3.24.*</release>
     <dep>clutter</dep>
     <dep>clutter-gst</dep>
     <dep>clutter-gtk</dep>
