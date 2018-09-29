@@ -308,6 +308,7 @@
     <dep>libsecret</dep>
   </project>
   <project name="eog">
+    <release version="f29">3.28.*</release>
     <dep>gdk-pixbuf</dep>
     <dep>glib</dep>
     <dep>gnome-desktop</dep>
