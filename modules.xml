@@ -282,6 +282,10 @@
     <dep>GConf</dep>
     <dep>gtk+</dep>
   </project>
+  <project name="d-feet">
+    <release version="f28">0.3.*</release>
+    <release version="f29">0.3.*</release>
+  </project>
   <project name="empathy">
     <release version="f23">3.12.*</release>
     <release version="f24">3.12.*</release>
