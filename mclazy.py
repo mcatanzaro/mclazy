@@ -354,7 +354,10 @@ def main():
                         print_fail("Failed to get tarball", e)
                         continue
                     # add the new source
-                    run_command (pkg_cache, ['fedpkg', 'new-sources', dest_tarball])
+                    rc = run_command (pkg_cache, ['fedpkg', 'new-sources', dest_tarball])
+                    if rc != 0:
+                        print_fail("Upload new sources for %s" % pkg)
+                        continue
 
         # prep the spec file for rpmdev-bumpspec
         if new_version:
