@@ -1151,7 +1151,7 @@
     <release version="f27">3.6.*</release>
     <release version="f28">3.6.*</release>
     <release version="f29">3.6.*</release>
-    <release version="rawhide">3.6.*</release>
+    <release version="rawhide">3.7.*,3.8.*</release>
     <dep>brasero</dep>
     <dep>clutter-gtk</dep>
     <dep>glib</dep>
