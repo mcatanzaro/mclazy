@@ -1212,6 +1212,7 @@
     <dep>gtk+</dep>
     <dep>pangomm</dep>
   </project>
+  <project name="gtranslator"/>
   <project name="gtksourceview" pkgname="gtksourceview3">
     <release version="f27">3.24.*</release>
     <release version="f28">3.24.*</release>
