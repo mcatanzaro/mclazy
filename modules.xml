@@ -131,6 +131,7 @@
     <release version="f27">2.24.*</release>
     <release version="f28">2.24.*</release>
     <release version="f29">2.24.*</release>
+    <release version="f30">2.24.*</release>
     <release version="rawhide">2.24.*</release>
     <dep>atk</dep>
     <dep>glibmm</dep>
@@ -220,6 +221,7 @@
     <release version="f27">3.0.*</release>
     <release version="f28">3.0.*</release>
     <release version="f29">3.0.*</release>
+    <release version="f30">3.0.*</release>
     <release version="rawhide">3.0.*</release>
     <dep>clutter</dep>
     <dep>gobject-introspection</dep>
@@ -285,6 +287,7 @@
     <release version="f27">3.12.*</release>
     <release version="f28">3.12.*</release>
     <release version="f29">3.12.*</release>
+    <release version="f30">3.12.*</release>
     <release version="rawhide">3.12.*</release>
     <dep>cheese</dep>
     <dep>clutter-gst</dep>
@@ -560,6 +563,7 @@
     <release version="f27">2.54.*</release>
     <release version="f28">2.54.*</release>
     <release version="f29">2.56.*</release>
+    <release version="f30">2.56.*</release>
     <release version="rawhide">2.56.*</release>
     <dep>glib</dep>
   </project>
@@ -571,6 +575,7 @@
     <release version="f27">2.6.*</release>
     <release version="f28">2.6.*</release>
     <release version="f29">2.6.*</release>
+    <release version="f30">2.6.*</release>
     <release version="rawhide">2.6.*</release>
     <dep>glib</dep>
     <dep>gobject-introspection</dep>
@@ -581,6 +586,7 @@
     <release version="f27">3.0.*</release>
     <release version="f28">3.2.*</release>
     <release version="f29">3.2.*</release>
+    <release version="f30">3.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="gnome-2048">
@@ -1151,6 +1157,7 @@
     <release version="f27">3.6.*</release>
     <release version="f28">3.6.*</release>
     <release version="f29">3.6.*</release>
+    <release version="f30">3.7.*,3.8.*</release>
     <release version="rawhide">3.7.*,3.8.*</release>
     <dep>brasero</dep>
     <dep>clutter-gtk</dep>
@@ -1169,6 +1176,7 @@
     <release version="f27">3.22.*</release>
     <release version="f28">3.22.*</release>
     <release version="f29">3.24.*</release>
+    <release version="f30">3.24.*</release>
     <release version="rawhide">3.24.*</release>
     <dep>at-spi2-atk</dep>
     <dep>atk</dep>
@@ -1197,6 +1205,7 @@
     <release version="f27">3.22.*</release>
     <release version="f28">3.22.*</release>
     <release version="f29">3.22.*</release>
+    <release version="f30">3.22.*</release>
     <release version="rawhide">3.22.*</release>
     <dep>atkmm</dep>
     <dep>glibmm</dep>
@@ -1207,6 +1216,7 @@
     <release version="f27">3.24.*</release>
     <release version="f28">3.24.*</release>
     <release version="f29">3.24.*</release>
+    <release version="f30">3.24.*</release>
     <release version="rawhide">3.24.*</release>
     <dep>gdk-pixbuf</dep>
     <dep>glib</dep>
@@ -1344,6 +1354,7 @@
   <project name="latexila">
     <release version="f28">3.26.*</release>
     <release version="f29">3.26.*</release>
+    <release version="f30">3.26.*</release>
     <release version="rawhide">3.26.*</release>
     <dep>glib</dep>
     <dep>gsettings-desktop-schemas</dep>
@@ -1549,7 +1560,8 @@
     <release version="f27">2.40.*</release>
     <release version="f28">2.42.*</release>
     <release version="f29">2.44.*</release>
-    <release version="rawhide">2.44.*</release>
+    <release version="f30">2.45.*,2.46.*</release>
+    <release version="rawhide">2.45.*,2.46.*</release>
     <dep>gdk-pixbuf</dep>
     <dep>glib</dep>
     <dep>gobject-introspection</dep>
@@ -1590,12 +1602,14 @@
     <release version="f27">2.40.*</release>
     <release version="f28">2.40.*</release>
     <release version="f29">2.40.*</release>
+    <release version="f30">2.40.*</release>
     <release version="rawhide">2.40.*</release>
   </project>
   <project name="libxml++" pkgname="libxml++30">
     <release version="f27">3.0.*</release>
     <release version="f28">3.0.*</release>
     <release version="f29">3.0.*</release>
+    <release version="f30">3.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="libwnck" pkgname="libwnck3">
@@ -1724,6 +1738,7 @@
     <release version="f27">2.40.*</release>
     <release version="f28">2.40.*</release>
     <release version="f29">2.40.*</release>
+    <release version="f30">2.40.*</release>
     <release version="rawhide">2.40.*</release>
     <dep>glibmm</dep>
     <dep>pango</dep>
@@ -1911,6 +1926,7 @@
     <release version="f27">3.0.*</release>
     <release version="f28">3.0.*</release>
     <release version="f29">3.0.*</release>
+    <release version="f30">3.0.*</release>
     <release version="rawhide">3.0.*</release>
     <dep>gtk+</dep>
     <dep>librsvg</dep>
