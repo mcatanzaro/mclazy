@@ -1513,6 +1513,9 @@
     <dep>gtk+</dep>
     <dep>gtk-doc</dep>
   </project>
+  <project name="libmanette">
+    <release version="f30">0.2.*</release>
+  </project>
   <project name="libmediaart">
     <release version="f23">1.9.*</release>
     <release version="f24">1.9.*</release>
