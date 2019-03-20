@@ -561,10 +561,10 @@
     <release version="f25">2.50.*</release>
     <release version="f26">2.52.*</release>
     <release version="f27">2.54.*</release>
-    <release version="f28">2.54.*</release>
-    <release version="f29">2.56.*</release>
-    <release version="f30">2.56.*</release>
-    <release version="rawhide">2.56.*</release>
+    <release version="f28">2.56.*</release>
+    <release version="f29">2.58.*</release>
+    <release version="f30">2.60.*</release>
+    <release version="rawhide">2.60.*</release>
     <dep>glib</dep>
   </project>
   <project name="gmime">
@@ -1205,8 +1205,8 @@
     <release version="f27">3.22.*</release>
     <release version="f28">3.22.*</release>
     <release version="f29">3.22.*</release>
-    <release version="f30">3.22.*</release>
-    <release version="rawhide">3.22.*</release>
+    <release version="f30">3.24.*</release>
+    <release version="rawhide">3.24.*</release>
     <dep>atkmm</dep>
     <dep>glibmm</dep>
     <dep>gtk+</dep>
