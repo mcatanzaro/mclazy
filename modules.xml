@@ -297,32 +297,6 @@
     <release version="f29">0.3.*</release>
     <release version="f30">0.3.*</release>
   </project>
-  <project name="empathy">
-    <release version="f23">3.12.*</release>
-    <release version="f24">3.12.*</release>
-    <release version="f25">3.12.*</release>
-    <release version="f26">3.12.*</release>
-    <release version="f27">3.12.*</release>
-    <release version="f28">3.12.*</release>
-    <release version="f29">3.12.*</release>
-    <release version="f30">3.12.*</release>
-    <release version="rawhide">3.12.*</release>
-    <dep>cheese</dep>
-    <dep>clutter-gst</dep>
-    <dep>clutter-gtk</dep>
-    <dep>cogl</dep>
-    <dep>folks</dep>
-    <dep>gcr</dep>
-    <dep>geocode-glib</dep>
-    <dep>glib</dep>
-    <dep>gnome-online-accounts</dep>
-    <dep>gsettings-desktop-schemas</dep>
-    <dep>gtk+</dep>
-    <dep>libchamplain</dep>
-    <dep>libgee</dep>
-    <dep>libnotify</dep>
-    <dep>libsecret</dep>
-  </project>
   <project name="eog">
     <release version="f29">3.28.*</release>
     <dep>gdk-pixbuf</dep>
@@ -1420,18 +1394,6 @@
     <dep>gnome-doc-utils</dep>
     <dep>gtk+</dep>
     <dep>libnotify</dep>
-  </project>
-  <project name="latexila">
-    <release version="f28">3.26.*</release>
-    <release version="f29">3.26.*</release>
-    <release version="f30">3.26.*</release>
-    <release version="rawhide">3.26.*</release>
-    <dep>glib</dep>
-    <dep>gsettings-desktop-schemas</dep>
-    <dep>gtk+</dep>
-    <dep>gtksourceview</dep>
-    <dep>libgee</dep>
-    <dep>vala</dep>
   </project>
   <project name="libchamplain">
     <release version="f23">0.12.*</release>
