@@ -442,6 +442,7 @@
     <dep>gtk+</dep>
     <dep>pango</dep>
   </project>
+  <project name="geary"/>
   <project name="gedit">
     <release version="f26">3.22.*</release>
     <release version="f27">3.22.*</release>
