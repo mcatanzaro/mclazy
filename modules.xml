@@ -492,7 +492,6 @@
     <dep>gtk+</dep>
   </project>
   <project name="gitg">
-    <release version="f30">3.30.*</release>
     <dep>glib</dep>
     <dep>gobject-introspection</dep>
     <dep>gsettings-desktop-schemas</dep>
@@ -1634,6 +1633,11 @@
     <dep>gobject-introspection</dep>
     <dep>gtk-doc</dep>
     <dep>vala</dep>
+  </project>
+  <project name="libsigc++" pkgname="libsigc++20">
+    <release version="f29">2.10.*</release>
+    <release version="f30">2.10.*</release>
+    <release version="rawhide">2.10.*</release>
   </project>
   <project name="libsoup" pkgconfig="libsoup-2.4">
     <release version="f23">2.52.*</release>
