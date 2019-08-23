@@ -277,7 +277,7 @@ def main():
             # j[3] = the LATEST-IS files
             try:
                 j = json.loads(f.read())
-            except Exception, e:
+            except Exception as e:
                 print_fail("Failed to read JSON at %s: %s" % (local_json_file, str(e)))
                 continue
 
