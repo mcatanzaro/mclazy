@@ -409,6 +409,7 @@ def main():
         # push the changes
         if args.simulate:
             print_debug("Not pushing as simulating")
+            unlock_file(lock_filename)
             continue
 
         rc = run_command (pkg_cache, ['git', 'push'])
