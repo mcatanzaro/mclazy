@@ -84,16 +84,16 @@
     <release version="f30">1.22.*</release>
     <release version="f31">1.22.*</release>
   </project>
+  <project name="d-feet">
+    <release version="f30">0.3.*</release>
+    <release version="f31">0.3.*</release>
+  </project>
   <project name="dconf">
     <release version="f30">0.32.*</release>
     <release version="f31">0.34.*</release>
   </project>
   <project name="dconf-editor"/>
   <project name="devhelp"/>
-  <project name="d-feet">
-    <release version="f30">0.3.*</release>
-    <release version="f31">0.3.*</release>
-  </project>
   <project name="eog"/>
   <project name="eog-plugins">
     <release version="f30">3.26.*</release>
@@ -301,7 +301,6 @@
     <release version="f31">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
-  <project name="gtranslator"/>
   <project name="gtksourceview" pkgname="gtksourceview3">
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
@@ -311,6 +310,7 @@
     <release version="f30">4.2.*</release>
     <release version="f31">4.4.*</release>
   </project>
+  <project name="gtranslator"/>
   <project name="gucharmap">
     <release version="f30">12.0.*</release>
     <release version="f31">12.*</release>
@@ -433,6 +433,7 @@
     <release version="f30">2.66.*</release>
     <release version="f31">2.68.*</release>
   </project>
+  <project name="libwnck" pkgname="libwnck3"/>
   <project name="libxml++">
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
@@ -443,7 +444,6 @@
     <release version="f31">3.0.*</release>
     <release version="rawhide">3.*</release>
   </project>
-  <project name="libwnck" pkgname="libwnck3"/>
   <project name="lightsoff"/>
   <project name="moserial">
     <release version="f30">3.0.*</release>
@@ -516,8 +516,8 @@
     <release version="f31">3.24.*</release>
   </project>
   <project name="sushi"/>
-  <project name="sysprof"/>
   <project name="swell-foop"/>
+  <project name="sysprof"/>
   <project name="tali"/>
   <project name="template-glib"/>
   <project name="tepl">
