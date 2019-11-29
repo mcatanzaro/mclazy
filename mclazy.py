@@ -131,6 +131,7 @@ def main():
     parser.add_argument('--check-installed', action='store_true', help='Check installed version against built version')
     parser.add_argument('--relax-version-checks', action='store_true', help='Relax checks on the version numbering')
     parser.add_argument('--no-build', action='store_true', help='Do not actually build, e.g. for rawhide')
+    parser.add_argument('--no-mockbuild', action='store_true', help='Do not do a local mock build')
     parser.add_argument('--no-rawhide-sync', action='store_true', help='Do not push the same changes to git master branch')
     parser.add_argument('--cache', default="cache", help='The cache of checked out packages')
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
@@ -390,11 +391,12 @@ def main():
                 unlock_file(lock_filename)
                 continue
 
-            rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
-            if rc != 0:
-                print_fail("package %s failed mock test build" % pkg)
-                unlock_file(lock_filename)
-                continue
+            if not args.no_mockbuild:
+                rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
+                if rc != 0:
+                    print_fail("package %s failed mock test build" % pkg)
+                    unlock_file(lock_filename)
+                    continue
 
             resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
             if not glob.glob(resultsglob):
