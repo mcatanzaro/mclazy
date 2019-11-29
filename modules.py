@@ -28,9 +28,7 @@ class ModulesItem(object):
         self.name = None
         self.pkgname = None
         self.release = None
-        self.wait_repo = False
         self.disabled = False
-        self.autobuild = True
         self.release_glob = {}
 
         # add the default gnome release numbers
@@ -53,10 +51,6 @@ class ModulesXml(object):
             item.pkgname = project.get('pkgname')
             if not item.pkgname:
                 item.pkgname = item.name
-            if project.get('wait_repo') == "1":
-                item.wait_repo = True
-            if project.get('autobuild') == "False":
-                item.autobuild = False
             if project.get('disabled') == "True":
                 item.disabled = True
             for data in project:

@@ -154,8 +154,6 @@ def main():
     for item in data.items:
         if item.disabled:
             continue
-        if not item.autobuild:
-            continue
         enabled = False
 
         # build just this
@@ -166,14 +164,14 @@ def main():
         if args.buildone == None:
             enabled = True
         if enabled:
-            modules.append((item.name, item.pkgname, item.release_glob, item.wait_repo))
+            modules.append((item.name, item.pkgname, item.release_glob))
 
     # create the cache directory if it's not already existing
     if not os.path.isdir(args.cache):
         os.mkdir(args.cache)
 
     # loop these
-    for module, pkg, release_version, wait_repo in modules:
+    for module, pkg, release_version in modules:
         print_info("Loading %s" % module)
         print_debug("Package name: %s" % pkg)
         print_debug("Version glob: %s" % release_version[args.fedora_branch])
@@ -467,16 +465,8 @@ def main():
             unlock_file(lock_filename)
             continue
 
-        # wait for repo to sync
-        if wait_repo and args.fedora_branch == "rawhide":
-            rc = run_command (pkg_cache, ['koji', 'wait-repo', pkg_branch_name, '--build', "%s-%s-1.%s" % (pkg, new_version, pkg_release_tag)])
-            if rc != 0:
-                print_fail("Wait for repo")
-                unlock_file(lock_filename)
-                continue
-
         # success!
-        print_info("Waited for build to complete")
+        print_info("Done")
 
         # unlock build
         unlock_file(lock_filename)
