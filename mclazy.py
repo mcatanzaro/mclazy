@@ -136,7 +136,6 @@ def main():
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
     parser.add_argument('--buildone', default=None, help='Only build one specific package')
     parser.add_argument('--buildroot', default=None, help='Use a custom buildroot, e.g. f18-gnome')
-    parser.add_argument('--bump-soname', default=None, help='Build any package that deps on this')
     args = parser.parse_args()
 
     # use rpm to check the installed version
@@ -152,11 +151,6 @@ def main():
     # parse the configuration file
     modules = []
     data = ModulesXml(args.modules)
-    if not args.buildone:
-        print_debug("Depsolving moduleset...")
-        if not data.depsolve():
-            print_fail("Failed to depsolve")
-            return
     for item in data.items:
         if item.disabled:
             continue
@@ -168,12 +162,8 @@ def main():
         if args.buildone == item.name:
             enabled = True
 
-        # build this as it deps on the thing that's just bumped the soname
-        if args.bump_soname in item.deps:
-            enabled = True
-
         # build everything
-        if args.buildone == None and args.bump_soname == None:
+        if args.buildone == None:
             enabled = True
         if enabled:
             modules.append((item.name, item.pkgname, item.release_glob, item.wait_repo))
@@ -332,7 +322,7 @@ def main():
                         continue
 
         # nothing to do
-        if new_version == None and not args.bump_soname:
+        if new_version == None:
             print_debug("No updates available")
             unlock_file(lock_filename)
             continue
@@ -390,10 +380,7 @@ def main():
             os.rename(spec_filename + ".tmp", spec_filename)
 
         # bump the spec file
-        if args.bump_soname:
-            comment = "Rebuilt for %s soname bump" % args.bump_soname
-        else:
-            comment = "Update to " + new_version
+        comment = "Update to " + new_version
         cmd = ['rpmdev-bumpspec', "--comment=%s" % comment, "%s.spec" % pkg]
         run_command (pkg_cache, cmd)
 

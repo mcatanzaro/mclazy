@@ -27,14 +27,11 @@ class ModulesItem(object):
     def __init__(self):
         self.name = None
         self.pkgname = None
-        self.pkgconfig = None
         self.release = None
         self.wait_repo = False
         self.disabled = False
         self.autobuild = True
         self.release_glob = {}
-        self.deps = []
-        self.depsolve_level = 0
 
         # add the default gnome release numbers
         self.release_glob['f30'] = "3.31.*,3.32.*,3.32"
@@ -56,9 +53,6 @@ class ModulesXml(object):
             item.pkgname = project.get('pkgname')
             if not item.pkgname:
                 item.pkgname = item.name
-            item.pkgconfig = project.get('pkgconfig')
-            if not item.pkgconfig:
-                item.pkgconfig = item.name
             if project.get('wait_repo') == "1":
                 item.wait_repo = True
             if project.get('autobuild') == "False":
@@ -66,9 +60,7 @@ class ModulesXml(object):
             if project.get('disabled') == "True":
                 item.disabled = True
             for data in project:
-                if data.tag == 'dep':
-                    item.deps.append(data.text)
-                elif data.tag == 'release':
+                if data.tag == 'release':
                     version = data.get('version')
                     item.release_glob[version] = data.text
             item.releases = []
@@ -80,56 +72,9 @@ class ModulesXml(object):
                 item.releases.append('f31')
             self.items.append(item)
 
-    def depsolve(self):
-        """ depsolves the list into the correct order """
-
-        # check there are no recyprical deps
-        for item in self.items:
-            for dep in item.deps:
-                item2 = self._get_item_by_name(dep)
-                if not item2:
-                    continue
-                if item.pkgname in item2.deps:
-                    print item.pkgname, "depends on", item2.pkgname
-                    print item2.pkgname, "depends on", item.pkgname
-                    return False
-
-        # do the depsolve
-        changes = True
-        cnt = 0
-        while changes:
-            if cnt > 10000:
-                print "Depsolve error"
-                self.items = sorted(self.items, key=lambda item: item.depsolve_level)
-                for item in self.items:
-                    if item.name:
-                        print item.name, item.depsolve_level
-                    else:
-                        print item.pkgname, item.depsolve_level
-                    for dep in item.deps:
-                        print "  ", dep, self._get_item_by_name(dep).depsolve_level
-                return False
-            changes = False
-            for item in self.items:
-                for dep in item.deps:
-                    item_dep = self._get_item_by_name(dep)
-                    if not item_dep:
-                        print "failed to find dep", dep
-                        return False
-                    if item.depsolve_level <= item_dep.depsolve_level:
-                        item.depsolve_level += 1
-                        changes = True
-                        cnt = cnt + 1
-                        break
-                if changes:
-                    break
-        # sort by depsolve key
-        self.items = sorted(self.items, key=lambda item: item.depsolve_level)
-        return True
-
     def _print(self):
         for item in self.items:
-            print("%02i " % item.depsolve_level + ' ' * item.depsolve_level + item.pkgname)
+            print(item.pkgname)
 
     def _get_item_by_name(self, name):
         for item in self.items:
