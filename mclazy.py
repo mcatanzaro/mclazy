@@ -219,11 +219,13 @@ def main():
             rc = run_command(args.cache, ["fedpkg", "co", pkg])
             if rc != 0:
                 print_fail("Checkout %s" % pkg)
+                unlock_file(lock_filename)
                 continue
         else:
             rc = run_command (pkg_cache, ['git', 'fetch'])
             if rc != 0:
                 print_fail("Update repo %s" % pkg)
+                unlock_file(lock_filename)
                 continue
 
         if args.fedora_branch == 'rawhide':
@@ -233,6 +235,7 @@ def main():
 
         if rc != 0:
             print_fail("Switch branch")
+            unlock_file(lock_filename)
             continue
 
         # get the current version
@@ -240,6 +243,7 @@ def main():
         spec_filename = "%s/%s/%s.spec" % (args.cache, pkg, pkg)
         if not os.path.exists(spec_filename):
             print_fail("No spec file")
+            unlock_file(lock_filename)
             continue
 
         # open spec file
@@ -248,6 +252,7 @@ def main():
             version = spec.sourceHeader["version"]
         except ValueError as e:
             print_fail("Can't parse spec file")
+            unlock_file(lock_filename)
             continue
         print_debug("Current version is %s" % version)
 
@@ -261,6 +266,7 @@ def main():
             except IOError as e:
                 print_fail("Failed to get JSON on try %i: %s" % (i, e))
         if not success:
+            unlock_file(lock_filename)
             continue
 
         new_version = None
@@ -279,6 +285,7 @@ def main():
                 j = json.loads(f.read())
             except Exception as e:
                 print_fail("Failed to read JSON at %s: %s" % (local_json_file, str(e)))
+                unlock_file(lock_filename)
                 continue
 
             # find the newest version
@@ -290,6 +297,7 @@ def main():
                         version_valid = True
                         break
                 if not args.relax_version_checks and not version_valid:
+                    unlock_file(lock_filename)
                     continue
                 rc = rpm.labelCompare((None, remote_ver, None), (None, newest_remote_version, None))
                 if rc > 0:
@@ -297,6 +305,7 @@ def main():
         if newest_remote_version == '0':
             print_fail("No remote versions matching the gnome branch %s" % gnome_branch)
             print_fail("Check modules.xml is looking at the correct branch")
+            unlock_file(lock_filename)
             continue
 
         print_debug("Newest remote version is: %s" % newest_remote_version)
@@ -319,6 +328,8 @@ def main():
                     if rc > 0:
                         print_fail("installed version is newer than gnome branch version")
                         print_fail("check modules.xml is looking at the correct branch")
+                        unlock_file(lock_filename)
+                        continue
 
         # nothing to do
         if new_version == None and not args.bump_soname:
@@ -332,6 +343,7 @@ def main():
                 print_debug("Updating major version number, but ignoring")
             elif new_version.split('.')[0] != version.split('.')[0]:
                 print_fail("Cannot update major version numbers")
+                unlock_file(lock_filename)
                 continue
 
         # we need to update the package
@@ -352,11 +364,13 @@ def main():
                         urllib.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
                     except IOError as e:
                         print_fail("Failed to get tarball", e)
+                        unlock_file(lock_filename)
                         continue
                     # add the new source
                     rc = run_command (pkg_cache, ['fedpkg', 'new-sources', dest_tarball])
                     if rc != 0:
                         print_fail("Upload new sources for %s" % pkg)
+                        unlock_file(lock_filename)
                         continue
 
         # prep the spec file for rpmdev-bumpspec
@@ -388,22 +402,26 @@ def main():
             rc = run_command (pkg_cache, ['fedpkg', 'prep'])
             if rc != 0:
                 print_fail("to build %s as patches did not apply" % pkg)
+                unlock_file(lock_filename)
                 continue
 
             rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
             if rc != 0:
                 print_fail("package %s failed mock test build" % pkg)
+                unlock_file(lock_filename)
                 continue
 
             resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
             if not glob.glob(resultsglob):
                 print_fail("package %s failed mock test build: no results" % pkg)
+                unlock_file(lock_filename)
                 continue
 
         # commit the changes
         rc = run_command (pkg_cache, ['git', 'commit', '-a', "--message=%s" % comment])
         if rc != 0:
             print_fail("commit")
+            unlock_file(lock_filename)
             continue
 
         # push the changes
@@ -415,6 +433,7 @@ def main():
         rc = run_command (pkg_cache, ['git', 'push'])
         if rc != 0:
             print_fail("push")
+            unlock_file(lock_filename)
             continue
 
         # Try to push the same change to master branch
@@ -455,6 +474,7 @@ def main():
             pkg_release_tag = 'fc32'
         else:
             print_fail("Failed to get release tag for", args.fedora_branch)
+            unlock_file(lock_filename)
             continue
 
         # build package
@@ -469,6 +489,7 @@ def main():
                 rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
             if rc != 0:
                 print_fail("Build")
+                unlock_file(lock_filename)
                 continue
 
         # work out repo branch
@@ -504,6 +525,7 @@ def main():
             pkg_branch_name = 'f32-build'
         else:
             print_fail("Failed to get repo branch tag for" + args.fedora_branch)
+            unlock_file(lock_filename)
             continue
 
         # wait for repo to sync
@@ -511,6 +533,7 @@ def main():
             rc = run_command (pkg_cache, ['koji', 'wait-repo', pkg_branch_name, '--build', "%s-%s-1.%s" % (pkg, new_version, pkg_release_tag)])
             if rc != 0:
                 print_fail("Wait for repo")
+                unlock_file(lock_filename)
                 continue
 
         # success!
