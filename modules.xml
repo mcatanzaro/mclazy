@@ -55,17 +55,6 @@
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
   </project>
-  <project name="alacarte">
-    <release version="f23">3.11.*</release>
-    <release version="f24">3.11.*</release>
-    <release version="f25">3.11.*</release>
-    <release version="f26">3.11.*</release>
-    <release version="f27">3.11.*</release>
-    <release version="f28">3.11.*</release>
-    <release version="f29">3.11.*</release>
-    <release version="f30">3.11.*</release>
-    <release version="f31">3.11.*</release>
-  </project>
   <project name="amtk">
     <release version="f29">5.0.*</release>
     <release version="f30">5.0.*</release>
@@ -424,16 +413,6 @@
   <project name="gnome-chess"/>
   <project name="gnome-clocks"/>
   <project name="gnome-color-manager"/>
-  <project name="gnome-common">
-    <release version="f24">3.18.*</release>
-    <release version="f25">3.18.*</release>
-    <release version="f26">3.18.*</release>
-    <release version="f27">3.18.*</release>
-    <release version="f28">3.18.*</release>
-    <release version="f29">3.18.*</release>
-    <release version="f30">3.18.*</release>
-    <release version="f31">3.18.*</release>
-  </project>
   <project name="gnome-contacts"/>
   <project name="gnome-control-center"/>
   <project name="gnome-desktop" pkgname="gnome-desktop3" pkgconfig="gnome-desktop-3.0" wait_repo="1"/>
@@ -444,17 +423,6 @@
     <release version="f31">3.26.*</release>
   </project>
   <project name="gnome-disk-utility"/>
-  <project name="gnome-doc-utils">
-    <release version="f23">0.20.*</release>
-    <release version="f24">0.20.*</release>
-    <release version="f25">0.20.*</release>
-    <release version="f26">0.20.*</release>
-    <release version="f27">0.20.*</release>
-    <release version="f28">0.20.*</release>
-    <release version="f29">0.20.*</release>
-    <release version="f30">0.20.*</release>
-    <release version="f31">0.20.*</release>
-  </project>
   <project name="gnome-documents"/>
   <project name="gnome-font-viewer"/>
   <project name="gnome-getting-started-docs"/>
@@ -501,17 +469,6 @@
     <release version="f30">3.30.*</release>
   </project>
   <project name="gnome-packagekit"/>
-  <project name="gnome-phone-manager">
-    <release version="f23">0.*</release>
-    <release version="f24">0.*</release>
-    <release version="f25">0.*</release>
-    <release version="f26">0.*</release>
-    <release version="f27">0.*</release>
-    <release version="f28">0.*</release>
-    <release version="f29">0.*</release>
-    <release version="f30">0.*</release>
-    <release version="f31">0.*</release>
-  </project>
   <project name="gnome-photos"/>
   <project name="gnome-power-manager"/>
   <project name="gnome-robots">
@@ -541,17 +498,6 @@
     <release version="f27">3.24.*</release>
   </project>
   <project name="gnome-sudoku"/>
-  <project name="gnome-system-log">
-    <release version="f23">3.9.*</release>
-    <release version="f24">3.9.*</release>
-    <release version="f25">3.9.*</release>
-    <release version="f26">3.9.*</release>
-    <release version="f27">3.9.*</release>
-    <release version="f28">3.9.*</release>
-    <release version="f29">3.9.*</release>
-    <release version="f30">3.9.*</release>
-    <release version="f31">3.9.*</release>
-  </project>
   <project name="gnome-system-monitor"/>
   <project name="gnome-taquin"/>
   <project name="gnome-terminal"/>
@@ -896,17 +842,6 @@
     <release version="f29">1.4.*</release>
     <release version="f30">1.4.*</release>
     <release version="f31">1.4.*</release>
-  </project>
-  <project name="libgnome-keyring">
-    <release version="f23">3.12.*</release>
-    <release version="f24">3.12.*</release>
-    <release version="f25">3.12.*</release>
-    <release version="f26">3.12.*</release>
-    <release version="f27">3.12.*</release>
-    <release version="f28">3.12.*</release>
-    <release version="f29">3.12.*</release>
-    <release version="f30">3.12.*</release>
-    <release version="f31">3.12.*</release>
   </project>
   <project name="libgnomekbd">
     <release version="f23">3.6.*</release>
