@@ -162,7 +162,7 @@
     <release version="f31">3.0.*</release>
     <release version="rawhide">3.*</release>
   </project>
-  <project name="clutter-gtk" pkgconfig="clutter-gtk-1.0">
+  <project name="clutter-gtk">
     <release version="f23">1.6.*</release>
     <release version="f24">1.8.*</release>
     <release version="f25">1.8.*</release>
@@ -242,7 +242,7 @@
     <release version="f29">3.28.*</release>
     <release version="f30">3.28.*</release>
   </project>
-  <project name="gdk-pixbuf" pkgname="gdk-pixbuf2" pkgconfig="gdk-pixbuf-2.0">
+  <project name="gdk-pixbuf" pkgname="gdk-pixbuf2">
     <release version="f23">2.32.*</release>
     <release version="f24">2.34.*</release>
     <release version="f25">2.36.*</release>
@@ -338,7 +338,7 @@
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
   </project>
-  <project name="glib" pkgname="glib2" pkgconfig="glib-2.0" wait_repo="1">
+  <project name="glib" pkgname="glib2">
     <release version="f23">2.46.*</release>
     <release version="f24">2.48.*</release>
     <release version="f25">2.50.*</release>
@@ -415,7 +415,7 @@
   <project name="gnome-color-manager"/>
   <project name="gnome-contacts"/>
   <project name="gnome-control-center"/>
-  <project name="gnome-desktop" pkgname="gnome-desktop3" pkgconfig="gnome-desktop-3.0" wait_repo="1"/>
+  <project name="gnome-desktop" pkgname="gnome-desktop3"/>
   <project name="gnome-devel-docs"/>
   <project name="gnome-dictionary">
     <release version="f29">3.26.*</release>
@@ -462,7 +462,7 @@
     <release version="f28">3.24.*</release>
     <release version="f29">3.24.*</release>
   </project>
-  <project name="gnome-online-accounts" pkgconfig="goa-1.0"/>
+  <project name="gnome-online-accounts"/>
   <project name="gnome-online-miners">
     <release version="f23">3.14.*</release>
     <release version="f24">3.20.*</release>
@@ -490,7 +490,7 @@
     <release version="f31">3.6.*</release>
   </project>
   <project name="gnome-session"/>
-  <project name="gnome-settings-daemon" wait_repo="1"/>
+  <project name="gnome-settings-daemon"/>
   <project name="gnome-shell"/>
   <project name="gnome-shell-extensions"/>
   <project name="gnome-software"/>
@@ -541,7 +541,7 @@
   </project>
   <project name="gnome-weather"/>
   <project name="gnote"/>
-  <project name="gobject-introspection" pkgconfig="gobject-introspection-1.0">
+  <project name="gobject-introspection">
     <release version="f23">1.46.*</release>
     <release version="f24">1.48.*</release>
     <release version="f25">1.50.*</release>
@@ -563,7 +563,7 @@
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
   </project>
-  <project name="grilo" pkgconfig="grilo-0.3">
+  <project name="grilo">
     <release version="f23">0.2.*</release>
     <release version="f24">0.3.*</release>
     <release version="f25">0.3.*</release>
@@ -585,7 +585,7 @@
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
   </project>
-  <project name="gsettings-desktop-schemas" wait_repo="1">
+  <project name="gsettings-desktop-schemas">
     <release version="f27">3.24.*</release>
     <release version="f29">3.28.*</release>
   </project>
@@ -620,7 +620,7 @@
     <release version="f31">3.8.*</release>
     <release version="rawhide">3.8.*</release>
   </project>
-  <project name="gtk+" pkgname="gtk3" pkgconfig="gtk+-3.0" wait_repo="1">
+  <project name="gtk+" pkgname="gtk3">
     <release version="f26">3.22.*</release>
     <release version="f27">3.22.*</release>
     <release version="f28">3.22.*</release>
@@ -803,7 +803,7 @@
     <release version="f30">0.17.*</release>
     <release version="f31">0.17.*</release>
   </project>
-  <project name="libgee" pkgconfig="gee-0.8">
+  <project name="libgee">
     <release version="f23">0.18.*</release>
     <release version="f24">0.18.*</release>
     <release version="f25">0.18.*</release>
@@ -823,7 +823,7 @@
     <release version="f30">0.6.*</release>
     <release version="f31">0.6.*</release>
   </project>
-  <project name="libgit2-glib" pkgconfig="libgit2-glib-1.0">
+  <project name="libgit2-glib">
     <release version="f23">0.23.*</release>
     <release version="f24">0.24.*</release>
     <release version="f25">0.24.*</release>
@@ -862,7 +862,7 @@
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
   </project>
-  <project name="libgweather" pkgconfig="gweather-3.0"/>
+  <project name="libgweather"/>
   <project name="libgxps">
     <release version="f23">0.2.*</release>
     <release version="f24">0.2.*</release>
@@ -943,7 +943,7 @@
   <project name="libsigc++" pkgname="libsigc++30">
     <release version="rawhide">3.*</release>
   </project>
-  <project name="libsoup" pkgconfig="libsoup-2.4">
+  <project name="libsoup">
     <release version="f23">2.52.*</release>
     <release version="f24">2.54.*</release>
     <release version="f25">2.56.*</release>
@@ -1078,7 +1078,7 @@
     <release version="f30">2.32.*</release>
     <release version="f31">2.34.*</release>
   </project>
-  <project name="pygobject" pkgname="pygobject3" pkgconfig="pygobject-3.0"/>
+  <project name="pygobject" pkgname="pygobject3"/>
   <project name="quadrapassel">
     <release version="f26">3.22.*</release>
     <release version="f27">3.22.*</release>
