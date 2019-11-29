@@ -10,13 +10,6 @@
   </project>
 
   By default, the following version mapping is assumed:
-    f23     = 3.18.*
-    f24     = 3.20.*
-    f25     = 3.22.*
-    f26     = 3.24.*
-    f27     = 3.26.*
-    f28     = 3.28.*
-    f29     = 3.30.*
     f30     = 3.32.*
     f31     = 3.34.*
     rawhide = * (the newest upsream version)
@@ -29,189 +22,80 @@
 -->
 <projects>
   <project name="GConf" pkgname="GConf2">
-    <release version="f23">3.2.*</release>
-    <release version="f24">3.2.*</release>
-    <release version="f25">3.2.*</release>
-    <release version="f26">3.2.*</release>
-    <release version="f27">3.2.*</release>
-    <release version="f28">3.2.*</release>
-    <release version="f29">3.2.*</release>
     <release version="f30">3.2.*</release>
     <release version="f31">3.2.*</release>
   </project>
-  <project name="accerciser">
-    <release version="f24">3.14.*</release>
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="accerciser"/>
   <project name="adwaita-icon-theme"/>
   <project name="aisleriot">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
   </project>
   <project name="amtk">
-    <release version="f29">5.0.*</release>
     <release version="f30">5.0.*</release>
     <release version="f31">5.0.*</release>
   </project>
   <project name="anjuta">
-    <release version="f29">3.28.*</release>
     <release version="f30">3.28.*</release>
   </project>
   <project name="at-spi2-atk">
-    <release version="f23">2.18.*</release>
-    <release version="f24">2.20.*</release>
-    <release version="f25">2.22.*</release>
-    <release version="f26">2.24.*</release>
-    <release version="f27">2.26.*</release>
-    <release version="f28">2.26.*</release>
-    <release version="f29">2.30.*</release>
     <release version="f30">2.32.*</release>
     <release version="f31">2.34.*</release>
   </project>
   <project name="at-spi2-core">
-    <release version="f23">2.18.*</release>
-    <release version="f24">2.20.*</release>
-    <release version="f25">2.22.*</release>
-    <release version="f26">2.24.*</release>
-    <release version="f27">2.26.*</release>
-    <release version="f28">2.28.*</release>
-    <release version="f29">2.30.*</release>
     <release version="f30">2.32.*</release>
     <release version="f31">2.34.*</release>
   </project>
   <project name="atk">
-    <release version="f23">2.18.*</release>
-    <release version="f24">2.20.*</release>
-    <release version="f25">2.22.*</release>
-    <release version="f26">2.24.*</release>
-    <release version="f27">2.26.*</release>
-    <release version="f28">2.28.*</release>
-    <release version="f29">2.30.*</release>
     <release version="f30">2.32.*</release>
     <release version="f31">2.34.*</release>
   </project>
   <project name="atkmm">
-    <release version="f23">2.24.*</release>
-    <release version="f24">2.24.*</release>
-    <release version="f25">2.24.*</release>
-    <release version="f26">2.24.*</release>
-    <release version="f27">2.24.*</release>
-    <release version="f28">2.24.*</release>
-    <release version="f29">2.24.*</release>
     <release version="f30">2.24.*</release>
     <release version="f31">2.24.*</release>
     <release version="rawhide">2.24.*</release>
   </project>
-  <project name="atomix">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-  </project>
+  <project name="atomix"/>
   <project name="baobab"/>
   <project name="bijiben"/>
   <project name="brasero">
-    <release version="f23">3.12.*</release>
-    <release version="f24">3.12.*</release>
-    <release version="f25">3.12.*</release>
-    <release version="f26">3.12.*</release>
-    <release version="f27">3.12.*</release>
-    <release version="f28">3.12.*</release>
-    <release version="f29">3.12.*</release>
     <release version="f30">3.12.*</release>
     <release version="f31">3.12.*</release>
   </project>
   <project name="cantarell-fonts" pkgname="abattis-cantarell-fonts">
-    <release version="f23">0.0.*</release>
-    <release version="f24">0.0.*</release>
-    <release version="f25">0.0.*</release>
-    <release version="f26">0.0.*</release>
-    <release version="f27">0.0.*</release>
-    <release version="f28">0.0.*</release>
-    <release version="f29">0.*</release>
     <release version="f30">0.*</release>
     <release version="f31">0.*</release>
   </project>
   <project name="cheese"/>
   <project name="clutter">
-    <release version="f23">1.24.*</release>
-    <release version="f24">1.26.*</release>
-    <release version="f25">1.26.*</release>
-    <release version="f26">1.26.*</release>
-    <release version="f27">1.26.*</release>
-    <release version="f28">1.26.*</release>
-    <release version="f29">1.26.*</release>
     <release version="f30">1.26.*</release>
     <release version="f31">1.26.*</release>
   </project>
   <project name="clutter-gst" pkgname="clutter-gst3">
-    <release version="f23">3.0.*</release>
-    <release version="f24">3.0.*</release>
-    <release version="f25">3.0.*</release>
-    <release version="f26">3.0.*</release>
-    <release version="f27">3.0.*</release>
-    <release version="f28">3.0.*</release>
-    <release version="f29">3.0.*</release>
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="clutter-gtk">
-    <release version="f23">1.6.*</release>
-    <release version="f24">1.8.*</release>
-    <release version="f25">1.8.*</release>
-    <release version="f26">1.8.*</release>
-    <release version="f27">1.8.*</release>
-    <release version="f28">1.8.*</release>
-    <release version="f29">1.8.*</release>
     <release version="f30">1.8.*</release>
     <release version="f31">1.8.*</release>
   </project>
   <project name="cogl">
-    <release version="f23">1.22.*</release>
-    <release version="f24">1.22.*</release>
-    <release version="f25">1.22.*</release>
-    <release version="f26">1.22.*</release>
-    <release version="f27">1.22.*</release>
-    <release version="f28">1.22.*</release>
-    <release version="f29">1.22.*</release>
     <release version="f30">1.22.*</release>
     <release version="f31">1.22.*</release>
   </project>
   <project name="dconf">
-    <release version="f23">0.24.*</release>
-    <release version="f24">0.26.*</release>
-    <release version="f25">0.26.*</release>
-    <release version="f26">0.26.*</release>
-    <release version="f27">0.26.*</release>
-    <release version="f28">0.28.*</release>
-    <release version="f29">0.30.*</release>
     <release version="f30">0.32.*</release>
     <release version="f31">0.34.*</release>
   </project>
   <project name="dconf-editor"/>
   <project name="devhelp"/>
   <project name="d-feet">
-    <release version="f28">0.3.*</release>
-    <release version="f29">0.3.*</release>
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
   </project>
-  <project name="eog">
-    <release version="f29">3.28.*</release>
-  </project>
+  <project name="eog"/>
   <project name="eog-plugins">
-    <release version="f24">3.16.*</release>
-    <release version="f25">3.16.*</release>
-    <release version="f26">3.16.*</release>
-    <release version="f28">3.26.*</release>
-    <release version="f29">3.26.*</release>
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
   </project>
@@ -222,183 +106,78 @@
   </project>
   <project name="five-or-more"/>
   <project name="folks">
-    <release version="f23">0.11.*</release>
-    <release version="f24">0.11.*</release>
-    <release version="f25">0.11.*</release>
-    <release version="f26">0.11.*</release>
-    <release version="f27">0.11.*</release>
-    <release version="f28">0.11.*</release>
-    <release version="f29">0.11.*</release>
     <release version="f30">0.11.*</release>
     <release version="f31">0.13.*</release>
   </project>
-  <project name="four-in-a-row">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-  </project>
+  <project name="four-in-a-row"/>
   <project name="gcr">
-    <release version="f26">3.20.*</release>
-    <release version="f27">3.20.*</release>
-    <release version="f29">3.28.*</release>
     <release version="f30">3.28.*</release>
   </project>
   <project name="gdk-pixbuf" pkgname="gdk-pixbuf2">
-    <release version="f23">2.32.*</release>
-    <release version="f24">2.34.*</release>
-    <release version="f25">2.36.*</release>
-    <release version="f26">2.36.*</release>
-    <release version="f27">2.36.*</release>
-    <release version="f28">2.36.*</release>
-    <release version="f29">2.38.*</release>
     <release version="f30">2.38.*</release>
     <release version="f31">2.40.*</release>
   </project>
   <project name="gdl" pkgname="libgdl">
-    <release version="f29">3.28.*</release>
     <release version="f30">3.28.*</release>
   </project>
   <project name="gdm"/>
   <project name="geary"/>
-  <project name="gedit">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-  </project>
+  <project name="gedit"/>
   <project name="gedit-code-assistance">
-    <release version="f24">3.16.*</release>
-    <release version="f25">3.16.*</release>
-    <release version="f26">3.16.*</release>
-    <release version="f27">3.16.*</release>
-    <release version="f28">3.16.*</release>
-    <release version="f29">3.16.*</release>
     <release version="f30">3.16.*</release>
     <release version="f31">3.16.*</release>
   </project>
-  <project name="gedit-plugins">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-  </project>
+  <project name="gedit-plugins"/>
   <project name="geocode-glib">
-    <release version="f28">3.26.*</release>
-    <release version="f29">3.26.*</release>
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
   </project>
   <project name="gexiv2" pkgname="libgexiv2">
-    <release version="f23">0.10.*</release>
-    <release version="f24">0.10.*</release>
-    <release version="f25">0.10.*</release>
-    <release version="f26">0.10.*</release>
-    <release version="f27">0.10.*</release>
-    <release version="f28">0.10.*</release>
-    <release version="f29">0.10.*</release>
     <release version="f30">0.12.*</release>
     <release version="f31">0.12.*</release>
   </project>
   <project name="ghex">
-    <release version="f24">3.18.*</release>
-    <release version="f25">3.18.*</release>
-    <release version="f26">3.18.*</release>
-    <release version="f27">3.18.*</release>
-    <release version="f28">3.18.*</release>
-    <release version="f29">3.18.*</release>
     <release version="f30">3.18.*</release>
     <release version="f31">3.18.*</release>
   </project>
   <project name="gitg"/>
   <project name="gjs">
-    <release version="f23">1.43.*,1.44.*</release>
-    <release version="f24">1.45.*,1.46.*</release>
-    <release version="f25">1.46.*</release>
-    <release version="f26">1.48.*</release>
-    <release version="f27">1.50.*</release>
-    <release version="f28">1.52.*</release>
-    <release version="f29">1.54.*</release>
     <release version="f30">1.56.*</release>
     <release version="f31">1.58.*</release>
   </project>
   <project name="glabels">
-    <release version="f23">3.2.*</release>
-    <release version="f24">3.4.*</release>
-    <release version="f25">3.4.*</release>
-    <release version="f26">3.4.*</release>
-    <release version="f27">3.4.*</release>
-    <release version="f28">3.4.*</release>
-    <release version="f29">3.4.*</release>
     <release version="f30">3.4.*</release>
     <release version="f31">3.4.*</release>
   </project>
   <project name="glade">
-    <release version="f23">3.19.*</release>
-    <release version="f24">3.20.*</release>
-    <release version="f25">3.20.*</release>
-    <release version="f26">3.20.*</release>
-    <release version="f27">3.20.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
   </project>
   <project name="glib" pkgname="glib2">
-    <release version="f23">2.46.*</release>
-    <release version="f24">2.48.*</release>
-    <release version="f25">2.50.*</release>
-    <release version="f26">2.52.*</release>
-    <release version="f27">2.54.*</release>
-    <release version="f28">2.56.*</release>
-    <release version="f29">2.58.*</release>
     <release version="f30">2.60.*</release>
     <release version="f31">2.62.*</release>
   </project>
   <project name="glib-networking">
-    <release version="f23">2.46.*</release>
-    <release version="f24">2.48.*</release>
-    <release version="f25">2.50.*</release>
-    <release version="f26">2.52.*</release>
-    <release version="f27">2.54.*</release>
-    <release version="f28">2.56.*</release>
-    <release version="f29">2.58.*</release>
     <release version="f30">2.60.*</release>
     <release version="f31">2.62.*</release>
   </project>
   <project name="glibmm" pkgname="glibmm24">
-    <release version="f23">2.46.*</release>
-    <release version="f24">2.48.*</release>
-    <release version="f25">2.50.*</release>
-    <release version="f26">2.52.*</release>
-    <release version="f27">2.54.*</release>
-    <release version="f28">2.56.*</release>
-    <release version="f29">2.58.*</release>
     <release version="f30">2.60.*</release>
     <release version="f31">2.62.*</release>
     <release version="rawhide">2.62.*</release>
   </project>
   <project name="gmime">
-    <release version="f23">2.6.*</release>
-    <release version="f24">2.6.*</release>
-    <release version="f25">2.6.*</release>
-    <release version="f26">2.6.*</release>
-    <release version="f27">2.6.*</release>
-    <release version="f28">2.6.*</release>
-    <release version="f29">2.6.*</release>
     <release version="f30">2.6.*</release>
     <release version="f31">2.6.*</release>
     <release version="rawhide">2.6.*</release>
   </project>
   <project name="gmime" pkgname="gmime30">
-    <release version="f27">3.0.*</release>
-    <release version="f28">3.2.*</release>
-    <release version="f29">3.2.*</release>
     <release version="f30">3.2.*</release>
     <release version="f31">3.2.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="gnome-2048"/>
   <project name="gnome-autoar">
-    <release version="f25">0.1.*</release>
-    <release version="f26">0.2.*</release>
-    <release version="f27">0.2.*</release>
-    <release version="f28">0.2.*</release>
-    <release version="f29">0.2.*</release>
     <release version="f30">0.2.*</release>
     <release version="f31">0.2.*</release>
   </project>
@@ -418,7 +197,6 @@
   <project name="gnome-desktop" pkgname="gnome-desktop3"/>
   <project name="gnome-devel-docs"/>
   <project name="gnome-dictionary">
-    <release version="f29">3.26.*</release>
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
   </project>
@@ -427,65 +205,26 @@
   <project name="gnome-font-viewer"/>
   <project name="gnome-getting-started-docs"/>
   <project name="gnome-initial-setup"/>
-  <project name="gnome-keyring">
-    <release version="f26">3.20.*</release>
-    <release version="f27">3.20.*</release>
-  </project>
-  <project name="gnome-klotski">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="gnome-keyring"/>
+  <project name="gnome-klotski"/>
   <project name="gnome-logs"/>
-  <project name="gnome-mahjongg">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="gnome-mahjongg"/>
   <project name="gnome-maps"/>
-  <project name="gnome-menus">
-    <release version="f23">3.13.*,3.14.*</release>
-    <release version="f24">3.13.*,3.14.*</release>
-    <release version="f25">3.13.*,3.14.*</release>
-    <release version="f26">3.13.*,3.14.*</release>
-    <release version="f27">3.13.*,3.14.*</release>
-    <release version="f28">3.13.*,3.14.*</release>
-    <release version="f29">3.13.*,3.14.*</release>
-  </project>
+  <project name="gnome-menus"/>
   <project name="gnome-mines"/>
   <project name="gnome-multi-writer"/>
   <project name="gnome-music"/>
-  <project name="gnome-nibbles">
-    <release version="f27">3.24.*</release>
-    <release version="f28">3.24.*</release>
-    <release version="f29">3.24.*</release>
-  </project>
+  <project name="gnome-nibbles"/>
   <project name="gnome-online-accounts"/>
   <project name="gnome-online-miners">
-    <release version="f23">3.14.*</release>
-    <release version="f24">3.20.*</release>
     <release version="f30">3.30.*</release>
   </project>
   <project name="gnome-packagekit"/>
   <project name="gnome-photos"/>
   <project name="gnome-power-manager"/>
-  <project name="gnome-robots">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="gnome-robots"/>
   <project name="gnome-screenshot"/>
   <project name="gnome-search-tool">
-    <release version="f23">3.6.*</release>
-    <release version="f24">3.6.*</release>
-    <release version="f25">3.6.*</release>
-    <release version="f26">3.6.*</release>
-    <release version="f27">3.6.*</release>
-    <release version="f28">3.6.*</release>
-    <release version="f29">3.6.*</release>
     <release version="f30">3.6.*</release>
     <release version="f31">3.6.*</release>
   </project>
@@ -494,383 +233,166 @@
   <project name="gnome-shell"/>
   <project name="gnome-shell-extensions"/>
   <project name="gnome-software"/>
-  <project name="gnome-sound-recorder">
-    <release version="f27">3.24.*</release>
-  </project>
+  <project name="gnome-sound-recorder"/>
   <project name="gnome-sudoku"/>
   <project name="gnome-system-monitor"/>
   <project name="gnome-taquin"/>
   <project name="gnome-terminal"/>
-  <project name="gnome-tetravex">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="gnome-tetravex"/>
   <project name="gnome-themes-extra">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f29">3.28,3.28.*</release>
     <release version="f30">3.28,3.28.*</release>
     <release version="f31">3.28,3.28.*</release>
   </project>
   <project name="gnome-todo">
-    <release version="f29">3.28.*</release>
     <release version="f30">3.28.*</release>
     <release version="f31">3.28.*</release>
   </project>
   <project name="gnome-tweaks"/>
   <project name="gnome-usage"/>
   <project name="gnome-user-docs"/>
-  <project name="gnome-user-share">
-    <release version="f24">3.18.*</release>
-    <release version="f25">3.18.*</release>
-    <release version="f26">3.18.*</release>
-    <release version="f27">3.18.*</release>
-  </project>
+  <project name="gnome-user-share"/>
   <project name="gnome-video-effects">
-    <release version="f23">0.4.*</release>
-    <release version="f24">0.4.*</release>
-    <release version="f25">0.4.*</release>
-    <release version="f26">0.4.*</release>
-    <release version="f27">0.4.*</release>
-    <release version="f28">0.4.*</release>
-    <release version="f29">0.4.*</release>
     <release version="f30">0.4.*</release>
     <release version="f31">0.5.*</release>
   </project>
   <project name="gnome-weather"/>
   <project name="gnote"/>
   <project name="gobject-introspection">
-    <release version="f23">1.46.*</release>
-    <release version="f24">1.48.*</release>
-    <release version="f25">1.50.*</release>
-    <release version="f26">1.52.*</release>
-    <release version="f27">1.54.*</release>
-    <release version="f28">1.56.*</release>
-    <release version="f29">1.58.*</release>
     <release version="f30">1.60.*</release>
     <release version="f31">1.62.*</release>
   </project>
   <project name="gom">
-    <release version="f23">0.3.*</release>
-    <release version="f24">0.3.*</release>
-    <release version="f25">0.3.*</release>
-    <release version="f26">0.3.*</release>
-    <release version="f27">0.3.*</release>
-    <release version="f28">0.3.*</release>
-    <release version="f29">0.3.*</release>
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
   </project>
   <project name="grilo">
-    <release version="f23">0.2.*</release>
-    <release version="f24">0.3.*</release>
-    <release version="f25">0.3.*</release>
-    <release version="f26">0.3.*</release>
-    <release version="f27">0.3.*</release>
-    <release version="f28">0.3.*</release>
-    <release version="f29">0.3.*</release>
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
   </project>
   <project name="grilo-plugins">
-    <release version="f23">0.2.*</release>
-    <release version="f24">0.3.*</release>
-    <release version="f25">0.3.*</release>
-    <release version="f26">0.3.*</release>
-    <release version="f27">0.3.*</release>
-    <release version="f28">0.3.*</release>
-    <release version="f29">0.3.*</release>
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
   </project>
-  <project name="gsettings-desktop-schemas">
-    <release version="f27">3.24.*</release>
-    <release version="f29">3.28.*</release>
-  </project>
+  <project name="gsettings-desktop-schemas"/>
   <project name="gspell">
-    <release version="f25">1.2.*</release>
-    <release version="f26">1.4.*</release>
-    <release version="f27">1.6.*</release>
-    <release version="f28">1.8.*</release>
-    <release version="f29">1.8.*</release>
     <release version="f30">1.8.*</release>
     <release version="f31">1.8.*</release>
   </project>
   <project name="gssdp">
-    <release version="f24">0.14.*</release>
-    <release version="f25">1.0.*</release>
-    <release version="f26">1.0.*</release>
-    <release version="f27">1.0.*</release>
-    <release version="f28">1.0.*</release>
-    <release version="f29">1.0.*</release>
     <release version="f30">1.0.*</release>
     <release version="f31">1.0.*</release>
   </project>
   <project name="gthumb">
-    <release version="f23">3.4.*</release>
-    <release version="f24">3.4.*</release>
-    <release version="f25">3.4.*</release>
-    <release version="f26">3.4.*</release>
-    <release version="f27">3.6.*</release>
-    <release version="f28">3.6.*</release>
-    <release version="f29">3.6.*</release>
     <release version="f30">3.8.*</release>
     <release version="f31">3.8.*</release>
     <release version="rawhide">3.8.*</release>
   </project>
   <project name="gtk+" pkgname="gtk3">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.24.*</release>
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtk-doc">
-    <release version="f23">1.*</release>
-    <release version="f24">1.*</release>
-    <release version="f25">1.*</release>
-    <release version="f26">1.*</release>
-    <release version="f27">1.*</release>
-    <release version="f28">1.*</release>
-    <release version="f29">1.*</release>
     <release version="f30">1.29</release>
     <release version="f31">1.29</release>
   </project>
   <project name="gtkmm" pkgname="gtkmm30">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtranslator"/>
   <project name="gtksourceview" pkgname="gtksourceview3">
-    <release version="f27">3.24.*</release>
-    <release version="f28">3.24.*</release>
-    <release version="f29">3.24.*</release>
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview4">
-    <release version="f29">4.0.*</release>
     <release version="f30">4.2.*</release>
     <release version="f31">4.4.*</release>
   </project>
   <project name="gucharmap">
-    <release version="f24">3.18.*</release>
-    <release version="f25">9.0.*</release>
-    <release version="f26">10.0.*</release>
-    <release version="f27">10.0.*</release>
-    <release version="f28">10.0.*</release>
-    <release version="f29">11.0.*</release>
     <release version="f30">12.0.*</release>
     <release version="f31">12.*</release>
   </project>
   <project name="gupnp">
-    <release version="f24">0.20.*</release>
-    <release version="f25">1.0.*</release>
-    <release version="f26">1.0.*</release>
-    <release version="f27">1.0.*</release>
-    <release version="f28">1.0.*</release>
-    <release version="f29">1.0.*</release>
     <release version="f30">1.0.*</release>
     <release version="f31">1.0.*</release>
   </project>
   <project name="gupnp-av">
-    <release version="f24">0.12.*</release>
-    <release version="f25">0.12.*</release>
-    <release version="f26">0.12.*</release>
-    <release version="f27">0.12.*</release>
-    <release version="f28">0.12.*</release>
-    <release version="f29">0.12.*</release>
     <release version="f30">0.12.*</release>
     <release version="f31">0.12.*</release>
   </project>
   <project name="gupnp-dlna">
-    <release version="f24">0.10.*</release>
-    <release version="f25">0.10.*</release>
-    <release version="f26">0.10.*</release>
-    <release version="f27">0.10.*</release>
-    <release version="f28">0.10.*</release>
-    <release version="f29">0.10.*</release>
     <release version="f30">0.10.*</release>
     <release version="f31">0.10.*</release>
   </project>
   <project name="gupnp-igd">
-    <release version="f24">0.2.*</release>
-    <release version="f25">0.2.*</release>
-    <release version="f26">0.2.*</release>
-    <release version="f27">0.2.*</release>
-    <release version="f28">0.2.*</release>
-    <release version="f29">0.2.*</release>
     <release version="f30">0.2.*</release>
     <release version="f31">0.2.*</release>
   </project>
   <project name="gupnp-tools">
-    <release version="f24">0.8.*</release>
-    <release version="f25">0.8.*</release>
-    <release version="f26">0.8.*</release>
-    <release version="f27">0.8.*</release>
-    <release version="f28">0.8.*</release>
-    <release version="f29">0.8.*</release>
     <release version="f30">0.8.*</release>
     <release version="f31">0.8.*</release>
   </project>
   <project name="gvfs">
-    <release version="f23">1.26.*</release>
-    <release version="f24">1.28.*</release>
-    <release version="f25">1.30.*</release>
-    <release version="f26">1.32.*</release>
-    <release version="f27">1.34.*</release>
-    <release version="f28">1.36.*</release>
-    <release version="f29">1.38.*</release>
     <release version="f30">1.40.*</release>
     <release version="f31">1.42.*</release>
   </project>
-  <project name="hitori">
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="hitori"/>
   <project name="iagno"/>
   <project name="json-glib">
-    <release version="f23">1.0.*</release>
-    <release version="f24">1.2.*</release>
-    <release version="f25">1.2.*</release>
-    <release version="f26">1.2.*</release>
-    <release version="f27">1.4.*</release>
-    <release version="f28">1.4.*</release>
-    <release version="f29">1.4.*</release>
     <release version="f30">1.4.*</release>
     <release version="f31">1.4.*</release>
   </project>
   <project name="jsonrpc-glib"/>
   <project name="krb5-auth-dialog">
-    <release version="f26">3.20.*</release>
-    <release version="f29">3.26.*</release>
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
   </project>
   <project name="libchamplain">
-    <release version="f23">0.12.*</release>
-    <release version="f24">0.12.*</release>
-    <release version="f25">0.12.*</release>
-    <release version="f26">0.12.*</release>
-    <release version="f27">0.12.*</release>
-    <release version="f28">0.12.*</release>
-    <release version="f29">0.12.*</release>
     <release version="f30">0.12.*</release>
     <release version="f31">0.12.*</release>
   </project>
   <project name="libcroco">
-    <release version="f23">0.6.*</release>
-    <release version="f24">0.6.*</release>
-    <release version="f25">0.6.*</release>
-    <release version="f26">0.6.*</release>
-    <release version="f27">0.6.*</release>
-    <release version="f28">0.6.*</release>
-    <release version="f29">0.6.*</release>
     <release version="f30">0.6.*</release>
     <release version="f31">0.6.*</release>
   </project>
   <project name="libcryptui">
-    <release version="f23">3.12.*</release>
-    <release version="f24">3.12.*</release>
-    <release version="f25">3.12.*</release>
-    <release version="f26">3.12.*</release>
-    <release version="f27">3.12.*</release>
-    <release version="f28">3.12.*</release>
-    <release version="f29">3.12.*</release>
     <release version="f30">3.12.*</release>
     <release version="f31">3.12.*</release>
   </project>
   <project name="libdazzle"/>
   <project name="libgdata">
-    <release version="f23">0.17.*</release>
-    <release version="f24">0.17.*</release>
-    <release version="f25">0.17.*</release>
-    <release version="f26">0.17.*</release>
-    <release version="f27">0.17.*</release>
-    <release version="f28">0.17.*</release>
-    <release version="f29">0.17.*</release>
     <release version="f30">0.17.*</release>
     <release version="f31">0.17.*</release>
   </project>
   <project name="libgee">
-    <release version="f23">0.18.*</release>
-    <release version="f24">0.18.*</release>
-    <release version="f25">0.18.*</release>
-    <release version="f26">0.20.*</release>
-    <release version="f27">0.20.*</release>
-    <release version="f28">0.20.*</release>
-    <release version="f29">0.20.*</release>
     <release version="f30">0.20.*</release>
     <release version="f31">0.20.*</release>
   </project>
   <project name="libgepub">
-    <release version="f25">0.4,0.4.*</release>
-    <release version="f26">0.4,0.4.*</release>
-    <release version="f27">0.5.*</release>
-    <release version="f28">0.6.*</release>
-    <release version="f29">0.6.*</release>
     <release version="f30">0.6.*</release>
     <release version="f31">0.6.*</release>
   </project>
   <project name="libgit2-glib">
-    <release version="f23">0.23.*</release>
-    <release version="f24">0.24.*</release>
-    <release version="f25">0.24.*</release>
-    <release version="f26">0.25.*</release>
-    <release version="f27">0.26.*</release>
-    <release version="f28">0.26.*</release>
-    <release version="f29">0.27.*</release>
     <release version="f30">0.28.*</release>
     <release version="f31">0.28.*</release>
   </project>
   <project name="libgnome-games-support">
-    <release version="f25">1.2.*</release>
-    <release version="f26">1.2.*</release>
-    <release version="f27">1.2.*</release>
-    <release version="f28">1.4.*</release>
-    <release version="f29">1.4.*</release>
     <release version="f30">1.4.*</release>
     <release version="f31">1.4.*</release>
   </project>
   <project name="libgnomekbd">
-    <release version="f23">3.6.*</release>
-    <release version="f24">3.6.*</release>
-    <release version="f28">3.26.*</release>
-    <release version="f29">3.26.*</release>
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
   </project>
   <project name="libgtop" pkgname="libgtop2">
-    <release version="f23">2.32.*</release>
-    <release version="f24">2.34.*</release>
-    <release version="f25">2.34.*</release>
-    <release version="f26">2.36.*</release>
-    <release version="f27">2.38.*</release>
-    <release version="f28">2.38.*</release>
-    <release version="f29">2.38.*</release>
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
   </project>
   <project name="libgweather"/>
   <project name="libgxps">
-    <release version="f23">0.2.*</release>
-    <release version="f24">0.2.*</release>
-    <release version="f25">0.2.*</release>
-    <release version="f26">0.2.*</release>
-    <release version="f27">0.3.*</release>
-    <release version="f28">0.3.*</release>
-    <release version="f29">0.3.*</release>
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
   </project>
@@ -879,63 +401,27 @@
     <release version="f31">0.2.*</release>
   </project>
   <project name="libmediaart">
-    <release version="f23">1.9.*</release>
-    <release version="f24">1.9.*</release>
-    <release version="f25">1.9.*</release>
-    <release version="f26">1.9.*</release>
-    <release version="f27">1.9.*</release>
-    <release version="f28">1.9.*</release>
-    <release version="f29">1.9.*</release>
     <release version="f30">1.9.*</release>
     <release version="f31">1.9.*</release>
   </project>
   <project name="libnotify">
-    <release version="f23">0.7.*</release>
-    <release version="f24">0.7.*</release>
-    <release version="f25">0.7.*</release>
-    <release version="f26">0.7.*</release>
-    <release version="f27">0.7.*</release>
-    <release version="f28">0.7.*</release>
-    <release version="f29">0.7.*</release>
     <release version="f30">0.7.*</release>
     <release version="f31">0.7.*</release>
   </project>
   <project name="libpeas">
-    <release version="f23">1.16.*</release>
-    <release version="f24">1.18.*</release>
-    <release version="f25">1.20.*</release>
-    <release version="f26">1.20.*</release>
-    <release version="f27">1.22.*</release>
-    <release version="f28">1.22.*</release>
-    <release version="f29">1.22.*</release>
     <release version="f30">1.22.*</release>
     <release version="f31">1.24.*</release>
   </project>
   <project name="librsvg" pkgname="librsvg2">
-    <release version="f23">2.40.*</release>
-    <release version="f24">2.40.*</release>
-    <release version="f25">2.40.*</release>
-    <release version="f26">2.40.*</release>
-    <release version="f27">2.40.*</release>
-    <release version="f28">2.42.*</release>
-    <release version="f29">2.44.*</release>
     <release version="f30">2.46.*</release>
     <release version="f31">2.46.*</release>
     <release version="rawhide">2.46.*</release>
   </project>
   <project name="libsecret">
-    <release version="f23">0.18.*</release>
-    <release version="f24">0.18.*</release>
-    <release version="f25">0.18.*</release>
-    <release version="f26">0.18.*</release>
-    <release version="f27">0.18.*</release>
-    <release version="f28">0.18.*</release>
-    <release version="f29">0.18.*</release>
     <release version="f30">0.18.*</release>
     <release version="f31">0.19.*</release>
   </project>
   <project name="libsigc++" pkgname="libsigc++20">
-    <release version="f29">2.10.*</release>
     <release version="f30">2.10.*</release>
     <release version="f31">2.10.*</release>
     <release version="rawhide">2.*</release>
@@ -944,323 +430,131 @@
     <release version="rawhide">3.*</release>
   </project>
   <project name="libsoup">
-    <release version="f23">2.52.*</release>
-    <release version="f24">2.54.*</release>
-    <release version="f25">2.56.*</release>
-    <release version="f26">2.58.*</release>
-    <release version="f27">2.60.*</release>
-    <release version="f28">2.62.*</release>
-    <release version="f29">2.64.*</release>
     <release version="f30">2.66.*</release>
     <release version="f31">2.68.*</release>
   </project>
   <project name="libxml++">
-    <release version="f26">2.40.*</release>
-    <release version="f27">2.40.*</release>
-    <release version="f28">2.40.*</release>
-    <release version="f29">2.40.*</release>
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
     <release version="rawhide">2.40.*</release>
   </project>
   <project name="libxml++" pkgname="libxml++30">
-    <release version="f27">3.0.*</release>
-    <release version="f28">3.0.*</release>
-    <release version="f29">3.0.*</release>
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
     <release version="rawhide">3.*</release>
   </project>
-  <project name="libwnck" pkgname="libwnck3">
-    <release version="f23">3.14.*</release>
-    <release version="f24">3.14.*</release>
-    <release version="f25">3.20.*</release>
-    <release version="f26">3.20.*</release>
-    <release version="f27">3.24.*</release>
-    <release version="f28">3.24.*</release>
-    <release version="f29">3.24.*</release>
-  </project>
+  <project name="libwnck" pkgname="libwnck3"/>
   <project name="lightsoff"/>
   <project name="moserial">
-    <release version="f23">3.0.*</release>
-    <release version="f24">3.0.*</release>
-    <release version="f25">3.0.*</release>
-    <release version="f26">3.0.*</release>
-    <release version="f27">3.0.*</release>
-    <release version="f28">3.0.*</release>
-    <release version="f29">3.0.*</release>
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
   </project>
-  <project name="mousetweaks">
-    <release version="f23">3.12.*</release>
-    <release version="f24">3.12.*</release>
-    <release version="f25">3.12.*</release>
-    <release version="f26">3.12.*</release>
-    <release version="f27">3.12.*</release>
-    <release version="f28">3.12.*</release>
-    <release version="f29">3.12.*</release>
-  </project>
+  <project name="mousetweaks"/>
   <project name="mutter"/>
   <project name="nautilus"/>
   <project name="nautilus-python">
-    <release version="f28">1.1.*</release>
-    <release version="f29">1.2.*</release>
     <release version="f30">1.2.*</release>
     <release version="f31">1.2.*</release>
   </project>
   <project name="nautilus-sendto">
-    <release version="f23">3.8.*</release>
-    <release version="f24">3.8.*</release>
-    <release version="f25">3.8.*</release>
-    <release version="f26">3.8.*</release>
-    <release version="f27">3.8.*</release>
-    <release version="f28">3.8.*</release>
-    <release version="f29">3.8.*</release>
     <release version="f30">3.8.*</release>
     <release version="f31">3.8.*</release>
   </project>
   <project name="nemiver">
-    <release version="f23">0.9.*</release>
-    <release version="f24">0.9.*</release>
-    <release version="f25">0.9.*</release>
-    <release version="f26">0.9.*</release>
-    <release version="f27">0.9.*</release>
-    <release version="f28">0.9.*</release>
-    <release version="f29">0.9.*</release>
     <release version="f30">0.9.*</release>
     <release version="f31">0.9.*</release>
   </project>
   <project name="orca"/>
   <project name="pango">
-    <release version="f23">1.38.*</release>
-    <release version="f24">1.40.*</release>
-    <release version="f25">1.40.*</release>
-    <release version="f26">1.40.*</release>
-    <release version="f27">1.40.*</release>
-    <release version="f28">1.42.*</release>
-    <release version="f29">1.42.*</release>
     <release version="f30">1.43.*</release>
     <release version="f31">1.44.*</release>
   </project>
   <project name="pangomm">
-    <release version="f23">2.38.*</release>
-    <release version="f24">2.40.*</release>
-    <release version="f25">2.40.*</release>
-    <release version="f26">2.40.*</release>
-    <release version="f27">2.40.*</release>
-    <release version="f28">2.40.*</release>
-    <release version="f29">2.40.*</release>
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
     <release version="rawhide">2.40.*</release>
   </project>
   <project name="pinpoint">
-    <release version="f23">0.1.*</release>
-    <release version="f24">0.1.*</release>
-    <release version="f25">0.1.*</release>
-    <release version="f26">0.1.*</release>
-    <release version="f27">0.1.*</release>
-    <release version="f28">0.1.*</release>
-    <release version="f29">0.1.*</release>
     <release version="f30">0.1.*</release>
     <release version="f31">0.1.*</release>
   </project>
   <project name="polari"/>
   <project name="pyatspi">
-    <release version="f23">2.18.*</release>
-    <release version="f24">2.20.*</release>
-    <release version="f25">2.22.*</release>
-    <release version="f26">2.24.*</release>
-    <release version="f27">2.26.*</release>
-    <release version="f28">2.28.*</release>
-    <release version="f29">2.30.*</release>
     <release version="f30">2.32.*</release>
     <release version="f31">2.34.*</release>
   </project>
   <project name="pygobject" pkgname="pygobject3"/>
-  <project name="quadrapassel">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="quadrapassel"/>
   <project name="rest">
-    <release version="f23">0.7.*,0.8.*</release>
-    <release version="f24">0.8.*</release>
-    <release version="f25">0.8.*</release>
-    <release version="f26">0.8.*</release>
-    <release version="f27">0.8.*</release>
-    <release version="f28">0.8.*</release>
-    <release version="f29">0.8.*</release>
     <release version="f30">0.8.*</release>
     <release version="f31">0.8.*</release>
   </project>
   <project name="rhythmbox">
-    <release version="f26">3.4.*</release>
-    <release version="f27">3.4.*</release>
-    <release version="f28">3.4.*</release>
-    <release version="f29">3.4.*</release>
     <release version="f30">3.4.*</release>
     <release version="f31">3.4.*</release>
   </project>
   <project name="rygel">
-    <release version="f23">0.28.*</release>
-    <release version="f24">0.30.*</release>
-    <release version="f25">0.32.*</release>
-    <release version="f26">0.34.*</release>
-    <release version="f27">0.36.*</release>
-    <release version="f28">0.36.*</release>
-    <release version="f29">0.36.*</release>
     <release version="f30">0.36.*</release>
     <release version="f31">0.36.*</release>
   </project>
-  <project name="seahorse">
-    <release version="f26">3.20.*</release>
-    <release version="f27">3.20.*</release>
-    <release version="f28">3.20.*</release>
-  </project>
+  <project name="seahorse"/>
   <project name="seahorse-nautilus">
-    <release version="f23">3.11.*</release>
-    <release version="f24">3.11.*</release>
-    <release version="f25">3.11.*</release>
-    <release version="f26">3.11.*</release>
-    <release version="f27">3.11.*</release>
-    <release version="f28">3.11.*</release>
-    <release version="f29">3.11.*</release>
     <release version="f30">3.11.*</release>
     <release version="f31">3.11.*</release>
   </project>
   <project name="seahorse-sharing">
-    <release version="f23">3.8.*</release>
-    <release version="f24">3.8.*</release>
-    <release version="f25">3.8.*</release>
-    <release version="f26">3.8.*</release>
-    <release version="f27">3.8.*</release>
-    <release version="f28">3.8.*</release>
-    <release version="f29">3.8.*</release>
     <release version="f30">3.8.*</release>
     <release version="f31">3.8.*</release>
   </project>
   <project name="shotwell">
-    <release version="f23">0.22.*</release>
-    <release version="f24">0.22.*</release>
-    <release version="f25">0.24.*</release>
-    <release version="f26">0.26.*</release>
-    <release version="f27">0.28.*</release>
-    <release version="f28">0.28.*</release>
-    <release version="f29">0.29.*,0.30.*</release>
     <release version="f30">0.31.*,0.32.*</release>
     <release version="f31">0.31.*,0.32.*</release>
   </project>
   <project name="simple-scan"/>
   <project name="sound-juicer">
-    <release version="f27">3.24.*</release>
-    <release version="f28">3.24.*</release>
-    <release version="f29">3.24.*</release>
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
   </project>
-  <project name="sushi">
-    <release version="f27">3.24.*</release>
-  </project>
+  <project name="sushi"/>
   <project name="sysprof"/>
   <project name="swell-foop"/>
-  <project name="tali">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
-  </project>
+  <project name="tali"/>
   <project name="template-glib"/>
   <project name="tepl">
-    <release version="f27">3.0.*</release>
-    <release version="f28">3.0.*</release>
-    <release version="f29">3.0.*</release>
     <release version="f30">4.2.*</release>
     <release version="f31">4.2.*</release>
   </project>
-  <project name="totem">
-    <release version="f28">3.26.*</release>
-    <release version="f29">3.26.*</release>
-  </project>
+  <project name="totem"/>
   <project name="totem-pl-parser">
-    <release version="f23">3.10.*</release>
-    <release version="f24">3.10.*</release>
-    <release version="f25">3.10.*</release>
-    <release version="f26">3.10.*</release>
-    <release version="f27">3.26.*</release>
-    <release version="f28">3.26.*</release>
-    <release version="f29">3.26.*</release>
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
   </project>
   <project name="tracker">
-    <release version="f23">1.6.*</release>
-    <release version="f24">1.8.*</release>
-    <release version="f25">1.10.*</release>
-    <release version="f26">1.12.*</release>
-    <release version="f27">2.0.*</release>
-    <release version="f28">2.1.*</release>
-    <release version="f29">2.1.*</release>
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.*</release>
   </project>
   <project name="tracker-miners">
-    <release version="f27">2.0.*</release>
-    <release version="f28">2.1.*</release>
-    <release version="f29">2.1.*</release>
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.*</release>
   </project>
   <project name="vala">
-    <release version="f23">0.30.*</release>
-    <release version="f24">0.32.*</release>
-    <release version="f25">0.34.*</release>
-    <release version="f26">0.36.*</release>
-    <release version="f27">0.38.*</release>
-    <release version="f28">0.40.*</release>
-    <release version="f29">0.42.*</release>
     <release version="f30">0.44.*</release>
     <release version="f31">0.46.*</release>
   </project>
   <project name="vinagre">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
   </project>
   <project name="vino">
-    <release version="f26">3.22.*</release>
-    <release version="f27">3.22.*</release>
-    <release version="f28">3.22.*</release>
-    <release version="f29">3.22.*</release>
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
   </project>
   <project name="vte" pkgname="vte291">
-    <release version="f23">0.42.*</release>
-    <release version="f24">0.44.*</release>
-    <release version="f25">0.46.*</release>
-    <release version="f26">0.48.*</release>
-    <release version="f27">0.50.*</release>
-    <release version="f28">0.52.*</release>
-    <release version="f29">0.54.*</release>
     <release version="f30">0.56.*</release>
     <release version="f31">0.58.*</release>
   </project>
   <project name="yelp"/>
-  <project name="yelp-tools">
-    <release version="f24">3.18.*</release>
-    <release version="f25">3.18.*</release>
-    <release version="f26">3.18.*</release>
-    <release version="f27">3.18.*</release>
-  </project>
-  <project name="yelp-xsl">
-    <release version="f26">3.20.*</release>
-    <release version="f27">3.20.*</release>
-  </project>
+  <project name="yelp-tools"/>
+  <project name="yelp-xsl"/>
   <project name="zenity"/>
 </projects>

@@ -37,18 +37,6 @@ class ModulesItem(object):
         self.depsolve_level = 0
 
         # add the default gnome release numbers
-        self.release_glob['f18'] = "3.6.*"
-        self.release_glob['f19'] = "3.8.*"
-        self.release_glob['f20'] = "3.9.*,3.10.*,3.10"
-        self.release_glob['f21'] = "3.14.*"
-        self.release_glob['f22'] = "3.15.*,3.16.*"
-        self.release_glob['f23'] = "3.17.*,3.18.*,3.18"
-        self.release_glob['f24'] = "3.19.*,3.20.*,3.20"
-        self.release_glob['f25'] = "3.21.*,3.22.*,3.22"
-        self.release_glob['f26'] = "3.23.*,3.24.*,3.24"
-        self.release_glob['f27'] = "3.25.*,3.26.*,3.26"
-        self.release_glob['f28'] = "3.27.*,3.28.*,3.28"
-        self.release_glob['f29'] = "3.29.*,3.30.*,3.30"
         self.release_glob['f30'] = "3.31.*,3.32.*,3.32"
         self.release_glob['f31'] = "3.33.*,3.34.*,3.34"
         self.release_glob['rawhide'] = "*"
@@ -88,17 +76,6 @@ class ModulesXml(object):
                 for release in project.get('releases').split(','):
                     item.releases.append(release)
             else:
-                item.releases.append('f19')
-                item.releases.append('f20')
-                item.releases.append('f21')
-                item.releases.append('f22')
-                item.releases.append('f23')
-                item.releases.append('f24')
-                item.releases.append('f25')
-                item.releases.append('f26')
-                item.releases.append('f27')
-                item.releases.append('f28')
-                item.releases.append('f29')
                 item.releases.append('f30')
                 item.releases.append('f31')
             self.items.append(item)
