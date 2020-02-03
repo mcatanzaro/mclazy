@@ -63,8 +63,8 @@
     <release version="f31">3.12.*</release>
   </project>
   <project name="cantarell-fonts" pkgname="abattis-cantarell-fonts">
-    <release version="f30">0.*</release>
-    <release version="f31">0.*</release>
+    <release version="f30">0.111</release>
+    <release version="f31">0.111</release>
   </project>
   <project name="cheese"/>
   <project name="clutter">
@@ -246,6 +246,7 @@
   <project name="gnome-todo">
     <release version="f30">3.28.*</release>
     <release version="f31">3.28.*</release>
+    <release version="rawhide">3.28.*</release>
   </project>
   <project name="gnome-tweaks"/>
   <project name="gnome-usage"/>
@@ -281,6 +282,7 @@
   <project name="gssdp">
     <release version="f30">1.0.*</release>
     <release version="f31">1.0.*</release>
+    <release version="rawhide">1.0.*</release>
   </project>
   <project name="gthumb">
     <release version="f30">3.8.*</release>
@@ -318,22 +320,27 @@
   <project name="gupnp">
     <release version="f30">1.0.*</release>
     <release version="f31">1.0.*</release>
+    <release version="rawhide">1.0.*</release>
   </project>
   <project name="gupnp-av">
     <release version="f30">0.12.*</release>
     <release version="f31">0.12.*</release>
+    <release version="rawhide">0.12.*</release>
   </project>
   <project name="gupnp-dlna">
     <release version="f30">0.10.*</release>
     <release version="f31">0.10.*</release>
+    <release version="rawhide">0.10.*</release>
   </project>
   <project name="gupnp-igd">
     <release version="f30">0.2.*</release>
     <release version="f31">0.2.*</release>
+    <release version="rawhide">0.2.*</release>
   </project>
   <project name="gupnp-tools">
     <release version="f30">0.8.*</release>
     <release version="f31">0.8.*</release>
+    <release version="rawhide">0.8.*</release>
   </project>
   <project name="gvfs">
     <release version="f30">1.40.*</release>
@@ -424,7 +431,7 @@
   <project name="libsigc++" pkgname="libsigc++20">
     <release version="f30">2.10.*</release>
     <release version="f31">2.10.*</release>
-    <release version="rawhide">2.*</release>
+    <release version="rawhide">2.10.*</release>
   </project>
   <project name="libsigc++" pkgname="libsigc++30">
     <release version="rawhide">3.*</release>
@@ -442,7 +449,7 @@
   <project name="libxml++" pkgname="libxml++30">
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
-    <release version="rawhide">3.*</release>
+    <release version="rawhide">3.2.*</release>
   </project>
   <project name="lightsoff"/>
   <project name="moserial">
@@ -496,6 +503,7 @@
   <project name="rygel">
     <release version="f30">0.36.*</release>
     <release version="f31">0.36.*</release>
+    <release version="rawhide">0.36.*</release>
   </project>
   <project name="seahorse"/>
   <project name="seahorse-nautilus">
@@ -540,6 +548,7 @@
   <project name="vala">
     <release version="f30">0.44.*</release>
     <release version="f31">0.46.*</release>
+    <release version="rawhide">0.47.*,0.48.*</release>
   </project>
   <project name="vinagre">
     <release version="f30">3.22.*</release>
