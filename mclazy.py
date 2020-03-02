@@ -352,7 +352,7 @@ def main():
                     try:
                         urllib.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
                     except IOError as e:
-                        print_fail("Failed to get tarball", e)
+                        print_fail("Failed to get tarball: %s" % e)
                         unlock_file(lock_filename)
                         continue
                     # add the new source
