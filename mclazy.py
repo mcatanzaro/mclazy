@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # Licensed under the GNU General Public License Version 2
 #
 # This program is free software; you can redistribute it and/or modify
@@ -23,7 +23,7 @@
 import glob
 import os
 import subprocess
-import urllib
+import urllib.request
 import json
 import re
 import rpm
@@ -43,7 +43,7 @@ COLOR_ENDC = '\033[0m'
 
 def run_command(cwd, argv):
     print_debug("Running %s" % " ".join(argv))
-    p = subprocess.Popen(argv, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p = subprocess.Popen(argv, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = p.communicate()
     if p.returncode != 0:
         print(output)
@@ -249,7 +249,7 @@ def main():
         success = False
         for i in range (1, 20):
             try:
-                urllib.urlretrieve ("%s/%s/cache.json" % (gnome_ftp, module), "%s/%s/cache.json" % (args.cache, pkg))
+                urllib.request.urlretrieve ("%s/%s/cache.json" % (gnome_ftp, module), "%s/%s/cache.json" % (args.cache, pkg))
                 success = True
                 break
             except IOError as e:
@@ -350,7 +350,7 @@ def main():
                 print_debug("Download %s" % tarball_url)
                 if not args.simulate:
                     try:
-                        urllib.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
+                        urllib.request.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
                     except IOError as e:
                         print_fail("Failed to get tarball: %s" % e)
                         unlock_file(lock_filename)
