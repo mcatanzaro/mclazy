@@ -530,6 +530,10 @@
     <release version="rawhide">3.2.*</release>
   </project>
   <project name="lightsoff"/>
+  <project name="mm-common">
+    <release version="f31">0.9.*</release>
+    <release version="f32">1.0.*</release>
+  </project>
   <project name="moserial">
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
