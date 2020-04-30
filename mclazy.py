@@ -398,11 +398,11 @@ def main():
                     unlock_file(lock_filename)
                     continue
 
-            resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
-            if not glob.glob(resultsglob):
-                print_fail("package %s failed mock test build: no results" % pkg)
-                unlock_file(lock_filename)
-                continue
+                resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
+                if not glob.glob(resultsglob):
+                    print_fail("package %s failed mock test build: no results" % pkg)
+                    unlock_file(lock_filename)
+                    continue
 
         # commit the changes
         rc = run_command (pkg_cache, ['git', 'commit', '-a', "--message=%s" % comment])
