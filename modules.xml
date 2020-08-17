@@ -61,6 +61,7 @@
     <release version="f30">2.24.*</release>
     <release version="f31">2.24.*</release>
     <release version="f32">2.24.*</release>
+    <release version="f33">2.24.*</release>
     <release version="rawhide">2.24.*</release>
   </project>
   <project name="atomix"/>
@@ -86,6 +87,7 @@
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
     <release version="f32">3.0.*</release>
+    <release version="f33">3.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="clutter-gtk">
@@ -192,18 +194,21 @@
     <release version="f30">2.60.*</release>
     <release version="f31">2.62.*</release>
     <release version="f32">2.64.*</release>
+    <release version="f33">2.64.*</release>
     <release version="rawhide">2.64.*</release>
   </project>
   <project name="gmime">
     <release version="f30">2.6.*</release>
     <release version="f31">2.6.*</release>
     <release version="f32">2.6.*</release>
+    <release version="f33">2.6.*</release>
     <release version="rawhide">2.6.*</release>
   </project>
   <project name="gmime" pkgname="gmime30">
     <release version="f30">3.2.*</release>
     <release version="f31">3.2.*</release>
     <release version="f32">3.2.*</release>
+    <release version="f33">3.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="gnome-2048"/>
@@ -282,6 +287,7 @@
     <release version="f30">3.28.*</release>
     <release version="f31">3.28.*</release>
     <release version="f32">3.28.*</release>
+    <release version="f33">3.28.*</release>
     <release version="rawhide">3.28.*</release>
   </project>
   <project name="gnome-tweaks"/>
@@ -330,16 +336,19 @@
     <release version="f30">3.8.*</release>
     <release version="f31">3.8.*</release>
     <release version="f32">3.10.*</release>
+    <release version="f33">3.10.*</release>
     <release version="rawhide">3.10.*</release>
   </project>
   <project name="gtk+" pkgname="gtk3">
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.13</release>
     <release version="f32">3.24.*</release>
+    <release version="f33">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtk" pkgname="gtk4">
     <release version="f32">3.98.4</release>
+    <release version="f33">3.99.*</release>
     <release version="rawhide">3.99.*</release>
   </project>
   <project name="gtk-doc">
@@ -351,12 +360,14 @@
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
     <release version="f32">3.24.*</release>
+    <release version="f33">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview3">
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
     <release version="f32">3.24.*</release>
+    <release version="f33">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview4">
@@ -498,6 +509,7 @@
     <release version="f30">2.46.*</release>
     <release version="f31">2.46.*</release>
     <release version="f32">2.48.*</release>
+    <release version="f33">2.48.*</release>
     <release version="rawhide">2.48.*</release>
   </project>
   <project name="libsecret">
@@ -509,10 +521,12 @@
     <release version="f30">2.10.*</release>
     <release version="f31">2.10.*</release>
     <release version="f32">2.10.*</release>
+    <release version="f33">2.10.*</release>
     <release version="rawhide">2.10.*</release>
   </project>
   <project name="libsigc++" pkgname="libsigc++30">
     <release version="f32">3.*</release>
+    <release version="f33">3.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="libsoup">
@@ -525,12 +539,14 @@
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
     <release version="f32">2.40.*</release>
+    <release version="f33">2.40.*</release>
     <release version="rawhide">2.40.*</release>
   </project>
   <project name="libxml++" pkgname="libxml++30">
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
     <release version="f32">3.2.*</release>
+    <release version="f33">3.2.*</release>
     <release version="rawhide">3.2.*</release>
   </project>
   <project name="lightsoff"/>
@@ -571,6 +587,7 @@
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
     <release version="f32">2.42.*</release>
+    <release version="f33">2.42.*</release>
     <release version="rawhide">2.42.*</release>
   </project>
   <project name="pinpoint">
@@ -643,18 +660,21 @@
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.*</release>
     <release version="f32">2.3.*</release>
+    <release version="f33">2.3.*</release>
     <release version="rawhide">2.3.*</release>
   </project>
   <project name="tracker-miners">
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.*</release>
     <release version="f32">2.3.*</release>
+    <release version="f33">2.3.*</release>
     <release version="rawhide">2.3.*</release>
   </project>
   <project name="vala">
     <release version="f30">0.44.*</release>
     <release version="f31">0.46.*</release>
     <release version="f32">0.48.*</release>
+    <release version="f33">0.48.*</release>
     <release version="rawhide">0.48.*</release>
   </project>
   <project name="vinagre">
