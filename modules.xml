@@ -177,7 +177,6 @@
   <project name="glade">
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
-    <release version="f32">3.22.*</release>
   </project>
   <project name="glib" pkgname="glib2">
     <release version="f30">2.60.*</release>
@@ -261,6 +260,7 @@
   <project name="gnome-search-tool">
     <release version="f30">3.6.*</release>
     <release version="f31">3.6.*</release>
+    <release version="f32">3.6.*</release>
   </project>
   <project name="gnome-session"/>
   <project name="gnome-settings-daemon"/>
@@ -329,18 +329,18 @@
   <project name="gthumb">
     <release version="f30">3.8.*</release>
     <release version="f31">3.8.*</release>
-    <release version="f32">3.8.*</release>
-    <release version="rawhide">3.8.*</release>
+    <release version="f32">3.10.*</release>
+    <release version="rawhide">3.10.*</release>
   </project>
   <project name="gtk+" pkgname="gtk3">
     <release version="f30">3.24.*</release>
-    <release version="f31">3.24.*</release>
+    <release version="f31">3.24.13</release>
     <release version="f32">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtk" pkgname="gtk4">
-    <release version="f32">3.98.*</release>
-    <release version="rawhide">3.98.*</release>
+    <release version="f32">3.98.4</release>
+    <release version="rawhide">3.99.*</release>
   </project>
   <project name="gtk-doc">
     <release version="f30">1.29</release>
@@ -469,6 +469,10 @@
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
     <release version="f32">0.3.*</release>
+  </project>
+  <project name="libhandy" pkgname="libhandy1">
+    <release version="f31">0.90.*</release>
+    <release version="f32">0.90.*</release>
   </project>
   <project name="libmanette">
     <release version="f30">0.2.*</release>
@@ -639,11 +643,13 @@
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.*</release>
     <release version="f32">2.3.*</release>
+    <release version="rawhide">2.3.*</release>
   </project>
   <project name="tracker-miners">
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.*</release>
     <release version="f32">2.3.*</release>
+    <release version="rawhide">2.3.*</release>
   </project>
   <project name="vala">
     <release version="f30">0.44.*</release>
