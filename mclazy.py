@@ -380,7 +380,7 @@ def main():
 
         # bump the spec file
         comment = "Update to " + new_version
-        cmd = ['rpmdev-bumpspec', "--comment=%s" % comment, "%s.spec" % pkg]
+        cmd = ['rpmdev-bumpspec', "--legacy-datestamp", "--comment=%s" % comment, "%s.spec" % pkg]
         run_command (pkg_cache, cmd)
 
         # run prep, and make sure patches still apply
