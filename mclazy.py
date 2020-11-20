@@ -70,7 +70,7 @@ def get_modules(modules_file):
             yield line.strip()
 
 def switch_branch_and_reset(pkg_cache, branch_name):
-    rc = run_command (pkg_cache, ['git', 'clean', '-dfx'])
+    rc = run_command (pkg_cache, ['git', 'clean', '-dffx'])
     if rc != 0:
         return rc
     rc = run_command (pkg_cache, ['git', 'reset', '--hard', 'HEAD'])
