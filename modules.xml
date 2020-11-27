@@ -38,6 +38,7 @@
     <release version="f30">5.0.*</release>
     <release version="f31">5.0.*</release>
     <release version="f32">5.0.*</release>
+    <release version="f33">5.2.*</release>
   </project>
   <project name="anjuta">
     <release version="f30">3.28.*</release>
@@ -61,8 +62,8 @@
     <release version="f30">2.24.*</release>
     <release version="f31">2.24.*</release>
     <release version="f32">2.24.*</release>
-    <release version="f33">2.24.*</release>
-    <release version="rawhide">2.24.*</release>
+    <release version="f33">2.28.*</release>
+    <release version="rawhide">2.28.*</release>
   </project>
   <project name="atomix"/>
   <project name="baobab"/>
@@ -100,6 +101,7 @@
     <release version="f31">1.22.*</release>
     <release version="f32">1.22.*</release>
   </project>
+  <project name="connections"/>
   <project name="d-feet">
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
@@ -184,6 +186,7 @@
     <release version="f30">2.60.*</release>
     <release version="f31">2.62.*</release>
     <release version="f32">2.64.*</release>
+    <release version="f33">2.66.*</release>
   </project>
   <project name="glib-networking">
     <release version="f30">2.60.*</release>
@@ -290,6 +293,7 @@
     <release version="f33">3.28.*</release>
     <release version="rawhide">3.28.*</release>
   </project>
+  <project name="gnome-tour"/>
   <project name="gnome-tweaks"/>
   <project name="gnome-usage"/>
   <project name="gnome-user-docs"/>
@@ -326,6 +330,7 @@
     <release version="f30">1.8.*</release>
     <release version="f31">1.8.*</release>
     <release version="f32">1.8.*</release>
+    <release version="f33">1.8.*</release>
   </project>
   <project name="gssdp">
     <release version="f30">1.0.*</release>
@@ -429,11 +434,6 @@
     <release version="f31">0.12.*</release>
     <release version="f32">0.12.*</release>
   </project>
-  <project name="libcroco">
-    <release version="f30">0.6.*</release>
-    <release version="f31">0.6.*</release>
-    <release version="f32">0.6.*</release>
-  </project>
   <project name="libcryptui">
     <release version="f30">3.12.*</release>
     <release version="f31">3.12.*</release>
@@ -444,6 +444,11 @@
     <release version="f30">0.17.*</release>
     <release version="f31">0.17.*</release>
     <release version="f32">0.17.*</release>
+  </project>
+  <project name="libgda">
+    <release version="f32">5.2.*</release>
+    <release version="f33">5.2.*</release>
+    <release version="rawhide">5.2.*</release>
   </project>
   <project name="libgee">
     <release version="f30">0.20.*</release>
@@ -482,8 +487,9 @@
     <release version="f32">0.3.*</release>
   </project>
   <project name="libhandy" pkgname="libhandy1">
-    <release version="f31">0.90.*</release>
-    <release version="f32">0.90.*</release>
+    <release version="f31">1.*</release>
+    <release version="f32">1.*</release>
+    <release version="f33">1.*</release>
   </project>
   <project name="libmanette">
     <release version="f30">0.2.*</release>
@@ -509,8 +515,8 @@
     <release version="f30">2.46.*</release>
     <release version="f31">2.46.*</release>
     <release version="f32">2.48.*</release>
-    <release version="f33">2.48.*</release>
-    <release version="rawhide">2.48.*</release>
+    <release version="f33">2.50.*</release>
+    <release version="rawhide">2.50.*</release>
   </project>
   <project name="libsecret">
     <release version="f30">0.18.*</release>
@@ -539,8 +545,8 @@
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
     <release version="f32">2.40.*</release>
-    <release version="f33">2.40.*</release>
-    <release version="rawhide">2.40.*</release>
+    <release version="f33">2.42.*</release>
+    <release version="rawhide">2.42.*</release>
   </project>
   <project name="libxml++" pkgname="libxml++30">
     <release version="f30">3.0.*</release>
@@ -649,6 +655,7 @@
     <release version="f30">4.2.*</release>
     <release version="f31">4.2.*</release>
     <release version="f32">4.4.*</release>
+    <release version="f33">5.0.*</release>
   </project>
   <project name="totem"/>
   <project name="totem-pl-parser">
@@ -658,17 +665,25 @@
   </project>
   <project name="tracker">
     <release version="f30">2.2.*</release>
-    <release version="f31">2.3.*</release>
-    <release version="f32">2.3.*</release>
+    <release version="f31">2.3.5</release>
+    <release version="f32">2.3.5</release>
     <release version="f33">2.3.*</release>
     <release version="rawhide">2.3.*</release>
   </project>
+  <project name="tracker" pkgname="tracker3">
+    <release version="f33">2.99.*,3.0.*</release>
+    <release version="rawhide">2.99.*,3.0.*</release>
+  </project>
   <project name="tracker-miners">
     <release version="f30">2.2.*</release>
-    <release version="f31">2.3.*</release>
-    <release version="f32">2.3.*</release>
+    <release version="f31">2.3.4</release>
+    <release version="f32">2.3.4</release>
     <release version="f33">2.3.*</release>
     <release version="rawhide">2.3.*</release>
+  </project>
+  <project name="tracker-miners" pkgname="tracker3-miners">
+    <release version="f33">2.99.*,3.0.*</release>
+    <release version="rawhide">2.99.*,3.0.*</release>
   </project>
   <project name="vala">
     <release version="f30">0.44.*</release>
