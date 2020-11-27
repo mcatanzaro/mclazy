@@ -22,11 +22,6 @@
 
 -->
 <projects>
-  <project name="GConf" pkgname="GConf2">
-    <release version="f30">3.2.*</release>
-    <release version="f31">3.2.*</release>
-    <release version="f32">3.2.*</release>
-  </project>
   <project name="accerciser"/>
   <project name="adwaita-icon-theme"/>
   <project name="aisleriot">
