@@ -116,7 +116,11 @@ def sync_to_rawhide_branch(pkg_cache, args):
 # first two digits of version
 def majorminor(ver):
     v = ver.split('.')
-    return "%s.%s" % (v[0], v[1])
+    # handle new ftp scheme in GNOME 40+
+    if v[0] == "40" or v[0] == "41" or  v[0] == "42":
+        return v[0]
+    else:
+        return "%s.%s" % (v[0], v[1])
 
 def main():
 
@@ -225,6 +229,7 @@ def main():
 
         # get the current version
         version = 0
+        version_dot = 0
         spec_filename = "%s/%s/%s.spec" % (args.cache, pkg, pkg)
         if not os.path.exists(spec_filename):
             print_fail("No spec file")
@@ -235,6 +240,7 @@ def main():
         try:
             spec = rpm.spec(spec_filename)
             version = spec.sourceHeader["version"]
+            version_dot = re.sub('([0-9]+)~(alpha|beta|rc)', r'\1.\2', version)
         except ValueError as e:
             print_fail("Can't parse spec file")
             unlock_file(lock_filename)
@@ -254,7 +260,6 @@ def main():
             unlock_file(lock_filename)
             continue
 
-        new_version = None
         gnome_branch = release_version[args.fedora_branch]
         local_json_file = "%s/%s/cache.json" % (args.cache, pkg)
         with open(local_json_file, 'r') as f:
@@ -275,31 +280,36 @@ def main():
 
             # find the newest version
             newest_remote_version = '0'
+            newest_remote_version_tilde = '0'
             for remote_ver in j[2][module]:
+                remote_ver_tilde = re.sub('([0-9]+).(alpha|beta|rc)', r'\1~\2', remote_ver)
                 version_valid = False
                 for b in gnome_branch.split(','):
                     if fnmatch.fnmatch(remote_ver, b):
                         version_valid = True
                         break
-                if not args.relax_version_checks and not version_valid:
+                if not version_valid:
                     unlock_file(lock_filename)
                     continue
-                rc = rpm.labelCompare((None, remote_ver, None), (None, newest_remote_version, None))
+                rc = rpm.labelCompare((None, remote_ver_tilde, None), (None, newest_remote_version_tilde, None))
                 if rc > 0:
                     newest_remote_version = remote_ver
+                    newest_remote_version_tilde = remote_ver_tilde
         if newest_remote_version == '0':
             print_fail("No remote versions matching the gnome branch %s" % gnome_branch)
             print_fail("Check modules.xml is looking at the correct branch")
             unlock_file(lock_filename)
             continue
 
-        print_debug("Newest remote version is: %s" % newest_remote_version)
 
         # is this newer than the rpm spec file version
-        rc = rpm.labelCompare((None, newest_remote_version, None), (None, version, None))
+        newest_remote_version_tilde = re.sub('([0-9]+).(alpha|beta|rc)', r'\1~\2', newest_remote_version)
+        rc = rpm.labelCompare((None, newest_remote_version_tilde, None), (None, version, None))
         new_version = None
+        new_version_tilde = None
         if rc > 0:
             new_version = newest_remote_version
+            new_version_tilde = newest_remote_version_tilde
 
         # check the installed version
         if args.check_installed:
@@ -309,7 +319,7 @@ def main():
                     print_debug("installed version is up to date")
                 else:
                     print_debug("installed version is %s" % installed_ver)
-                    rc = rpm.labelCompare((None, installed_ver, None), (None, newest_remote_version, None))
+                    rc = rpm.labelCompare((None, installed_ver, None), (None, newest_remote_version_tilde, None))
                     if rc > 0:
                         print_fail("installed version is newer than gnome branch version")
                         print_fail("check modules.xml is looking at the correct branch")
@@ -326,14 +336,14 @@ def main():
         if new_version:
             if args.relax_version_checks:
                 print_debug("Updating major version number, but ignoring")
-            elif new_version.split('.')[0] != version.split('.')[0]:
+            elif new_version.split('.')[0] != version_dot.split('.')[0]:
                 print_fail("Cannot update major version numbers")
                 unlock_file(lock_filename)
                 continue
 
         # we need to update the package
         if new_version:
-            print_debug("Need to update from %s to %s" %(version, new_version))
+            print_debug("Need to update from %s to %s" %(version, new_version_tilde))
 
         # download the tarball if it doesn't exist
         if new_version:
@@ -364,11 +374,11 @@ def main():
                 with open(spec_filename+".tmp", "w") as tmp_spec:
                     for line in f:
                         if line.startswith('Version:'):
-                            line = replace_spec_value(line, new_version + '\n')
+                            line = replace_spec_value(line, new_version_tilde + '\n')
                         elif line.startswith('Release:'):
                             line = replace_spec_value(line, '0%{?dist}\n')
                         elif line.startswith(('Source:', 'Source0:')):
-                            line = re.sub("/" + majorminor(version) + "/",
+                            line = re.sub("/" + majorminor(version_dot) + "/",
                                           "/" + majorminor(new_version) + "/",
                                           line)
                         tmp_spec.write(line)
@@ -444,8 +454,8 @@ def main():
 
         # build package
         if not args.no_build:
-            if new_version:
-                print_info("Building %s-%s-1.%s" % (pkg, new_version, pkg_release_tag))
+            if new_version_tilde:
+                print_info("Building %s-%s-1.%s" % (pkg, new_version_tilde, pkg_release_tag))
             else:
                 print_info("Building %s-%s-1.%s" % (pkg, version, pkg_release_tag))
             if args.buildroot:
