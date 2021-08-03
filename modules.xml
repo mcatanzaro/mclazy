@@ -29,12 +29,7 @@
     <release version="f31">3.22.*</release>
     <release version="f32">3.22.*</release>
     <release version="f33">3.22.*</release>
-  </project>
-  <project name="amtk">
-    <release version="f30">5.0.*</release>
-    <release version="f31">5.0.*</release>
-    <release version="f32">5.0.*</release>
-    <release version="f33">5.2.*</release>
+    <release version="f34">3.22.*</release>
   </project>
   <project name="anjuta">
     <release version="f30">3.28.*</release>
@@ -44,24 +39,28 @@
     <release version="f31">2.34.*</release>
     <release version="f32">2.34.*</release>
     <release version="f33">2.38.*</release>
+    <release version="f34">2.38.*</release>
   </project>
   <project name="at-spi2-core">
     <release version="f30">2.32.*</release>
     <release version="f31">2.34.*</release>
     <release version="f32">2.36.*</release>
     <release version="f33">2.38.*</release>
+    <release version="f34">2.40.*</release>
   </project>
   <project name="atk">
     <release version="f30">2.32.*</release>
     <release version="f31">2.34.*</release>
     <release version="f32">2.36.*</release>
     <release version="f33">2.36.*</release>
+    <release version="f34">2.36.*</release>
   </project>
   <project name="atkmm">
     <release version="f30">2.24.*</release>
     <release version="f31">2.24.*</release>
     <release version="f32">2.24.*</release>
     <release version="f33">2.28.*</release>
+    <release version="f34">2.28.*</release>
     <release version="rawhide">2.28.*</release>
   </project>
   <project name="atomix"/>
@@ -72,12 +71,14 @@
     <release version="f31">3.12.*</release>
     <release version="f32">3.12.*</release>
     <release version="f33">3.12.*</release>
+    <release version="f34">3.12.*</release>
   </project>
   <project name="cantarell-fonts" pkgname="abattis-cantarell-fonts">
     <release version="f30">0.111</release>
     <release version="f31">0.111</release>
     <release version="f32">0.201</release>
     <release version="f33">0.301</release>
+    <release version="f34">0.301</release>
   </project>
   <project name="cheese"/>
   <project name="clutter">
@@ -85,12 +86,14 @@
     <release version="f31">1.26.*</release>
     <release version="f32">1.26.*</release>
     <release version="f33">1.26.*</release>
+    <release version="f34">1.26.*</release>
   </project>
   <project name="clutter-gst" pkgname="clutter-gst3">
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
     <release version="f32">3.0.*</release>
-    <release version="f33">3.*</release>
+    <release version="f33">3.0.*</release>
+    <release version="f34">3.0.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="clutter-gtk">
@@ -98,25 +101,28 @@
     <release version="f31">1.8.*</release>
     <release version="f32">1.8.*</release>
     <release version="f33">1.8.*</release>
+    <release version="f34">1.8.*</release>
   </project>
   <project name="cogl">
     <release version="f30">1.22.*</release>
     <release version="f31">1.22.*</release>
     <release version="f32">1.22.*</release>
     <release version="f33">1.22.*</release>
+    <release version="f34">1.22.*</release>
   </project>
-  <project name="connections"/>
   <project name="d-feet">
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
     <release version="f32">0.3.*</release>
     <release version="f33">0.3.*</release>
+    <release version="f34">0.3.*</release>
   </project>
   <project name="dconf">
     <release version="f30">0.32.*</release>
     <release version="f31">0.34.*</release>
     <release version="f32">0.36.*</release>
     <release version="f33">0.38.*</release>
+    <release version="f34">0.40.*</release>
   </project>
   <project name="dconf-editor"/>
   <project name="devhelp"/>
@@ -126,6 +132,7 @@
     <release version="f31">3.26.*</release>
     <release version="f32">3.26.*</release>
     <release version="f33">3.26.*</release>
+    <release version="f34">3.26.*</release>
   </project>
   <project name="epiphany"/>
   <project name="evince"/>
@@ -138,6 +145,7 @@
     <release version="f31">0.14.*</release>
     <release version="f32">0.14.*</release>
     <release version="f33">0.14.*</release>
+    <release version="f34">0.15.*</release>
   </project>
   <project name="four-in-a-row"/>
   <project name="gcr">
@@ -147,7 +155,8 @@
     <release version="f30">2.38.*</release>
     <release version="f31">2.40.*</release>
     <release version="f32">2.40.*</release>
-    <release version="f33">2.40.*</release>
+    <release version="f33">2.42.*</release>
+    <release version="f34">2.42.*</release>
   </project>
   <project name="gdl" pkgname="libgdl">
     <release version="f30">3.28.*</release>
@@ -155,30 +164,27 @@
   <project name="gdm"/>
   <project name="geary"/>
   <project name="gedit"/>
-  <project name="gedit-code-assistance">
-    <release version="f30">3.16.*</release>
-    <release version="f31">3.16.*</release>
-    <release version="f32">3.16.*</release>
-    <release version="f33">3.16.*</release>
-  </project>
   <project name="gedit-plugins"/>
   <project name="geocode-glib">
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
     <release version="f32">3.26.*</release>
     <release version="f33">3.26.*</release>
+    <release version="f34">3.26.*</release>
   </project>
   <project name="gexiv2" pkgname="libgexiv2">
     <release version="f30">0.12.*</release>
     <release version="f31">0.12.*</release>
     <release version="f32">0.12.*</release>
     <release version="f33">0.12.*</release>
+    <release version="f34">0.12.*</release>
   </project>
   <project name="ghex">
     <release version="f30">3.18.*</release>
     <release version="f31">3.18.*</release>
     <release version="f32">3.18.*</release>
     <release version="f33">3.18.*</release>
+    <release version="f34">3.18.*</release>
   </project>
   <project name="gitg"/>
   <project name="gjs">
@@ -186,12 +192,14 @@
     <release version="f31">1.58.*</release>
     <release version="f32">1.64.*</release>
     <release version="f33">1.66.*</release>
+    <release version="f34">1.68.*</release>
   </project>
   <project name="glabels">
     <release version="f30">3.4.*</release>
     <release version="f31">3.4.*</release>
     <release version="f32">3.4.*</release>
     <release version="f33">3.4.*</release>
+    <release version="f34">3.4.*</release>
   </project>
   <project name="glade">
     <release version="f30">3.22.*</release>
@@ -202,25 +210,29 @@
     <release version="f31">2.62.*</release>
     <release version="f32">2.64.*</release>
     <release version="f33">2.66.*</release>
+    <release version="f34">2.68.*</release>
   </project>
   <project name="glib-networking">
     <release version="f30">2.60.*</release>
     <release version="f31">2.62.*</release>
     <release version="f32">2.64.*</release>
     <release version="f33">2.66.*</release>
+    <release version="f34">2.68.*</release>
   </project>
   <project name="glibmm" pkgname="glibmm24">
     <release version="f30">2.60.*</release>
     <release version="f31">2.62.*</release>
     <release version="f32">2.64.*</release>
     <release version="f33">2.64.*</release>
-    <release version="rawhide">2.64.*</release>
+    <release version="f34">2.66.*</release>
+    <release version="rawhide">2.66.*</release>
   </project>
   <project name="gmime">
     <release version="f30">2.6.*</release>
     <release version="f31">2.6.*</release>
     <release version="f32">2.6.*</release>
     <release version="f33">2.6.*</release>
+    <release version="f34">2.6.*</release>
     <release version="rawhide">2.6.*</release>
   </project>
   <project name="gmime" pkgname="gmime30">
@@ -228,6 +240,7 @@
     <release version="f31">3.2.*</release>
     <release version="f32">3.2.*</release>
     <release version="f33">3.2.*</release>
+    <release version="f34">3.2.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="gnome-2048"/>
@@ -236,6 +249,7 @@
     <release version="f31">0.2.*</release>
     <release version="f32">0.2.*</release>
     <release version="f33">0.2.*</release>
+    <release version="f34">0.3.*</release>
   </project>
   <project name="gnome-backgrounds"/>
   <project name="gnome-bluetooth"/>
@@ -248,6 +262,7 @@
   <project name="gnome-chess"/>
   <project name="gnome-clocks"/>
   <project name="gnome-color-manager"/>
+  <project name="gnome-connections"/>
   <project name="gnome-contacts"/>
   <project name="gnome-control-center"/>
   <project name="gnome-desktop" pkgname="gnome-desktop3"/>
@@ -259,9 +274,7 @@
     <release version="f33">3.26.*</release>
   </project>
   <project name="gnome-disk-utility"/>
-  <project name="gnome-documents"/>
   <project name="gnome-font-viewer"/>
-  <project name="gnome-getting-started-docs"/>
   <project name="gnome-initial-setup"/>
   <project name="gnome-keyring"/>
   <project name="gnome-klotski"/>
@@ -282,12 +295,14 @@
   <project name="gnome-photos"/>
   <project name="gnome-power-manager"/>
   <project name="gnome-robots"/>
+  <project name="gnome-remote-desktop"/>
   <project name="gnome-screenshot"/>
   <project name="gnome-search-tool">
     <release version="f30">3.6.*</release>
     <release version="f31">3.6.*</release>
     <release version="f32">3.6.*</release>
     <release version="f33">3.6.*</release>
+    <release version="f34">3.6.*</release>
   </project>
   <project name="gnome-session"/>
   <project name="gnome-settings-daemon"/>
@@ -305,12 +320,14 @@
     <release version="f31">3.28,3.28.*</release>
     <release version="f32">3.28,3.28.*</release>
     <release version="f33">3.28,3.28.*</release>
+    <release version="f34">3.28,3.28.*</release>
   </project>
   <project name="gnome-todo">
     <release version="f30">3.28.*</release>
     <release version="f31">3.28.*</release>
     <release version="f32">3.28.*</release>
     <release version="f33">3.28.*</release>
+    <release version="f34">3.28.*</release>
     <release version="rawhide">3.28.*</release>
   </project>
   <project name="gnome-tour"/>
@@ -323,6 +340,7 @@
     <release version="f31">0.5.*</release>
     <release version="f32">0.5.*</release>
     <release version="f33">0.5.*</release>
+    <release version="f34">0.5.*</release>
   </project>
   <project name="gnome-weather"/>
   <project name="gnote"/>
@@ -331,24 +349,28 @@
     <release version="f31">1.62.*</release>
     <release version="f32">1.64.*</release>
     <release version="f33">1.66.*</release>
+    <release version="f34">1.68.*</release>
   </project>
   <project name="gom">
-    <release version="f30">0.4.*</release>
-    <release version="f31">0.4.*</release>
-    <release version="f32">0.4.*</release>
-    <release version="f33">0.4.*</release>
+    <release version="f30">0.4,0.4.*</release>
+    <release version="f31">0.4,0.4.*</release>
+    <release version="f32">0.4,0.4.*</release>
+    <release version="f33">0.4,0.4.*</release>
+    <release version="f34">0.4,0.4.*</release>
   </project>
   <project name="grilo">
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
     <release version="f32">0.3.*</release>
     <release version="f33">0.3.*</release>
+    <release version="f34">0.3.*</release>
   </project>
   <project name="grilo-plugins">
     <release version="f30">0.3.*</release>
     <release version="f31">0.3.*</release>
     <release version="f32">0.3.*</release>
     <release version="f33">0.3.*</release>
+    <release version="f34">0.3.*</release>
   </project>
   <project name="gsettings-desktop-schemas"/>
   <project name="gspell">
@@ -356,18 +378,21 @@
     <release version="f31">1.8.*</release>
     <release version="f32">1.8.*</release>
     <release version="f33">1.8.*</release>
+    <release version="f34">1.9.*</release>
   </project>
   <project name="gssdp">
     <release version="f30">1.0.*</release>
     <release version="f31">1.0.*</release>
     <release version="f32">1.0.*</release>
     <release version="f33">1.2.*</release>
+    <release version="f34">1.2.*</release>
   </project>
   <project name="gthumb">
     <release version="f30">3.8.*</release>
     <release version="f31">3.8.*</release>
     <release version="f32">3.10.*</release>
     <release version="f33">3.10.*</release>
+    <release version="f34">3.10.*</release>
     <release version="rawhide">3.10.*</release>
   </project>
   <project name="gtk+" pkgname="gtk3">
@@ -375,11 +400,13 @@
     <release version="f31">3.24.13</release>
     <release version="f32">3.24.*</release>
     <release version="f33">3.24.*</release>
+    <release version="f34">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtk" pkgname="gtk4">
     <release version="f32">3.98.4</release>
     <release version="f33">4.0.*</release>
+    <release version="f34">4.2.*</release>
     <release version="rawhide">4.*</release>
   </project>
   <project name="gtk-doc">
@@ -387,12 +414,14 @@
     <release version="f31">1.29</release>
     <release version="f32">1.32</release>
     <release version="f33">1.33.*</release>
+    <release version="f34">1.33.*</release>
   </project>
   <project name="gtkmm" pkgname="gtkmm30">
     <release version="f30">3.24.*</release>
     <release version="f31">3.24.*</release>
     <release version="f32">3.24.*</release>
     <release version="f33">3.24.*</release>
+    <release version="f34">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview3">
@@ -400,6 +429,7 @@
     <release version="f31">3.24.*</release>
     <release version="f32">3.24.*</release>
     <release version="f33">3.24.*</release>
+    <release version="f34">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview4">
@@ -407,6 +437,8 @@
     <release version="f31">4.4.*</release>
     <release version="f32">4.6.*</release>
     <release version="f33">4.8.*</release>
+    <release version="f34">4.8.*</release>
+    <release version="rawhide">4.8.*</release>
   </project>
   <project name="gtranslator"/>
   <project name="gucharmap">
@@ -414,42 +446,49 @@
     <release version="f31">12.*</release>
     <release version="f32">13.*</release>
     <release version="f33">13.*</release>
+    <release version="f34">13.*</release>
   </project>
   <project name="gupnp">
     <release version="f30">1.0.*</release>
     <release version="f31">1.0.*</release>
     <release version="f32">1.0.*</release>
     <release version="f33">1.2.*</release>
+    <release version="f34">1.2.*</release>
   </project>
   <project name="gupnp-av">
     <release version="f30">0.12.*</release>
     <release version="f31">0.12.*</release>
     <release version="f32">0.12.*</release>
     <release version="f33">0.12.*</release>
+    <release version="f34">0.12.*</release>
   </project>
   <project name="gupnp-dlna">
     <release version="f30">0.10.*</release>
     <release version="f31">0.10.*</release>
     <release version="f32">0.10.*</release>
     <release version="f33">0.10.*</release>
+    <release version="f34">0.10.*</release>
   </project>
   <project name="gupnp-igd">
     <release version="f30">0.2.*</release>
     <release version="f31">0.2.*</release>
     <release version="f32">0.2.*</release>
     <release version="f33">1.2.*</release>
+    <release version="f34">1.2.*</release>
   </project>
   <project name="gupnp-tools">
     <release version="f30">0.8.*</release>
     <release version="f31">0.8.*</release>
     <release version="f32">0.8.*</release>
     <release version="f33">0.10.*</release>
+    <release version="f34">0.10.*</release>
   </project>
   <project name="gvfs">
     <release version="f30">1.40.*</release>
     <release version="f31">1.42.*</release>
     <release version="f32">1.44.*</release>
     <release version="f33">1.46.*</release>
+    <release version="f34">1.48.*</release>
   </project>
   <project name="hitori"/>
   <project name="iagno"/>
@@ -458,25 +497,28 @@
     <release version="f31">1.4.*</release>
     <release version="f32">1.4.*</release>
     <release version="f33">1.6.*</release>
+    <release version="f34">1.6.*</release>
   </project>
   <project name="jsonrpc-glib"/>
   <project name="krb5-auth-dialog">
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
     <release version="f32">3.26.*</release>
-    <release version="f33">3.26.*</release>
+    <release version="f34">3.26.*</release>
   </project>
   <project name="libchamplain">
     <release version="f30">0.12.*</release>
     <release version="f31">0.12.*</release>
     <release version="f32">0.12.*</release>
     <release version="f33">0.12.*</release>
+    <release version="f34">0.12.*</release>
   </project>
   <project name="libcryptui">
     <release version="f30">3.12.*</release>
     <release version="f31">3.12.*</release>
     <release version="f32">3.12.*</release>
     <release version="f33">3.12.*</release>
+    <release version="f34">3.12.*</release>
   </project>
   <project name="libdazzle"/>
   <project name="libgdata">
@@ -484,10 +526,12 @@
     <release version="f31">0.17.*</release>
     <release version="f32">0.17.*</release>
     <release version="f33">0.17.*</release>
+    <release version="f34">0.18.*</release>
   </project>
   <project name="libgda">
     <release version="f32">5.2.*</release>
     <release version="f33">5.2.*</release>
+    <release version="f34">5.2.*</release>
     <release version="rawhide">5.2.*</release>
   </project>
   <project name="libgee">
@@ -495,36 +539,42 @@
     <release version="f31">0.20.*</release>
     <release version="f32">0.20.*</release>
     <release version="f33">0.20.*</release>
+    <release version="f34">0.20.*</release>
   </project>
   <project name="libgepub">
     <release version="f30">0.6.*</release>
     <release version="f31">0.6.*</release>
     <release version="f32">0.6.*</release>
     <release version="f33">0.6.*</release>
+    <release version="f34">0.6.*</release>
   </project>
   <project name="libgit2-glib">
     <release version="f30">0.28.*</release>
     <release version="f31">0.28.*</release>
     <release version="f32">0.99.*</release>
     <release version="f33">0.99.*</release>
+    <release version="f34">0.99.*</release>
   </project>
   <project name="libgnome-games-support">
     <release version="f30">1.4.*</release>
     <release version="f31">1.4.*</release>
     <release version="f32">1.6.*</release>
     <release version="f33">1.8.*</release>
+    <release version="f34">1.8.*</release>
   </project>
   <project name="libgnomekbd">
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
     <release version="f32">3.26.*</release>
     <release version="f33">3.26.*</release>
+    <release version="f34">3.26.*</release>
   </project>
   <project name="libgtop" pkgname="libgtop2">
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
     <release version="f32">2.40.*</release>
     <release version="f33">2.40.*</release>
+    <release version="f34">2.40.*</release>
   </project>
   <project name="libgweather"/>
   <project name="libgxps">
@@ -532,41 +582,45 @@
     <release version="f31">0.3.*</release>
     <release version="f32">0.3.*</release>
     <release version="f33">0.3.*</release>
+    <release version="f34">0.3.*</release>
   </project>
-  <project name="libhandy" pkgname="libhandy1">
-    <release version="f31">1.0.*</release>
-    <release version="f32">1.0.*</release>
-    <release version="f33">1.0.*</release>
+  <project name="libhandy">
+    <release version="f34">1.2.*</release>
   </project>
   <project name="libmanette">
     <release version="f30">0.2.*</release>
     <release version="f31">0.2.*</release>
     <release version="f32">0.2.*</release>
     <release version="f33">0.2.*</release>
+    <release version="f34">0.2.*</release>
   </project>
   <project name="libmediaart">
     <release version="f30">1.9.*</release>
     <release version="f31">1.9.*</release>
     <release version="f32">1.9.*</release>
     <release version="f33">1.9.*</release>
+    <release version="f34">1.9.*</release>
   </project>
   <project name="libnotify">
     <release version="f30">0.7.*</release>
     <release version="f31">0.7.*</release>
     <release version="f32">0.7.*</release>
     <release version="f33">0.7.*</release>
+    <release version="f34">0.7.*</release>
   </project>
   <project name="libpeas">
     <release version="f30">1.22.*</release>
     <release version="f31">1.24.*</release>
     <release version="f32">1.26.*</release>
     <release version="f33">1.28.*</release>
+    <release version="f34">1.30.*</release>
   </project>
   <project name="librsvg" pkgname="librsvg2">
     <release version="f30">2.46.*</release>
     <release version="f31">2.46.*</release>
     <release version="f32">2.48.*</release>
     <release version="f33">2.50.*</release>
+    <release version="f34">2.50.*</release>
     <release version="rawhide">2.50.*</release>
   </project>
   <project name="libsecret">
@@ -574,17 +628,20 @@
     <release version="f31">0.19.*</release>
     <release version="f32">0.20.*</release>
     <release version="f33">0.20.*</release>
+    <release version="f34">0.20.*</release>
   </project>
   <project name="libsigc++" pkgname="libsigc++20">
     <release version="f30">2.10.*</release>
     <release version="f31">2.10.*</release>
     <release version="f32">2.10.*</release>
     <release version="f33">2.10.*</release>
+    <release version="f34">2.10.*</release>
     <release version="rawhide">2.10.*</release>
   </project>
   <project name="libsigc++" pkgname="libsigc++30">
     <release version="f32">3.*</release>
     <release version="f33">3.*</release>
+    <release version="f34">3.*</release>
     <release version="rawhide">3.*</release>
   </project>
   <project name="libsoup">
@@ -592,6 +649,8 @@
     <release version="f31">2.68.*</release>
     <release version="f32">2.70.*</release>
     <release version="f33">2.72.*</release>
+    <release version="f34">2.72.*</release>
+    <release version="rawhide">2.72.*</release>
   </project>
   <project name="libwnck" pkgname="libwnck3"/>
   <project name="libxml++">
@@ -599,6 +658,7 @@
     <release version="f31">2.40.*</release>
     <release version="f32">2.40.*</release>
     <release version="f33">2.42.*</release>
+    <release version="f34">2.42.*</release>
     <release version="rawhide">2.42.*</release>
   </project>
   <project name="libxml++" pkgname="libxml++30">
@@ -606,6 +666,7 @@
     <release version="f31">3.0.*</release>
     <release version="f32">3.2.*</release>
     <release version="f33">3.2.*</release>
+    <release version="f34">3.2.*</release>
     <release version="rawhide">3.2.*</release>
   </project>
   <project name="lightsoff"/>
@@ -613,12 +674,14 @@
     <release version="f31">0.9.*</release>
     <release version="f32">1.0.*</release>
     <release version="f33">1.0.*</release>
+    <release version="f34">1.0.*</release>
   </project>
   <project name="moserial">
     <release version="f30">3.0.*</release>
     <release version="f31">3.0.*</release>
     <release version="f32">3.0.*</release>
     <release version="f33">3.0.*</release>
+    <release version="f34">3.0.*</release>
   </project>
   <project name="mousetweaks"/>
   <project name="mutter"/>
@@ -628,18 +691,14 @@
     <release version="f31">1.2.*</release>
     <release version="f32">1.2.*</release>
     <release version="f33">1.2.*</release>
-  </project>
-  <project name="nautilus-sendto">
-    <release version="f30">3.8.*</release>
-    <release version="f31">3.8.*</release>
-    <release version="f32">3.8.*</release>
-    <release version="f33">3.8.*</release>
+    <release version="f34">1.2.*</release>
   </project>
   <project name="nemiver">
     <release version="f30">0.9.*</release>
     <release version="f31">0.9.*</release>
     <release version="f32">0.9.*</release>
     <release version="f33">0.9.*</release>
+    <release version="f34">0.9.*</release>
   </project>
   <project name="orca"/>
   <project name="pango">
@@ -647,19 +706,22 @@
     <release version="f31">1.44.*</release>
     <release version="f32">1.44.*</release>
     <release version="f33">1.48.*</release>
+    <release version="f34">1.48.*</release>
   </project>
   <project name="pangomm">
     <release version="f30">2.40.*</release>
     <release version="f31">2.40.*</release>
     <release version="f32">2.42.*</release>
     <release version="f33">2.42.*</release>
-    <release version="rawhide">2.42.*</release>
+    <release version="f34">2.46.*</release>
+    <release version="rawhide">2.46.*</release>
   </project>
   <project name="pinpoint">
     <release version="f30">0.1.*</release>
     <release version="f31">0.1.*</release>
     <release version="f32">0.1.*</release>
     <release version="f33">0.1.*</release>
+    <release version="f34">0.1.*</release>
   </project>
   <project name="polari"/>
   <project name="pyatspi">
@@ -667,6 +729,7 @@
     <release version="f31">2.34.*</release>
     <release version="f32">2.36.*</release>
     <release version="f33">2.38.*</release>
+    <release version="f34">2.38.*</release>
   </project>
   <project name="pygobject" pkgname="pygobject3"/>
   <project name="quadrapassel"/>
@@ -675,18 +738,21 @@
     <release version="f31">0.8.*</release>
     <release version="f32">0.8.*</release>
     <release version="f33">0.8.*</release>
+    <release version="f34">0.8.*</release>
   </project>
   <project name="rhythmbox">
     <release version="f30">3.4.*</release>
     <release version="f31">3.4.*</release>
     <release version="f32">3.4.*</release>
     <release version="f33">3.4.*</release>
+    <release version="f34">3.4.*</release>
   </project>
   <project name="rygel">
     <release version="f30">0.36.*</release>
     <release version="f31">0.36.*</release>
     <release version="f32">0.36.*</release>
     <release version="f33">0.40.*</release>
+    <release version="f34">0.40.*</release>
   </project>
   <project name="seahorse"/>
   <project name="seahorse-nautilus">
@@ -694,18 +760,21 @@
     <release version="f31">3.11.*</release>
     <release version="f32">3.11.*</release>
     <release version="f33">3.11.*</release>
+    <release version="f34">3.11.*</release>
   </project>
   <project name="seahorse-sharing">
     <release version="f30">3.8.*</release>
     <release version="f31">3.8.*</release>
     <release version="f32">3.8.*</release>
     <release version="f33">3.8.*</release>
+    <release version="f34">3.8.*</release>
   </project>
   <project name="shotwell">
     <release version="f30">0.31.*,0.32.*</release>
     <release version="f31">0.31.*,0.32.*</release>
     <release version="f32">0.31.*,0.32.*</release>
     <release version="f33">0.31.*,0.32.*</release>
+    <release version="f34">0.31.*,0.32.*</release>
   </project>
   <project name="simple-scan"/>
   <project name="sound-juicer">
@@ -718,65 +787,49 @@
   <project name="sysprof"/>
   <project name="tali"/>
   <project name="template-glib"/>
-  <project name="tepl">
-    <release version="f30">4.2.*</release>
-    <release version="f31">4.2.*</release>
-    <release version="f32">4.4.*</release>
-    <release version="f33">5.0.*</release>
-  </project>
   <project name="totem"/>
   <project name="totem-pl-parser">
     <release version="f30">3.26.*</release>
     <release version="f31">3.26.*</release>
     <release version="f32">3.26.*</release>
     <release version="f33">3.26.*</release>
+    <release version="f34">3.26.*</release>
   </project>
   <project name="tracker">
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.5</release>
     <release version="f32">2.3.5</release>
     <release version="f33">2.3.*</release>
-    <release version="rawhide">2.3.*</release>
-  </project>
-  <project name="tracker" pkgname="tracker3">
-    <release version="f33">3.0.*</release>
-    <release version="rawhide">3.0.*</release>
+    <release version="f34">3.1.*</release>
   </project>
   <project name="tracker-miners">
     <release version="f30">2.2.*</release>
     <release version="f31">2.3.4</release>
     <release version="f32">2.3.4</release>
     <release version="f33">2.3.*</release>
-    <release version="rawhide">2.3.*</release>
-  </project>
-  <project name="tracker-miners" pkgname="tracker3-miners">
-    <release version="f33">3.0.*</release>
-    <release version="rawhide">3.0.*</release>
+    <release version="f34">3.1.*</release>
   </project>
   <project name="vala">
     <release version="f30">0.44.*</release>
     <release version="f31">0.46.*</release>
     <release version="f32">0.48.*</release>
     <release version="f33">0.48.*</release>
-    <release version="rawhide">0.48.*</release>
+    <release version="f34">0.48.*</release>
+    <release version="rawhide">0.52.*</release>
   </project>
   <project name="vinagre">
     <release version="f30">3.22.*</release>
     <release version="f31">3.22.*</release>
     <release version="f32">3.22.*</release>
     <release version="f33">3.22.*</release>
-  </project>
-  <project name="vino">
-    <release version="f30">3.22.*</release>
-    <release version="f31">3.22.*</release>
-    <release version="f32">3.22.*</release>
-    <release version="f33">3.22.*</release>
+    <release version="f34">3.22.*</release>
   </project>
   <project name="vte" pkgname="vte291">
     <release version="f30">0.56.*</release>
     <release version="f31">0.58.*</release>
     <release version="f32">0.60.*</release>
     <release version="f33">0.62.*</release>
+    <release version="f34">0.64.*</release>
   </project>
   <project name="yelp"/>
   <project name="yelp-tools"/>
