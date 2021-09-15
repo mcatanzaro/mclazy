@@ -375,7 +375,7 @@ def main():
                     for line in f:
                         if line.startswith('Version:'):
                             line = replace_spec_value(line, new_version_tilde + '\n')
-                        elif line.startswith('Release:'):
+                        elif line.startswith('Release:') and 'autorelease' not in line:
                             line = replace_spec_value(line, '0%{?dist}\n')
                         elif line.startswith(('Source:', 'Source0:')):
                             line = re.sub("/" + majorminor(version_dot) + "/",
