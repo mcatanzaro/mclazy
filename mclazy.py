@@ -354,13 +354,13 @@ def main():
             else:
                 tarball_url = gnome_ftp + "/" + module + "/" + tarball
                 print_debug("Download %s" % tarball_url)
+                try:
+                    urllib.request.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
+                except IOError as e:
+                    print_fail("Failed to get tarball: %s" % e)
+                    unlock_file(lock_filename)
+                    continue
                 if not args.simulate:
-                    try:
-                        urllib.request.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
-                    except IOError as e:
-                        print_fail("Failed to get tarball: %s" % e)
-                        unlock_file(lock_filename)
-                        continue
                     # add the new source
                     rc = run_command (pkg_cache, ['fedpkg', 'new-sources', dest_tarball])
                     if rc != 0:
@@ -390,25 +390,24 @@ def main():
         run_command (pkg_cache, cmd)
 
         # run prep, and make sure patches still apply
-        if not args.simulate:
-            rc = run_command (pkg_cache, ['fedpkg', 'prep'])
+        rc = run_command (pkg_cache, ['fedpkg', 'prep'])
+        if rc != 0:
+            print_fail("to build %s as patches did not apply" % pkg)
+            unlock_file(lock_filename)
+            continue
+
+        if not args.no_mockbuild:
+            rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
             if rc != 0:
-                print_fail("to build %s as patches did not apply" % pkg)
+                print_fail("package %s failed mock test build" % pkg)
                 unlock_file(lock_filename)
                 continue
 
-            if not args.no_mockbuild:
-                rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
-                if rc != 0:
-                    print_fail("package %s failed mock test build" % pkg)
-                    unlock_file(lock_filename)
-                    continue
-
-                resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
-                if not glob.glob(resultsglob):
-                    print_fail("package %s failed mock test build: no results" % pkg)
-                    unlock_file(lock_filename)
-                    continue
+            resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
+            if not glob.glob(resultsglob):
+                print_fail("package %s failed mock test build: no results" % pkg)
+                unlock_file(lock_filename)
+                continue
 
         # commit the changes
         rc = run_command (pkg_cache, ['git', 'commit', '-a', "--message=%s" % comment])
