@@ -13,6 +13,8 @@
     f30     = 3.32.*
     f31     = 3.34.*
     f32     = 3.36.*
+    f33     = 3.38.*
+    f34     = 40.*
     rawhide = * (the newest upsream version)
 
   If the package name differs from the upstream tarball name, then do
@@ -227,6 +229,9 @@
     <release version="f34">2.66.*</release>
     <release version="rawhide">2.66.*</release>
   </project>
+  <project name="glibmm" pkgname="glibmm2.68">
+    <release version="rawhide">2.70.*</release>
+  </project>
   <project name="gmime">
     <release version="f30">2.6.*</release>
     <release version="f31">2.6.*</release>
@@ -277,8 +282,8 @@
   <project name="gnome-font-viewer"/>
   <project name="gnome-initial-setup"/>
   <project name="gnome-keyring"/>
+  <project name="gnome-kiosk"/>
   <project name="gnome-klotski"/>
-  <project name="gnome-latex"/>
   <project name="gnome-logs"/>
   <project name="gnome-mahjongg"/>
   <project name="gnome-maps"/>
@@ -323,12 +328,7 @@
     <release version="f34">3.28,3.28.*</release>
   </project>
   <project name="gnome-todo">
-    <release version="f30">3.28.*</release>
-    <release version="f31">3.28.*</release>
-    <release version="f32">3.28.*</release>
-    <release version="f33">3.28.*</release>
     <release version="f34">3.28.*</release>
-    <release version="rawhide">3.28.*</release>
   </project>
   <project name="gnome-tour"/>
   <project name="gnome-tweaks"/>
@@ -393,7 +393,7 @@
     <release version="f32">3.10.*</release>
     <release version="f33">3.10.*</release>
     <release version="f34">3.10.*</release>
-    <release version="rawhide">3.10.*</release>
+    <release version="rawhide">3.12.*</release>
   </project>
   <project name="gtk+" pkgname="gtk3">
     <release version="f30">3.24.*</release>
@@ -406,7 +406,7 @@
   <project name="gtk" pkgname="gtk4">
     <release version="f32">3.98.4</release>
     <release version="f33">4.0.*</release>
-    <release version="f34">4.2.*</release>
+    <release version="f34">4.4.*</release>
     <release version="rawhide">4.*</release>
   </project>
   <project name="gtk-doc">
@@ -445,8 +445,8 @@
     <release version="f30">12.0.*</release>
     <release version="f31">12.*</release>
     <release version="f32">13.*</release>
-    <release version="f33">13.*</release>
-    <release version="f34">13.*</release>
+    <release version="f33">14.*</release>
+    <release version="f34">14.*</release>
   </project>
   <project name="gupnp">
     <release version="f30">1.0.*</release>
@@ -505,6 +505,9 @@
     <release version="f31">3.26.*</release>
     <release version="f32">3.26.*</release>
     <release version="f34">3.26.*</release>
+  </project>
+  <project name="libadwaita">
+    <release version="f34">1.*</release>
   </project>
   <project name="libchamplain">
     <release version="f30">0.12.*</release>
@@ -621,7 +624,7 @@
     <release version="f32">2.48.*</release>
     <release version="f33">2.50.*</release>
     <release version="f34">2.50.*</release>
-    <release version="rawhide">2.50.*</release>
+    <release version="rawhide">2.52.*</release>
   </project>
   <project name="libsecret">
     <release version="f30">0.18.*</release>
@@ -650,7 +653,7 @@
     <release version="f32">2.70.*</release>
     <release version="f33">2.72.*</release>
     <release version="f34">2.72.*</release>
-    <release version="rawhide">2.72.*</release>
+    <release version="rawhide">2.74.*</release>
   </project>
   <project name="libwnck" pkgname="libwnck3"/>
   <project name="libxml++">
@@ -716,6 +719,9 @@
     <release version="f34">2.46.*</release>
     <release version="rawhide">2.46.*</release>
   </project>
+  <project name="pangomm" pkgname="pangomm2.48">
+    <release version="rawhide">2.50.*</release>
+  </project>
   <project name="pinpoint">
     <release version="f30">0.1.*</release>
     <release version="f31">0.1.*</release>
@@ -761,13 +767,6 @@
     <release version="f32">3.11.*</release>
     <release version="f33">3.11.*</release>
     <release version="f34">3.11.*</release>
-  </project>
-  <project name="seahorse-sharing">
-    <release version="f30">3.8.*</release>
-    <release version="f31">3.8.*</release>
-    <release version="f32">3.8.*</release>
-    <release version="f33">3.8.*</release>
-    <release version="f34">3.8.*</release>
   </project>
   <project name="shotwell">
     <release version="f30">0.31.*,0.32.*</release>
@@ -815,7 +814,7 @@
     <release version="f32">0.48.*</release>
     <release version="f33">0.48.*</release>
     <release version="f34">0.48.*</release>
-    <release version="rawhide">0.52.*</release>
+    <release version="rawhide">0.53.*,0.54.*</release>
   </project>
   <project name="vinagre">
     <release version="f30">3.22.*</release>
@@ -831,6 +830,7 @@
     <release version="f33">0.62.*</release>
     <release version="f34">0.64.*</release>
   </project>
+  <project name="xdg-desktop-portal-gnome"/>
   <project name="yelp"/>
   <project name="yelp-tools"/>
   <project name="yelp-xsl"/>
