@@ -446,10 +446,6 @@
     <release version="f34">1.0.*</release>
     <release version="f35">1.0.*</release>
   </project>
-  <project name="moserial">
-    <release version="f34">3.0.*</release>
-    <release version="f35">3.0.*</release>
-  </project>
   <project name="mousetweaks"/>
   <project name="mutter"/>
   <project name="nautilus"/>
