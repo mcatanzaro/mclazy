@@ -66,10 +66,6 @@ class ModulesXml(object):
                 for release in project.get('releases').split(','):
                     item.releases.append(release)
             else:
-                item.releases.append('f30')
-                item.releases.append('f31')
-                item.releases.append('f32')
-                item.releases.append('f33')
                 item.releases.append('f34')
                 item.releases.append('f35')
             self.items.append(item)

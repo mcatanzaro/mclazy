@@ -434,15 +434,7 @@ def main():
             run_command (pkg_cache, ['git', 'checkout', args.fedora_branch])
 
         # work out release tag
-        if args.fedora_branch == "f30":
-            pkg_release_tag = 'fc30'
-        elif args.fedora_branch == "f31":
-            pkg_release_tag = 'fc31'
-        elif args.fedora_branch == "f32":
-            pkg_release_tag = 'fc32'
-        elif args.fedora_branch == "f33":
-            pkg_release_tag = 'fc33'
-        elif args.fedora_branch == "f34":
+        if args.fedora_branch == "f34":
             pkg_release_tag = 'fc34'
         elif args.fedora_branch == "f35":
             pkg_release_tag = 'fc35'
@@ -469,15 +461,7 @@ def main():
                 continue
 
         # work out repo branch
-        if args.fedora_branch == "f30":
-            pkg_branch_name = 'f30-build'
-        elif args.fedora_branch == "f31":
-            pkg_branch_name = 'f31-build'
-        elif args.fedora_branch == "f32":
-            pkg_branch_name = 'f32-build'
-        elif args.fedora_branch == "f33":
-            pkg_branch_name = 'f33-build'
-        elif args.fedora_branch == "f34":
+        if args.fedora_branch == "f34":
             pkg_branch_name = 'f34-build'
         elif args.fedora_branch == "f35":
             pkg_branch_name = 'f35-build'
