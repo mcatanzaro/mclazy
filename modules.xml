@@ -165,7 +165,11 @@
     <release version="f35">0.4.*</release>
   </project>
   <project name="gnome-backgrounds"/>
-  <project name="gnome-bluetooth"/>
+  <project name="gnome-bluetooth">
+    <release version="f34">3.34.*</release>
+    <release version="f35">3.34.*</release>
+    <release version="rawhide">3.*</release>
+  </project>
   <project name="gnome-books"/>
   <project name="gnome-boxes"/>
   <project name="gnome-builder"/>
@@ -218,6 +222,7 @@
   <project name="gnome-taquin"/>
   <project name="gnome-terminal"/>
   <project name="gnome-tetravex"/>
+  <project name="gnome-text-editor"/>
   <project name="gnome-themes-extra">
     <release version="f34">3.28,3.28.*</release>
     <release version="f35">3.28,3.28.*</release>
@@ -295,6 +300,10 @@
     <release version="f35">4.8.*</release>
     <release version="rawhide">4.8.*</release>
   </project>
+  <project name="gtksourceview" pkgname="gtksourceview5">
+    <release version="f35">5.2.*</release>
+    <release version="rawhide">5.*</release>
+  </project>
   <project name="gtranslator"/>
   <project name="gucharmap">
     <release version="f34">14.*</release>
@@ -368,6 +377,7 @@
   <project name="libgit2-glib">
     <release version="f34">0.99.*</release>
     <release version="f35">0.99.*</release>
+    <release version="rawhide">1.0.*</release>
   </project>
   <project name="libgnome-games-support">
     <release version="f34">1.8.*</release>
@@ -381,7 +391,14 @@
     <release version="f34">2.40.*</release>
     <release version="f35">2.40.*</release>
   </project>
-  <project name="libgweather"/>
+  <project name="libgweather">
+    <release version="f34">40.*</release>
+    <release version="f35">40.*</release>
+    <release version="rawhide">40.*</release>
+  </project>
+  <project name="libgweather" pkgname="libgweather4">
+    <release version="rawhide">3.*</release>
+  </project>
   <project name="libgxps">
     <release version="f34">0.3.*</release>
     <release version="f35">0.3.*</release>
@@ -409,7 +426,7 @@
   <project name="librsvg" pkgname="librsvg2">
     <release version="f34">2.50.*</release>
     <release version="f35">2.52.*</release>
-    <release version="rawhide">2.52.*</release>
+    <release version="rawhide">2.53.*</release>
   </project>
   <project name="libsecret">
     <release version="f34">0.20.*</release>
@@ -485,6 +502,7 @@
   <project name="rest">
     <release version="f34">0.8.*</release>
     <release version="f35">0.8.*</release>
+    <release version="rawhide">0.8.*</release>
   </project>
   <project name="rhythmbox">
     <release version="f34">3.4.*</release>
@@ -527,7 +545,7 @@
   <project name="vala">
     <release version="f34">0.48.*</release>
     <release version="f35">0.54.*</release>
-    <release version="rawhide">0.53.*,0.54.*</release>
+    <release version="rawhide">0.55.*,0.56.*</release>
   </project>
   <project name="vinagre">
     <release version="f34">3.22.*</release>
