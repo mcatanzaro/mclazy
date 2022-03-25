@@ -438,8 +438,10 @@ def main():
             pkg_release_tag = 'fc34'
         elif args.fedora_branch == "f35":
             pkg_release_tag = 'fc35'
-        elif args.fedora_branch == "rawhide":
+        elif args.fedora_branch == "f36":
             pkg_release_tag = 'fc36'
+        elif args.fedora_branch == "rawhide":
+            pkg_release_tag = 'fc37'
         else:
             print_fail("Failed to get release tag for", args.fedora_branch)
             unlock_file(lock_filename)
@@ -465,8 +467,10 @@ def main():
             pkg_branch_name = 'f34-build'
         elif args.fedora_branch == "f35":
             pkg_branch_name = 'f35-build'
-        elif args.fedora_branch == "rawhide":
+        elif args.fedora_branch == "f36":
             pkg_branch_name = 'f36-build'
+        elif args.fedora_branch == "rawhide":
+            pkg_branch_name = 'f37-build'
         else:
             print_fail("Failed to get repo branch tag for" + args.fedora_branch)
             unlock_file(lock_filename)
