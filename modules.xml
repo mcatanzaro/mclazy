@@ -336,6 +336,11 @@
     <release version="f36">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
+  <project name="gtkmm" pkgname="gtkmm4.0">
+    <release version="f35">4.4.*</release>
+    <release version="f36">4.6.*</release>
+    <release version="rawhide">4.*</release>
+  </project>
   <project name="gtksourceview" pkgname="gtksourceview3">
     <release version="f34">3.24.*</release>
     <release version="f35">3.24.*</release>
