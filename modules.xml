@@ -329,6 +329,7 @@
   <project name="gtk-doc">
     <release version="f34">1.33.*</release>
     <release version="f35">1.33.*</release>
+    <release version="f36">1.33.*</release>
   </project>
   <project name="gtkmm" pkgname="gtkmm30">
     <release version="f34">3.24.*</release>
@@ -344,11 +345,13 @@
   <project name="gtksourceview" pkgname="gtksourceview3">
     <release version="f34">3.24.*</release>
     <release version="f35">3.24.*</release>
+    <release version="f36">3.24.*</release>
     <release version="rawhide">3.24.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview4">
     <release version="f34">4.8.*</release>
     <release version="f35">4.8.*</release>
+    <release version="f36">4.8.*</release>
     <release version="rawhide">4.8.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview5">
@@ -397,11 +400,13 @@
   <project name="json-glib">
     <release version="f34">1.6.*</release>
     <release version="f35">1.6.*</release>
+    <release version="f36">1.6.*</release>
   </project>
   <project name="jsonrpc-glib"/>
   <project name="krb5-auth-dialog">
     <release version="f34">3.26.*</release>
     <release version="f35">3.26.*</release>
+    <release version="f36">3.26.*</release>
   </project>
   <project name="libadwaita">
     <release version="f34">1.0.*</release>
@@ -635,6 +640,7 @@
   <project name="totem-pl-parser">
     <release version="f34">3.26.*</release>
     <release version="f35">3.26.*</release>
+    <release version="f36">3.26.*</release>
   </project>
   <project name="tracker">
     <release version="f34">3.1.*</release>
@@ -659,7 +665,7 @@
   <project name="vte" pkgname="vte291">
     <release version="f34">0.64.*</release>
     <release version="f35">0.66.*</release>
-    <release version="f36">0.67.*</release>
+    <release version="f36">0.68.*</release>
   </project>
   <project name="xdg-desktop-portal-gnome"/>
   <project name="yelp"/>
