@@ -13,6 +13,7 @@
     f34     = 40.*
     f35     = 41.*
     f36     = 42.*
+    f37     = 43.*
     rawhide = * (the newest upstream version)
 
   If the package name differs from the upstream tarball name, then do
@@ -568,15 +569,15 @@
     <release version="f36">1.2.*</release>
   </project>
   <project name="nemiver">
-    <release version="f34">0.9.*</release>
     <release version="f35">0.9.*</release>
     <release version="f36">0.9.*</release>
   </project>
   <project name="orca"/>
   <project name="pango">
-    <release version="f34">1.48.*</release>
     <release version="f35">1.50.*</release>
     <release version="f36">1.50.*</release>
+    <release version="f37">1.50.*</release>
+    <release version="rawhide">1.50.*</release>
   </project>
   <project name="pangomm">
     <release version="f34">2.46.*</release>
