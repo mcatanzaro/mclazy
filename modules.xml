@@ -428,6 +428,10 @@
     <release version="f36">3.12.*</release>
   </project>
   <project name="libdazzle"/>
+  <project name="libdex">
+    <release version="f38">0.1.*</release>
+    <release version="rawhide">0.*</release>
+  </project>
   <project name="libgdata">
     <release version="f35">0.18.*</release>
     <release version="f36">0.18.*</release>
