@@ -357,7 +357,9 @@
   <project name="gtksourceview" pkgname="gtksourceview4">
     <release version="f35">4.8.*</release>
     <release version="f36">4.8.*</release>
-    <release version="rawhide">4.*</release>
+    <release version="f37">4.8.*</release>
+    <release version="f38">4.8.*</release>
+    <release version="rawhide">4.8.*</release>
   </project>
   <project name="gtksourceview" pkgname="gtksourceview5">
     <release version="f35">5.2.*</release>
