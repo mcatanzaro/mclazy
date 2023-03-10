@@ -507,6 +507,11 @@
     <release version="f38">0.8.*</release>
     <release version="rawhide">0.*</release>
   </project>
+  <project name="libpanel">
+    <release version="f37">1.0.*</release>
+    <release version="f38">1.1.*,1.2.*</release>
+    <release version="rawhide">1.1.*,1.2.*</release>
+  </project>
   <project name="libpeas">
     <release version="f35">1.30.*</release>
     <release version="f36">1.32.*</release>
@@ -519,6 +524,11 @@
   <project name="libsecret">
     <release version="f35">0.20.*</release>
     <release version="f36">0.20.*</release>
+  </project>
+  <project name="libshumate">
+    <release version="f37">1.0.*</release>
+    <release version="f38">1.0.*</release>
+    <release version="rawhide">1.*</release>
   </project>
   <project name="libsigc++" pkgname="libsigc++20">
     <release version="f35">2.10.*</release>
