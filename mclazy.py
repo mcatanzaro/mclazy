@@ -434,16 +434,16 @@ def main():
             run_command (pkg_cache, ['git', 'checkout', args.fedora_branch])
 
         # work out release tag
-        if args.fedora_branch == "f35":
-            pkg_release_tag = 'fc35'
-        elif args.fedora_branch == "f36":
+        if args.fedora_branch == "f36":
             pkg_release_tag = 'fc36'
         elif args.fedora_branch == "f37":
             pkg_release_tag = 'fc37'
         elif args.fedora_branch == "f38":
             pkg_release_tag = 'fc38'
-        elif args.fedora_branch == "rawhide":
+        elif args.fedora_branch == "f39":
             pkg_release_tag = 'fc39'
+        elif args.fedora_branch == "rawhide":
+            pkg_release_tag = 'fc40'
         else:
             print_fail("Failed to get release tag for", args.fedora_branch)
             unlock_file(lock_filename)
@@ -465,16 +465,16 @@ def main():
                 continue
 
         # work out repo branch
-        if args.fedora_branch == "f35":
-            pkg_branch_name = 'f35-build'
-        elif args.fedora_branch == "f36":
+        if args.fedora_branch == "f36":
             pkg_branch_name = 'f36-build'
         elif args.fedora_branch == "f37":
             pkg_branch_name = 'f37-build'
         elif args.fedora_branch == "f38":
             pkg_branch_name = 'f38-build'
-        elif args.fedora_branch == "rawhide":
+        elif args.fedora_branch == "f39":
             pkg_branch_name = 'f39-build'
+        elif args.fedora_branch == "rawhide":
+            pkg_branch_name = 'f40-build'
         else:
             print_fail("Failed to get repo branch tag for" + args.fedora_branch)
             unlock_file(lock_filename)
