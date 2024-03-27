@@ -469,9 +469,10 @@
   <project name="libxml++" pkgname="libxml++30">
     <release version="f38">3.2.*</release>
     <release version="f39">3.2.*</release>
-    <release version="rawhide">3.*</release>
+    <release version="rawhide">3.2.*</release>
   </project>
   <project name="lightsoff"/>
+  <project name="loupe"/>
   <project name="mm-common">
     <release version="f38">1.0.*</release>
     <release version="f39">1.0.*</release>
@@ -540,6 +541,7 @@
     <release version="f39">0.32.*</release>
   </project>
   <project name="simple-scan"/>
+  <project name="snapshot"/>
   <project name="sound-juicer"/>
   <project name="sushi"/>
   <project name="swell-foop"/>
