@@ -32,12 +32,9 @@ class ModulesItem(object):
         self.release_glob = {}
 
         # add the default gnome release numbers
-        self.release_glob['f34'] = "3.31.*,3.32.*,3.32,3.33.*,3.34.*,3.34,3.35.*,3.36.*,3.36,3.37.*,3.38.*,3.38,3.39.*,3.39,3.40.*,3.40"
-        self.release_glob['f35'] = self.release_glob['f34'] + ",3.41.*,3.42.*,3.42,41.*,41"
-        self.release_glob['f36'] = self.release_glob['f35'] + ",3.43.*,3.44.*,3.42,42.*,42"
-        self.release_glob['f37'] = self.release_glob['f36'] + ",3.45.*,3.46.*,43.*,43"
-        self.release_glob['f38'] = self.release_glob['f37'] + ",3.47.*,3.48.*,44.*,44"
+        self.release_glob['f38'] = "40.*,40,41.*,41,42.*,42,43.*,43,3.47.*,3.48.*,44.*,44"
         self.release_glob['f39'] = self.release_glob['f38'] + ",3.49.*,3.50.*,45.*,45"
+        self.release_glob['f40'] = self.release_glob['f39'] + ",3.51.*,3.52.*,46.*,46"
         self.release_glob['rawhide'] = "*"
 
 class ModulesXml(object):
