@@ -35,6 +35,7 @@ class ModulesItem(object):
         self.release_glob['f38'] = "40.*,40,41.*,41,42.*,42,43.*,43,3.47.*,3.48.*,44.*,44"
         self.release_glob['f39'] = self.release_glob['f38'] + ",3.49.*,3.50.*,45.*,45"
         self.release_glob['f40'] = self.release_glob['f39'] + ",3.51.*,3.52.*,46.*,46"
+        self.release_glob['f41'] = self.release_glob['f40'] + ",3.53.*,3.54.*,47.*,47"
         self.release_glob['rawhide'] = "*"
 
 class ModulesXml(object):

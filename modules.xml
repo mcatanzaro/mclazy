@@ -13,6 +13,7 @@
     f38     = 44.*
     f39     = 45.*
     f40     = 46.*
+    f41     = 47.*
     rawhide = * (the newest upstream version)
 
   If the package name differs from the upstream tarball name, then do
@@ -534,6 +535,7 @@
     <release version="f40">3.4.*</release>
     <release version="rawhide">3.*</release>
   </project>
+  <project name="libspelling"/>
   <project name="libwnck" pkgname="libwnck3"/>
   <project name="libxml++">
     <release version="f38">2.42.*</release>
@@ -572,8 +574,8 @@
   <project name="pango">
     <release version="f38">1.50.*</release>
     <release version="f39">1.51.*</release>
-    <release version="f40">1.52.*</release>
-    <release version="rawhide">1.*</release>
+    <release version="f40">1.54.*</release>
+    <release version="rawhide">1.54.*</release>
   </project>
   <project name="pangomm">
     <release version="f38">2.46.*</release>
@@ -593,6 +595,7 @@
     <release version="f40">0.1.*</release>
   </project>
   <project name="polari"/>
+  <project name="ptyxis"/>
   <project name="pyatspi">
     <release version="f38">2.46.*</release>
     <release version="f39">2.46.*</release>
