@@ -93,6 +93,7 @@
   </project>
   <project name="dconf-editor"/>
   <project name="devhelp"/>
+  <project name="d-spy"/>
   <project name="eog"/>
   <project name="eog-plugins"/>
   <project name="epiphany"/>
