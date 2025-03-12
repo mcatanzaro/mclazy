@@ -37,7 +37,7 @@
     <release version="f42">2.56.*</release>
     <release version="rawhide">2.*</release>
   </project>
-  <project name="atkmm" pkgname="atkmm">
+  <project name="atkmm">
     <release version="f40">2.28.*</release>
     <release version="f41">2.28.*</release>
     <release version="f42">2.28.*</release>
@@ -60,9 +60,9 @@
   </project>
   <project name="cantarell-fonts" pkgname="abattis-cantarell-fonts">
     <release version="f40">0.301</release>
-    <release version="f41">3.12.*</release>
-    <release version="f42">3.12.*</release>
-    <release version="rawhide">3.12.*</release>
+    <release version="f41">0.301*</release>
+    <release version="f42">0.301*</release>
+    <release version="rawhide">0.301*</release>
   </project>
   <project name="cheese"/>
   <project name="clutter">
