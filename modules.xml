@@ -24,6 +24,7 @@
 -->
 <projects>
   <project name="accerciser"/>
+  <project name="adwaita-fonts"/>
   <project name="adwaita-icon-theme"/>
   <project name="aisleriot">
     <release version="f38">3.22.*</release>
@@ -97,6 +98,7 @@
     <release version="f42">0.40.*</release>
   </project>
   <project name="dconf-editor"/>
+  <project name="decibels"/>
   <project name="devhelp"/>
   <project name="d-spy"/>
   <project name="eog"/>
@@ -602,6 +604,7 @@
     <release version="f40">2.56.*</release>
     <release version="rawhide">2.*</release>
   </project>
+  <project name="papers"/>
   <project name="pinpoint">
     <release version="f40">0.1.*</release>
     <release version="f41">0.1.*</release>
@@ -652,6 +655,7 @@
     <release version="f42">0.32.*</release>
     <release version="rawhide">0.*</release>
   </project>
+  <project name="showtime"/>
   <project name="simple-scan"/>
   <project name="snapshot"/>
   <project name="sound-juicer"/>
