@@ -216,6 +216,11 @@
   <project name="gnome-music"/>
   <project name="gnome-nibbles"/>
   <project name="gnome-online-accounts"/>
+    <release version="f40">3.50.*</release>
+    <release version="f41">3.52.*</release>
+    <release version="f42">3.54.*</release>
+    <release version="rawhide">3.*</release>
+  </project>
   <project name="gnome-packagekit"/>
   <project name="gnome-photos"/>
   <project name="gnome-power-manager"/>
@@ -600,8 +605,8 @@
   </project>
   <project name="pangomm" pkgname="pangomm2.48">
     <release version="f40">2.52.*</release>
-    <release version="f40">2.54.*</release>
-    <release version="f40">2.56.*</release>
+    <release version="f41">2.54.*</release>
+    <release version="f42">2.56.*</release>
     <release version="rawhide">2.*</release>
   </project>
   <project name="papers"/>
