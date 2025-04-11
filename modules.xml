@@ -215,7 +215,7 @@
   <project name="gnome-multi-writer"/>
   <project name="gnome-music"/>
   <project name="gnome-nibbles"/>
-  <project name="gnome-online-accounts"/>
+  <project name="gnome-online-accounts">
     <release version="f40">3.50.*</release>
     <release version="f41">3.52.*</release>
     <release version="f42">3.54.*</release>
