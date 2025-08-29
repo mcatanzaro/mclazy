@@ -200,6 +200,7 @@ def main():
                 continue
             else:
                 print_fail("Process with PID %i locked but did not release" % pid)
+                print_fail("(This means a previous instance of mclazy died uncleanly)")
 
         # create lockfile
         with open(lock_filename, 'w') as f:
