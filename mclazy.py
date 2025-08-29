@@ -48,7 +48,7 @@ def log_error(module, message):
     errors.append((module, message))
 
 def run_command(cwd, argv):
-    print_debug("Running %s" % " ".join(argv))
+    print_debug(f"Running {' '.join(argv)}")
     p = subprocess.Popen(argv, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, error = p.communicate()
     if p.returncode != 0:
@@ -85,7 +85,7 @@ def switch_branch_and_reset(pkg_cache, branch_name):
     rc = run_command (pkg_cache, ['git', 'checkout', branch_name])
     if rc != 0:
         return rc
-    rc = run_command (pkg_cache, ['git', 'reset', '--hard', "origin/%s" % branch_name])
+    rc = run_command (pkg_cache, ['git', 'reset', '--hard', f"origin/{branch_name}"])
     if rc != 0:
         return rc
 
@@ -123,10 +123,10 @@ def sync_to_rawhide_branch(module, pkg_cache, args):
 def majorminor(ver):
     v = ver.split('.')
     # handle new ftp scheme in GNOME 40+
-    if v[0] == "40" or v[0] == "41" or  v[0] == "42":
+    if v[0] == "40" or v[0] == "41" or v[0] == "42":
         return v[0]
     else:
-        return "%s.%s" % (v[0], v[1])
+        return f"{v[0]}.{v[1]}"
 
 def main():
 
@@ -165,7 +165,7 @@ def main():
         mi = ts.dbMatch()
         for h in mi:
             installed_pkgs[h['name']] = h['version']
-        print_debug("Loaded rpmdb with %i items" % len(installed_pkgs))
+        print_debug(f"Loaded rpmdb with {len(installed_pkgs)} items")
 
     # parse the configuration file
     modules = []
@@ -191,48 +191,48 @@ def main():
 
     # loop these
     for module, pkg, release_version in modules:
-        print_info("Loading %s" % module)
-        print_debug("Package name: %s" % pkg)
-        print_debug("Version glob: %s" % release_version[args.fedora_branch])
+        print_info(f"Loading {module}")
+        print_debug(f"Package name: {pkg}")
+        print_debug(f"Version glob: {release_version[args.fedora_branch]}")
 
         # ensure we've not locked this build in another instance
-        lock_filename = args.cache + "/" + pkg + "-" + lockfile
+        lock_filename = f"{args.cache}/{pkg}-{lockfile}"
         if os.path.exists(lock_filename):
             # check this process is still running
             is_still_running = False
             with open(lock_filename, 'r') as f:
                 try:
                     pid = int(f.read())
-                    if os.path.isdir("/proc/%i" % pid):
+                    if os.path.isdir(f"/proc/{pid}"):
                         is_still_running = True
                 except ValueError as e:
                     # pid in file was not an integer
                     pass
 
             if is_still_running:
-                print_info("Ignoring as another process (PID %i) has this" % pid)
+                print_info(f"Ignoring as another process (PID {pid}) has this")
                 continue
             else:
-                log_error(module, "Process with PID %i locked but did not release" % pid)
+                log_error(module, f"Process with PID {pid} locked but did not release")
                 log_error(module, "(This means a previous instance of mclazy died uncleanly)")
 
         # create lockfile
         with open(lock_filename, 'w') as f:
-            f.write("%s" % os.getpid())
+            f.write(f"{os.getpid()}")
 
         pkg_cache = os.path.join(args.cache, pkg)
 
         # ensure package is checked out
-        if not os.path.isdir(args.cache + "/" + pkg):
+        if not os.path.isdir(f"{args.cache}/{pkg}"):
             rc = run_command(args.cache, ["fedpkg", "co", pkg])
             if rc != 0:
-                log_error(module, "Checkout %s" % pkg)
+                log_error(module, f"Checkout {pkg}")
                 unlock_file(lock_filename)
                 continue
         else:
             rc = run_command (pkg_cache, ['git', 'fetch'])
             if rc != 0:
-                log_error(module, "Update repo %s" % pkg)
+                log_error(module, f"Update repo {pkg}")
                 unlock_file(lock_filename)
                 continue
 
@@ -245,7 +245,7 @@ def main():
         # get the current version
         version = 0
         version_dot = 0
-        spec_filename = "%s/%s/%s.spec" % (args.cache, pkg, pkg)
+        spec_filename = f"{args.cache}/{pkg}/{pkg}.spec"
         if not os.path.exists(spec_filename):
             log_error(module, "No spec file")
             unlock_file(lock_filename)
@@ -260,23 +260,23 @@ def main():
             log_error(module, "Can't parse spec file")
             unlock_file(lock_filename)
             continue
-        print_debug("Current version is %s" % version)
+        print_debug(f"Current version is {version}")
 
         # check for newer version on GNOME.org
         success = False
         for i in range (1, 20):
             try:
-                urllib.request.urlretrieve ("%s/%s/cache.json" % (gnome_ftp, module), "%s/%s/cache.json" % (args.cache, pkg))
+                urllib.request.urlretrieve (f"{gnome_ftp}/{module}/cache.json", f"{args.cache}/{pkg}/cache.json")
                 success = True
                 break
             except IOError as e:
-                log_error(module, "Failed to get JSON on try %i: %s" % (i, e))
+                log_error(module, f"Failed to get JSON on try {i}: {e}")
         if not success:
             unlock_file(lock_filename)
             continue
 
         gnome_branch = release_version[args.fedora_branch]
-        local_json_file = "%s/%s/cache.json" % (args.cache, pkg)
+        local_json_file = f"{args.cache}/{pkg}/cache.json"
         with open(local_json_file, 'r') as f:
 
             # the format of the json file is as follows:
@@ -289,7 +289,7 @@ def main():
             try:
                 j = json.loads(f.read())
             except Exception as e:
-                log_error(module, "Failed to read JSON at %s: %s" % (local_json_file, str(e)))
+                log_error(module, f"Failed to read JSON at {local_json_file}: {str(e)}")
                 unlock_file(lock_filename)
                 continue
 
@@ -311,7 +311,7 @@ def main():
                     newest_remote_version = remote_ver
                     newest_remote_version_tilde = remote_ver_tilde
         if newest_remote_version == '0':
-            log_error(module, "No remote versions matching the gnome branch %s" % gnome_branch)
+            log_error(module, f"No remote versions matching the gnome branch {gnome_branch}")
             log_error(module, "Check modules.xml is looking at the correct branch")
             unlock_file(lock_filename)
             continue
@@ -333,7 +333,7 @@ def main():
                 if installed_ver == newest_remote_version:
                     print_debug("installed version is up to date")
                 else:
-                    print_debug("installed version is %s" % installed_ver)
+                    print_debug(f"installed version is {installed_ver}")
                     rc = rpm.labelCompare((None, installed_ver, None), (None, newest_remote_version_tilde, None))
                     if rc > 0:
                         log_error(module, "installed version is newer than gnome branch version")
@@ -358,7 +358,7 @@ def main():
 
         # we need to update the package
         if new_version:
-            print_debug("Need to update from %s to %s" %(version, new_version_tilde))
+            print_debug(f"Need to update from {version} to {new_version_tilde}")
 
         # download the tarball if it doesn't exist
         if new_version:
@@ -369,26 +369,26 @@ def main():
                 try:
                     tarball = j[1][module][new_version]['tar.gz']
                 except KeyError:
-                    log_error(module, "Cannot find tarball for " % module)
+                    log_error(module, f"Cannot find tarball for {module}")
                     unlock_file(lock_filename)
                     continue
             dest_tarball = tarball.split('/')[1]
-            if os.path.exists(pkg + "/" + dest_tarball):
-                print_debug("Source %s already exists" % dest_tarball)
+            if os.path.exists(f"{pkg}/{dest_tarball}"):
+                print_debug(f"Source {dest_tarball} already exists")
             else:
-                tarball_url = gnome_ftp + "/" + module + "/" + tarball
-                print_debug("Download %s" % tarball_url)
+                tarball_url = f"{gnome_ftp}/{module}/{tarball}"
+                print_debug(f"Download {tarball_url}")
                 try:
-                    urllib.request.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
+                    urllib.request.urlretrieve (tarball_url, f"{args.cache}/{pkg}/{dest_tarball}")
                 except IOError as e:
-                    log_error(module, "Failed to get tarball: %s" % e)
+                    log_error(module, f"Failed to get tarball: {e}")
                     unlock_file(lock_filename)
                     continue
                 if not args.simulate:
                     # add the new source
                     rc = run_command (pkg_cache, ['fedpkg', 'new-sources', dest_tarball])
                     if rc != 0:
-                        log_error(module, "Upload new sources for %s" % pkg)
+                        log_error(module, f"Failed to upload new sources for {pkg}")
                         unlock_file(lock_filename)
                         continue
 
@@ -402,39 +402,39 @@ def main():
                         elif line.startswith('Release:') and 'autorelease' not in line:
                             line = replace_spec_value(line, '0%{?dist}\n')
                         elif line.startswith(('Source:', 'Source0:')):
-                            line = re.sub("/" + majorminor(version_dot) + "/",
-                                          "/" + majorminor(new_version) + "/",
+                            line = re.sub(f"/{majorminor(version_dot)}/",
+                                          f"/{majorminor(new_version)}/",
                                           line)
                         tmp_spec.write(line)
-            os.rename(spec_filename + ".tmp", spec_filename)
+            os.rename(f"{spec_filename}.tmp", spec_filename)
 
         # bump the spec file
         comment = "Update to " + new_version
-        cmd = ['rpmdev-bumpspec', "--legacy-datestamp", "--comment=%s" % comment, "%s.spec" % pkg]
+        cmd = ['rpmdev-bumpspec', "--legacy-datestamp", f"--comment={comment}", f"{pkg}.spec"]
         run_command (pkg_cache, cmd)
 
         # run prep, and make sure patches still apply
         rc = run_command (pkg_cache, ['fedpkg', 'prep'])
         if rc != 0:
-            log_error(module, "package %s failed prep (do the patches not apply?)" % pkg)
+            log_error(module, f"package {pkg} failed prep (do the patches not apply?)")
             unlock_file(lock_filename)
             continue
 
         if not args.no_mockbuild:
             rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
             if rc != 0:
-                log_error(module, "package %s failed mock test build" % pkg)
+                log_error(module, f"package {pkg} failed mock test build")
                 unlock_file(lock_filename)
                 continue
 
-            resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
+            resultsglob = os.path.join(pkg_cache, f"results_{pkg}/*/*/*.rpm")
             if not glob.glob(resultsglob):
-                log_error(module, "package %s failed mock test build: no results" % pkg)
+                log_error(module, f"package {pkg} failed mock test build: no results")
                 unlock_file(lock_filename)
                 continue
 
         # commit the changes
-        rc = run_command (pkg_cache, ['git', 'commit', '-a', "--message=%s" % comment])
+        rc = run_command (pkg_cache, ['git', 'commit', '-a', f"--message={comment}"])
         if rc != 0:
             log_error(module, "commit")
             unlock_file(lock_filename)
@@ -474,9 +474,9 @@ def main():
         # build package
         if not args.no_build:
             if new_version_tilde:
-                print_info("Building %s-%s-1.%s" % (pkg, new_version_tilde, pkg_release_tag))
+                print_info(f"Building {pkg}-{new_version_tilde}-1.{pkg_release_tag}")
             else:
-                print_info("Building %s-%s-1.%s" % (pkg, version, pkg_release_tag))
+                print_info(f"Building {pkg}-{version}-1.{pkg_release_tag}")
             if args.buildroot:
                 rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait', '--target', args.buildroot])
             else:
