@@ -348,7 +348,16 @@ def main():
 
         # download the tarball if it doesn't exist
         if new_version:
-            tarball = j[1][module][new_version]['tar.xz']
+            tarball = None
+            try:
+                tarball = j[1][module][new_version]['tar.xz']
+            except KeyError:
+                try:
+                    tarball = j[1][module][new_version]['tar.gz']
+                except KeyError:
+                    print_fail("Cannot find tarball for " % module)
+                    unlock_file(lock_filename)
+                    continue
             dest_tarball = tarball.split('/')[1]
             if os.path.exists(pkg + "/" + dest_tarball):
                 print_debug("Source %s already exists" % dest_tarball)
