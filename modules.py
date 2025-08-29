@@ -32,11 +32,9 @@ class ModulesItem(object):
         self.release_glob = {}
 
         # add the default gnome release numbers
-        self.release_glob['f38'] = "40.*,40,41.*,41,42.*,42,43.*,43,3.47.*,3.48.*,44.*,44"
-        self.release_glob['f39'] = self.release_glob['f38'] + ",3.49.*,3.50.*,45.*,45"
-        self.release_glob['f40'] = self.release_glob['f39'] + ",3.51.*,3.52.*,46.*,46"
-        self.release_glob['f41'] = self.release_glob['f40'] + ",3.53.*,3.54.*,47.*,47"
-        self.release_glob['f42'] = self.release_glob['f41'] + ",3.55.*,3.56.*,48.*,48"
+        self.release_glob['f41'] = "47.*"
+        self.release_glob['f42'] = self.release_glob['f41'] + ",48.*"
+        self.release_glob['f43'] = self.release_glob['f42'] + ",49.*"
         self.release_glob['rawhide'] = "*"
 
 class ModulesXml(object):
@@ -65,10 +63,9 @@ class ModulesXml(object):
                 for release in project.get('releases').split(','):
                     item.releases.append(release)
             else:
-                item.releases.append('f34')
-                item.releases.append('f35')
-                item.releases.append('f36')
-                item.releases.append('f37')
+                item.releases.append('f41')
+                item.releases.append('f42')
+                item.releases.append('f43')
             self.items.append(item)
 
     def _print(self):

@@ -444,16 +444,14 @@ def main():
             run_command (pkg_cache, ['git', 'checkout', args.fedora_branch])
 
         # work out release tag
-        if args.fedora_branch == "f39":
-            pkg_release_tag = 'fc39'
-        elif args.fedora_branch == "f40":
-            pkg_release_tag = 'fc40'
-        elif args.fedora_branch == "f41":
+        if args.fedora_branch == "f41":
             pkg_release_tag = 'fc41'
         elif args.fedora_branch == "f42":
             pkg_release_tag = 'fc42'
-        elif args.fedora_branch == "rawhide":
+        elif args.fedora_branch == "f43":
             pkg_release_tag = 'fc43'
+        elif args.fedora_branch == "rawhide":
+            pkg_release_tag = 'fc44'
         else:
             print_fail("Failed to get release tag for", args.fedora_branch)
             unlock_file(lock_filename)
