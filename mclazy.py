@@ -474,22 +474,6 @@ def main():
                 unlock_file(lock_filename)
                 continue
 
-        # work out repo branch
-        if args.fedora_branch == "f39":
-            pkg_branch_name = 'f39-build'
-        elif args.fedora_branch == "f40":
-            pkg_branch_name = 'f40-build'
-        elif args.fedora_branch == "f41":
-            pkg_branch_name = 'f41-build'
-        elif args.fedora_branch == "f42":
-            pkg_branch_name = 'f42-build'
-        elif args.fedora_branch == "rawhide":
-            pkg_branch_name = 'f43-build'
-        else:
-            print_fail("Failed to get repo branch tag for" + args.fedora_branch)
-            unlock_file(lock_filename)
-            continue
-
         # success!
         print_info("Done")
 
