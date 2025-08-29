@@ -112,11 +112,9 @@ def sync_to_rawhide_branch(module, pkg_cache, args):
         log_error(module, "build")
         return
 
-# first two digits of version
 def majorminor(ver):
     v = ver.split('.')
-    # handle new ftp scheme in GNOME 40+
-    if v[0] == "40" or v[0] == "41" or v[0] == "42":
+    if int(v[0]) >= 40:
         return v[0]
     else:
         return f"{v[0]}.{v[1]}"
