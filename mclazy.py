@@ -138,6 +138,7 @@ def main():
     parser = argparse.ArgumentParser(description='Automatically build Fedora packages for a GNOME release')
     parser.add_argument('--fedora-branch', default="rawhide", help='The fedora release to target (default: rawhide)')
     parser.add_argument('--simulate', action='store_true', help='Do not push any changes')
+    parser.add_argument('--no-simulate', action='store_true', help='Push changes')
     parser.add_argument('--check-installed', action='store_true', help='Check installed version against built version')
     parser.add_argument('--relax-version-checks', action='store_true', help='Relax checks on the version numbering')
     parser.add_argument('--no-build', action='store_true', help='Do not actually build, e.g. for rawhide')
@@ -148,6 +149,13 @@ def main():
     parser.add_argument('--buildone', default=None, help='Only build one specific package')
     parser.add_argument('--buildroot', default=None, help='Use a custom buildroot, e.g. f18-gnome')
     args = parser.parse_args()
+
+    if (args.simulate and args.no_simulate):
+        print_fail('Cannot use both --simulate and --no-simulate')
+        return
+    if (not args.simulate and not args.no_simulate):
+        print_fail('Must use either --simulate or --no-simulate')
+        return
 
     # use rpm to check the installed version
     installed_pkgs = {}
