@@ -40,6 +40,13 @@ COLOR_WARNING = '\033[93m'
 COLOR_FAIL = '\033[91m'
 COLOR_ENDC = '\033[0m'
 
+errors = []
+updates = []
+
+def log_error(module, message):
+    print_fail(message)
+    errors.append((module, message))
+
 def run_command(cwd, argv):
     print_debug("Running %s" % " ".join(argv))
     p = subprocess.Popen(argv, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -84,10 +91,10 @@ def switch_branch_and_reset(pkg_cache, branch_name):
 
     return 0
 
-def sync_to_rawhide_branch(pkg_cache, args):
+def sync_to_rawhide_branch(module, pkg_cache, args):
     rc = switch_branch_and_reset (pkg_cache, 'rawhide')
     if rc != 0:
-        print_fail("switch to 'rawhide' branch")
+        log_error(module, "switch to 'rawhide' branch")
         return
 
     # First try a fast-forward merge
@@ -98,18 +105,18 @@ def sync_to_rawhide_branch(pkg_cache, args):
         rc = run_command (pkg_cache, ['git', 'cherry-pick', args.fedora_branch])
         if rc != 0:
             run_command (pkg_cache, ['git', 'cherry-pick', '--abort'])
-            print_fail("cherry-pick")
+            log_error(module, "cherry-pick")
             return
 
     rc = run_command (pkg_cache, ['git', 'push'])
     if rc != 0:
-        print_fail("push")
+        log_error(module, "push")
         return
 
     # Build the package
     rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
     if rc != 0:
-        print_fail("build")
+        log_error(module, "build")
         return
 
 # first two digits of version
@@ -130,7 +137,7 @@ def main():
     # read defaults from command line arguments
     parser = argparse.ArgumentParser(description='Automatically build Fedora packages for a GNOME release')
     parser.add_argument('--fedora-branch', default="rawhide", help='The fedora release to target (default: rawhide)')
-    parser.add_argument('--simulate', action='store_true', help='Do not commit any changes')
+    parser.add_argument('--simulate', action='store_true', help='Do not push any changes')
     parser.add_argument('--check-installed', action='store_true', help='Check installed version against built version')
     parser.add_argument('--relax-version-checks', action='store_true', help='Relax checks on the version numbering')
     parser.add_argument('--no-build', action='store_true', help='Do not actually build, e.g. for rawhide')
@@ -198,8 +205,8 @@ def main():
                 print_info("Ignoring as another process (PID %i) has this" % pid)
                 continue
             else:
-                print_fail("Process with PID %i locked but did not release" % pid)
-                print_fail("(This means a previous instance of mclazy died uncleanly)")
+                log_error(module, "Process with PID %i locked but did not release" % pid)
+                log_error(module, "(This means a previous instance of mclazy died uncleanly)")
 
         # create lockfile
         with open(lock_filename, 'w') as f:
@@ -211,19 +218,19 @@ def main():
         if not os.path.isdir(args.cache + "/" + pkg):
             rc = run_command(args.cache, ["fedpkg", "co", pkg])
             if rc != 0:
-                print_fail("Checkout %s" % pkg)
+                log_error(module, "Checkout %s" % pkg)
                 unlock_file(lock_filename)
                 continue
         else:
             rc = run_command (pkg_cache, ['git', 'fetch'])
             if rc != 0:
-                print_fail("Update repo %s" % pkg)
+                log_error(module, "Update repo %s" % pkg)
                 unlock_file(lock_filename)
                 continue
 
         rc = switch_branch_and_reset (pkg_cache, args.fedora_branch)
         if rc != 0:
-            print_fail("Switch branch")
+            log_error(module, "Switch branch")
             unlock_file(lock_filename)
             continue
 
@@ -232,7 +239,7 @@ def main():
         version_dot = 0
         spec_filename = "%s/%s/%s.spec" % (args.cache, pkg, pkg)
         if not os.path.exists(spec_filename):
-            print_fail("No spec file")
+            log_error(module, "No spec file")
             unlock_file(lock_filename)
             continue
 
@@ -242,7 +249,7 @@ def main():
             version = spec.sourceHeader["version"]
             version_dot = re.sub('([0-9]+)~(alpha|beta|rc)', r'\1.\2', version)
         except ValueError as e:
-            print_fail("Can't parse spec file")
+            log_error(module, "Can't parse spec file")
             unlock_file(lock_filename)
             continue
         print_debug("Current version is %s" % version)
@@ -255,7 +262,7 @@ def main():
                 success = True
                 break
             except IOError as e:
-                print_fail("Failed to get JSON on try %i: %s" % (i, e))
+                log_error(module, "Failed to get JSON on try %i: %s" % (i, e))
         if not success:
             unlock_file(lock_filename)
             continue
@@ -274,7 +281,7 @@ def main():
             try:
                 j = json.loads(f.read())
             except Exception as e:
-                print_fail("Failed to read JSON at %s: %s" % (local_json_file, str(e)))
+                log_error(module, "Failed to read JSON at %s: %s" % (local_json_file, str(e)))
                 unlock_file(lock_filename)
                 continue
 
@@ -296,8 +303,8 @@ def main():
                     newest_remote_version = remote_ver
                     newest_remote_version_tilde = remote_ver_tilde
         if newest_remote_version == '0':
-            print_fail("No remote versions matching the gnome branch %s" % gnome_branch)
-            print_fail("Check modules.xml is looking at the correct branch")
+            log_error(module, "No remote versions matching the gnome branch %s" % gnome_branch)
+            log_error(module, "Check modules.xml is looking at the correct branch")
             unlock_file(lock_filename)
             continue
 
@@ -321,8 +328,8 @@ def main():
                     print_debug("installed version is %s" % installed_ver)
                     rc = rpm.labelCompare((None, installed_ver, None), (None, newest_remote_version_tilde, None))
                     if rc > 0:
-                        print_fail("installed version is newer than gnome branch version")
-                        print_fail("check modules.xml is looking at the correct branch")
+                        log_error(module, "installed version is newer than gnome branch version")
+                        log_error(module, "check modules.xml is looking at the correct branch")
                         unlock_file(lock_filename)
                         continue
 
@@ -337,7 +344,7 @@ def main():
             if args.relax_version_checks:
                 print_debug("Updating major version number, but ignoring")
             elif new_version.split('.')[0] != version_dot.split('.')[0]:
-                print_fail("Cannot update major version numbers")
+                log_error(module, "Cannot update major version numbers")
                 unlock_file(lock_filename)
                 continue
 
@@ -354,7 +361,7 @@ def main():
                 try:
                     tarball = j[1][module][new_version]['tar.gz']
                 except KeyError:
-                    print_fail("Cannot find tarball for " % module)
+                    log_error(module, "Cannot find tarball for " % module)
                     unlock_file(lock_filename)
                     continue
             dest_tarball = tarball.split('/')[1]
@@ -366,14 +373,14 @@ def main():
                 try:
                     urllib.request.urlretrieve (tarball_url, args.cache + "/" + pkg + "/" + dest_tarball)
                 except IOError as e:
-                    print_fail("Failed to get tarball: %s" % e)
+                    log_error(module, "Failed to get tarball: %s" % e)
                     unlock_file(lock_filename)
                     continue
                 if not args.simulate:
                     # add the new source
                     rc = run_command (pkg_cache, ['fedpkg', 'new-sources', dest_tarball])
                     if rc != 0:
-                        print_fail("Upload new sources for %s" % pkg)
+                        log_error(module, "Upload new sources for %s" % pkg)
                         unlock_file(lock_filename)
                         continue
 
@@ -401,27 +408,27 @@ def main():
         # run prep, and make sure patches still apply
         rc = run_command (pkg_cache, ['fedpkg', 'prep'])
         if rc != 0:
-            print_fail("to build %s as patches did not apply" % pkg)
+            log_error(module, "package %s failed prep (do the patches not apply?)" % pkg)
             unlock_file(lock_filename)
             continue
 
         if not args.no_mockbuild:
             rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
             if rc != 0:
-                print_fail("package %s failed mock test build" % pkg)
+                log_error(module, "package %s failed mock test build" % pkg)
                 unlock_file(lock_filename)
                 continue
 
             resultsglob = os.path.join(pkg_cache, "results_%s/*/*/*.rpm" % pkg)
             if not glob.glob(resultsglob):
-                print_fail("package %s failed mock test build: no results" % pkg)
+                log_error(module, "package %s failed mock test build: no results" % pkg)
                 unlock_file(lock_filename)
                 continue
 
         # commit the changes
         rc = run_command (pkg_cache, ['git', 'commit', '-a', "--message=%s" % comment])
         if rc != 0:
-            print_fail("commit")
+            log_error(module, "commit")
             unlock_file(lock_filename)
             continue
 
@@ -433,13 +440,13 @@ def main():
 
         rc = run_command (pkg_cache, ['git', 'push'])
         if rc != 0:
-            print_fail("push")
+            log_error(module, "push")
             unlock_file(lock_filename)
             continue
 
         # Try to push the same change to rawhide branch
         if not args.no_rawhide_sync and args.fedora_branch != 'rawhide':
-            sync_to_rawhide_branch (pkg_cache, args)
+            sync_to_rawhide_branch (module, pkg_cache, args)
             run_command (pkg_cache, ['git', 'checkout', args.fedora_branch])
 
         # work out release tag
@@ -452,7 +459,7 @@ def main():
         elif args.fedora_branch == "rawhide":
             pkg_release_tag = 'fc44'
         else:
-            print_fail("Failed to get release tag for", args.fedora_branch)
+            log_error(module, "Failed to get release tag for", args.fedora_branch)
             unlock_file(lock_filename)
             continue
 
@@ -467,15 +474,31 @@ def main():
             else:
                 rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
             if rc != 0:
-                print_fail("Build")
+                log_error(module, "Build")
                 unlock_file(lock_filename)
                 continue
 
         # success!
+        updates.append((module, version, new_version))
         print_info("Done")
 
         # unlock build
         unlock_file(lock_filename)
+
+    if (len(updates) == 0):
+        print_info("Completed processing without updating any modules")
+    else:
+        print_info("Summary of updated modules:")
+        for (module, oldver, newver) in updates:
+            print_info(f"{module}: {oldver} -> {newver}")
+
+    if (len(errors) == 0):
+        print_info("Completed processing without any errors")
+    else:
+        print_info("Summary of errors:")
+        for (module, message) in errors:
+            print_fail(f"{module}: {message}")
+
 
 if __name__ == "__main__":
     main()
