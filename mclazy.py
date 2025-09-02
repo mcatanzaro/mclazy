@@ -139,7 +139,8 @@ def main():
     parser.add_argument('--cache', default="cache", help='The cache of checked out packages')
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
     parser.add_argument('--buildone', default=None, help='Only build one specific package')
-    parser.add_argument('--buildroot', default=None, help='Use a custom buildroot, e.g. f18-gnome')
+    parser.add_argument('--side-tag', default=None, help='Specify side tag to use for build')
+    parser.add_argument('--no-side-tag', default=False, help='Build without any side tag')
     args = parser.parse_args()
 
     if args.simulate and args.no_simulate:
@@ -147,6 +148,10 @@ def main():
         return
     if not args.simulate and not args.no_simulate:
         print_fail('Must use either --simulate or --no-simulate')
+        return
+
+    if args.side_tag == None and not args.no_side_tag and not args.simulate:
+        print_fail('Must use either --side-tag or --no-side-tag')
         return
 
     # use rpm to check the installed version
@@ -451,8 +456,8 @@ def main():
                     print_info(f"Building {pkg}-{new_version_tilde}-1.{pkg_release_tag}")
                 else:
                     print_info(f"Building {pkg}-{version}-1.{pkg_release_tag}")
-                if args.buildroot:
-                    rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait', '--target', args.buildroot])
+                if args.side_tag != None:
+                    rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait', '--target', args.side_tag])
                 else:
                     rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
                 if rc != 0:
