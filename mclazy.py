@@ -431,6 +431,7 @@ def main():
         # push the changes
         if args.simulate:
             print_debug("Not pushing as simulating")
+            updates.append((module, version, new_version))
             unlock_file(lock_filename)
             continue
 
