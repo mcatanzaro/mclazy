@@ -331,14 +331,18 @@ def main():
             unlock_file(lock_filename)
             continue
 
-        # never update a major version number */
+        # don't do major updates unless requested
         if new_version:
-            if args.relax_version_checks:
-                print_debug("Updating major version number, but ignoring")
-            elif new_version.split('.')[0] != version_dot.split('.')[0]:
-                log_error(module, "Cannot update major version numbers")
-                unlock_file(lock_filename)
-                continue
+            current_version = version_dot
+            current_major_version = current_version.split('.')[0]
+            new_major_version = new_version.split('.')[0]
+            if current_major_version != new_major_version and int(new_major_version) < 40:
+                if args.relax_version_checks:
+                    print_debug(f"Updating from {current_version} to {new_version} is allowed due to --relax-version-checks")
+                else:
+                    log_error(module, f"Cannot update from {current_version} to {new_version} without --relax-version-checks")
+                    unlock_file(lock_filename)
+                    continue
 
         # we need to update the package
         if new_version:
