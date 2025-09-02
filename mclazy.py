@@ -28,6 +28,7 @@ import re
 import rpm
 import argparse
 import fnmatch
+import sys
 
 from contextlib import contextmanager
 
@@ -478,4 +479,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit(1)
