@@ -145,7 +145,7 @@
     <release version="f42">2.82.*</release>
     <release version="f43">2.83.*,2.84.*</release>
   </project>
-  <project name="glycin"/>
+  <!-- glycin does not support direct push to its dist-git repo -->
   <project name="gnome-2048"/>
   <project name="gnome-app-list"/>
   <project name="gnome-autoar">
