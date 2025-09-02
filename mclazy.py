@@ -142,10 +142,10 @@ def main():
     parser.add_argument('--buildroot', default=None, help='Use a custom buildroot, e.g. f18-gnome')
     args = parser.parse_args()
 
-    if (args.simulate and args.no_simulate):
+    if args.simulate and args.no_simulate:
         print_fail('Cannot use both --simulate and --no-simulate')
         return
-    if (not args.simulate and not args.no_simulate):
+    if not args.simulate and not args.no_simulate:
         print_fail('Must use either --simulate or --no-simulate')
         return
 
