@@ -104,7 +104,7 @@ def sync_to_rawhide_branch(module, pkg_cache, args):
         log_error(module, "build")
         return
 
-def majorminor(ver):
+def release_series(ver):
     v = ver.split('.')
     if int(v[0]) >= 40:
         return v[0]
@@ -386,8 +386,8 @@ def main():
                         elif line.startswith('Release:') and 'autorelease' not in line:
                             line = replace_spec_value(line, '0%{?dist}\n')
                         elif line.startswith(('Source:', 'Source0:')):
-                            line = re.sub(f"/{majorminor(version_dot)}/",
-                                          f"/{majorminor(new_version)}/",
+                            line = re.sub(f"/{release_series(version_dot)}/",
+                                          f"/{release_series(new_version)}/",
                                           line)
                         tmp_spec.write(line)
             os.rename(f"{spec_filename}.tmp", spec_filename)
