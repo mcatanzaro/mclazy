@@ -194,7 +194,7 @@
   </project>
   <project name="gnome-power-manager"/>
   <project name="gnome-remote-desktop"/>
-  <project name="gnome-robots"/>
+  <!-- gnome-robots is a Rust package, which we do not update automatically. -->
   <project name="gnome-session"/>
   <project name="gnome-settings-daemon"/>
   <project name="gnome-shell"/>
@@ -210,11 +210,11 @@
   </project>
   <project name="gnome-tetravex"/>
   <project name="gnome-text-editor"/>
-  <project name="gnome-tour"/>
+  <!-- gnome-tour is a Rust package, which we do not update automatically. -->
   <project name="gnome-tweaks"/>
   <project name="gnome-usage"/>
   <project name="gnome-user-docs"/>
-  <project name="gnome-user-share"/>
+  <!-- gnome-user-share is a Rust package, which we do not update automatically. -->
   <project name="gnome-video-effects">
     <release version="f41">0.6.*</release>
     <release version="f42">0.6.*</release>
@@ -439,11 +439,7 @@
     <release version="f42">0.9.*</release>
     <release version="f43">0.10.*</release>
   </project>
-  <project name="librsvg" pkgname="librsvg2">
-    <release version="f41">2.59.*</release>
-    <release version="f42">2.60.*</release>
-    <release version="f43">2.61.*</release>
-  </project>
+  <!-- librsvg is a Rust package, which we do not update automatically. -->
   <project name="libsecret">
     <release version="f41">0.21.*</release>
     <release version="f42">0.21.*</release>
@@ -481,7 +477,7 @@
     <release version="f42">3.9.*</release>
     <release version="f43">3.10.*</release>
   </project>
-  <project name="loupe"/>
+  <!-- loupe is a Rust package, which we do not update automatically. -->
   <project name="mm-common">
     <release version="f41">1.0.*</release>
     <release version="f42">1.0.*</release>
@@ -548,7 +544,7 @@
   </project>
   <project name="showtime"/>
   <project name="simple-scan"/>
-  <project name="snapshot"/>
+  <!-- snapshot is a Rust package, which we do not update automatically. -->
   <project name="sound-juicer"/>
   <project name="sushi"/>
   <project name="swell-foop"/>
