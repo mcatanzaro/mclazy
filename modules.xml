@@ -29,11 +29,19 @@
    "Fedora Packaging Duties - Package Overview" spreadsheet.
 -->
 <projects>
-  <project name="accerciser"/>
+  <project name="accerciser">
+    <release version="f41">3.44.*</release>
+    <release version="f42">3.46.*</release>
+    <release version="f43">3.46.*</release>
+  </project>
   <project name="adwaita-fonts"/>
   <project name="adwaita-icon-theme"/>
   <project name="adwaita-icon-theme-legacy"/>
-  <project name="aisleriot"/>
+  <project name="aisleriot">
+    <release version="f41">3.22.*</release>
+    <release version="f42">3.22.*</release>
+    <release version="f43">3.22.*</release>
+  </project>
   <project name="at-spi2-core">
     <release version="f41">2.54.*</release>
     <release version="f42">2.56.*</release>
@@ -75,10 +83,10 @@
   <project name="eog"/>
   <project name="eog-plugins"/>
   <project name="epiphany"/>
-  <!-- evince is maintained manually by mkasik -->
-  <!-- evolution is maintained manually by mcrha -->
-  <!-- evolution-data-server is maintained manually by mcrha -->
-  <!-- evolution-ews is maintained manually by mcrha -->
+  <!-- evince is maintained manually by mkasik. -->
+  <!-- evolution is maintained manually by mcrha. -->
+  <!-- evolution-data-server is maintained manually by mcrha. -->
+  <!-- evolution-ews is maintained manually by mcrha. -->
   <project name="file-roller"/>
   <project name="five-or-more"/>
   <project name="folks">
@@ -86,7 +94,11 @@
     <release version="f42">0.15.*</release>
     <release version="f43">0.15.*</release>
   </project>
-  <project name="four-in-a-row"/>
+  <project name="four-in-a-row">
+    <release version="f41">3.38.*</release>
+    <release version="f42">3.38.*</release>
+    <release version="f43">3.38.*</release>
+  </project>
   <project name="gcr">
     <release version="f41">4.3.*</release>
     <release version="f42">4.4.*</release>
@@ -100,7 +112,7 @@
   <project name="gdm"/>
   <project name="geary"/>
   <project name="gedit"/>
-  <project name="gedit-plugins"/>
+  <!-- gnome-sig is not allowed to commit to gedit-plugins. -->
   <project name="geocode-glib">
     <release version="f41">3.26.*</release>
     <release version="f42">3.26.*</release>
@@ -112,13 +124,17 @@
     <release version="f43">0.14.*</release>
     <release version="rawhide">0.14.*</release>
   </project>
-  <project name="ghex"/>
+  <!-- gnome-sig is not allowed to commit to ghex. -->
   <project name="gi-docgen">
     <release version="f41">2025.4</release>
     <release version="f42">2025.4</release>
     <release version="f43">2025.4</release>
   </project>
   <project name="gitg"/>
+    <release version="f41">44</release>
+    <release version="f42">44</release>
+    <release version="f43">44</release>
+  </project>
   <project name="gjs">
     <release version="f41">1.82.*</release>
     <release version="f42">1.84.*</release>
@@ -145,9 +161,17 @@
     <release version="f42">2.82.*</release>
     <release version="f43">2.83.*,2.84.*</release>
   </project>
-  <!-- glycin does not support direct push to its dist-git repo -->
-  <project name="gnome-2048"/>
-  <project name="gnome-app-list"/>
+  <!-- glycin is a Rust package, which we do not update automatically. -->
+  <project name="gnome-2048">
+    <release version="f41">3.38.*</release>
+    <release version="f42">3.38.*</release>
+    <release version="f43">3.38.*</release>
+  </project>
+  <project name="gnome-app-list">
+    <release version="f41">2.*</release>
+    <release version="f42">3.*</release>
+    <release version="f43">3.*</release>
+  </project>
   <project name="gnome-autoar">
     <release version="f41">0.4.*</release>
     <release version="f42">0.4.*</release>
@@ -162,7 +186,11 @@
   <project name="gnome-characters"/>
   <project name="gnome-chess"/>
   <project name="gnome-clocks"/>
-  <project name="gnome-color-manager"/>
+  <project name="gnome-color-manager">
+    <release version="f41">3.36.*</release>
+    <release version="f42">3.36.*</release>
+    <release version="f43">3.36.*</release>
+  </project>
   <project name="gnome-connections"/>
   <project name="gnome-console"/>
   <project name="gnome-contacts"/>
@@ -179,14 +207,26 @@
   <project name="gnome-initial-setup"/>
   <project name="gnome-keyring"/>
   <project name="gnome-kiosk"/>
-  <project name="gnome-klotski"/>
+  <project name="gnome-klotski">
+    <release version="f41">3.38.*</release>
+    <release version="f42">3.38.*</release>
+    <release version="f43">3.38.*</release>
+  </project>
   <project name="gnome-logs"/>
   <project name="gnome-mahjongg"/>
   <project name="gnome-maps"/>
-  <project name="gnome-menus"/>
+  <project name="gnome-menus">
+    <release version="f41">3.36.*</release>
+    <release version="f42">3.36.*</release>
+    <release version="f43">3.36.*</release>
+  </project>
   <project name="gnome-mines"/>
   <project name="gnome-music"/>
-  <project name="gnome-nibbles"/>
+  <project name="gnome-nibbles">
+    <release version="f41">4.1.*</release>
+    <release version="f42">4.2.*</release>
+    <release version="f43">4.4.*</release>
+  </project>
   <project name="gnome-online-accounts">
     <release version="f41">3.52.*</release>
     <release version="f42">3.54.*</release>
@@ -199,27 +239,31 @@
   <project name="gnome-settings-daemon"/>
   <project name="gnome-shell"/>
   <project name="gnome-shell-extensions"/>
-  <!-- gnome-software is maintained manually by mcrha --> 
+  <!-- gnome-software is maintained manually by mcrha. -->
   <project name="gnome-sudoku"/>
   <project name="gnome-system-monitor"/>
-  <project name="gnome-taquin"/>
+  <project name="gnome-taquin">
+    <release version="f41">3.38.*</release>
+    <release version="f42">3.38.*</release>
+    <release version="f43">3.38.*</release>
+  </project>
   <project name="gnome-terminal">
     <release version="f41">3.54.*</release>
     <release version="f42">3.56.*</release>
     <release version="f43">3.56.*</release>
   </project>
-  <project name="gnome-tetravex"/>
+  <project name="gnome-tetravex">
+    <release version="f41">3.38.*</release>
+    <release version="f42">3.38.*</release>
+    <release version="f43">3.38.*</release>
+  </project>
   <project name="gnome-text-editor"/>
   <!-- gnome-tour is a Rust package, which we do not update automatically. -->
-  <project name="gnome-tweaks"/>
+  <!-- gnome-sig is not allowed to commit to gnome-tweaks. -->
   <project name="gnome-usage"/>
   <project name="gnome-user-docs"/>
   <!-- gnome-user-share is a Rust package, which we do not update automatically. -->
-  <project name="gnome-video-effects">
-    <release version="f41">0.6.*</release>
-    <release version="f42">0.6.*</release>
-    <release version="f43">0.6.*</release>
-  </project>
+  <!-- gnome-sig is not allowed to commit to gnome-video-effects. -->
   <project name="gnome-weather"/>
   <project name="gnote"/>
   <project name="gobject-introspection">
@@ -296,11 +340,6 @@
     <release version="f43">5.17.*,5.18.*</release>
   </project>
   <project name="gtranslator"/>
-  <project name="gucharmap">
-    <release version="f41">16.*</release>
-    <release version="f42">16.*</release>
-    <release version="f43">16.*</release>
-  </project>
   <project name="gupnp">
     <release version="f41">1.6.*</release>
     <release version="f42">1.6.*</release>
@@ -311,28 +350,24 @@
     <release version="f42">0.14.*</release>
     <release version="f43">0.14.*</release>
   </project>
-  <project name="gupnp-dlna">
-    <release version="f41">0.12.*</release>
-    <release version="f42">0.12.*</release>
-    <release version="f43">0.12.*</release>
-  </project>
+  <!-- gnome-sig is not allowed to commit to gupnp-dlna. -->
   <project name="gupnp-igd">
     <release version="f41">1.6.*</release>
     <release version="f42">1.6.*</release>
     <release version="f43">1.6.*</release>
   </project>
-  <project name="gupnp-tools">
-    <release version="f41">0.12.*</release>
-    <release version="f42">0.12.*</release>
-    <release version="f43">0.12.*</release>
-  </project>
+  <!-- gnome-sig is not allowed to commit to gupnp-tools. -->
   <project name="gvfs">
     <release version="f41">1.56.*</release>
-    <release version="f42">1.58.*</release>
-    <release version="f43">1.58.*</release>
+    <release version="f42">1.57.*,1.58.*</release>
+    <release version="f43">1.57.*,1.58.*</release>
   </project>
   <project name="hitori"/>
-  <project name="iagno"/>
+  <project name="iagno">
+    <release version="f41">3.38.*</release>
+    <release version="f42">3.38.*</release>
+    <release version="f43">3.38.*</release>
+  </project>
   <project name="json-glib">
     <release version="f41">1.10.*</release>
     <release version="f42">1.10.*</release>
@@ -357,28 +392,16 @@
   <project name="libdex">
     <release version="f41">0.8.*</release>
     <release version="f42">0.10.*</release>
-    <release version="f43">0.11.*,0.12.*</release>
+    <release version="f43">1.0.*</release>
   </project>
   <project name="libgdata">
     <release version="f41">0.18.*</release>
     <release version="f42">0.18.*</release>
     <release version="f43">0.18.*</release>
   </project>
-  <project name="libgda">
-    <release version="f41">6.0.*</release>
-    <release version="f42">6.0.*</release>
-    <release version="f43">6.0.*</release>
-  </project>
-  <project name="libgee">
-    <release version="f41">0.20.*</release>
-    <release version="f42">0.20.*</release>
-    <release version="f43">0.20.*</release>
-  </project>
-  <project name="libgepub">
-    <release version="f41">0.7.*</release>
-    <release version="f42">0.7.*</release>
-    <release version="f43">0.7.*</release>
-  </project>
+  <!-- gnome-sig is not allowed to commit to libgda. -->
+  <!-- gnome-sig is not allowed to commit to libgee. -->
+  <!-- gnome-sig is not allowed to commit to libgepub. -->
   <project name="libgit2-glib">
     <release version="f41">1.2.*</release>
     <release version="f42">1.2.*</release>
@@ -390,9 +413,9 @@
     <release version="f43">1.14.*</release>
   </project>
   <project name="libgtop" pkgname="libgtop2">
-    <release version="f41">2.42.*</release>
-    <release version="f42">2.42.*</release>
-    <release version="f43">2.42.*</release>
+    <release version="f41">2.41.*,2.42.*</release>
+    <release version="f42">2.41.*,2.42.*</release>
+    <release version="f43">2.41.*,2.42.*</release>
   </project>
   <project name="libgweather">
     <release version="f41">4.4.*</release>
@@ -456,11 +479,7 @@
     <release version="f43">2.12.*</release>
     <release version="rawhide">2.12.*</release>
   </project>
-  <project name="libsigc++" pkgname="libsigc++30">
-    <release version="f41">3.6.*</release>
-    <release version="f42">3.6.*</release>
-    <release version="f43">3.6.*</release>
-  </project>
+  <!-- gnome-sig is not allowed to commit to libsigc++30. -->
   <project name="libsoup" pkgname="libsoup3">
     <release version="f41">3.6.*</release>
     <release version="f42">3.6.*</release>
@@ -518,7 +537,7 @@
   <project name="pyatspi">
     <release version="f41">2.46.*</release>
     <release version="f42">2.46.*</release>
-    <release version="f43">2.47.*,2.48.*</release>
+    <release version="f43">2.57.*,2.58.*</release>
   </project>
   <project name="pygobject" pkgname="pygobject3">
     <release version="f41">3.50.*</release>
@@ -545,7 +564,11 @@
   <project name="showtime"/>
   <project name="simple-scan"/>
   <!-- snapshot is a Rust package, which we do not update automatically. -->
-  <project name="sound-juicer"/>
+  <project name="sound-juicer">
+    <release version="f41">3.40.*</release>
+    <release version="f42">3.40.*</release>
+    <release version="f43">3.40.*</release>
+  </project>
   <project name="sushi"/>
   <project name="swell-foop"/>
   <project name="sysprof"/>
@@ -561,11 +584,7 @@
     <release version="f43">3.10.*</release>
   </project>
   <project name="totem"/>
-  <project name="totem-pl-parser">
-    <release version="f41">3.26.*</release>
-    <release version="f42">3.26.*</release>
-    <release version="f43">3.26.*</release>
-  </project>
+  <!-- gnome-sig is not allowed to commit to totem-pl-parser. -->
   <project name="vala">
     <release version="f41">0.56.*</release>
     <release version="f42">0.56.*</release>
@@ -582,7 +601,7 @@
   <project name="yelp-xsl"/>
   <project name="zenity">
     <release version="f41">4.0.*</release>
-    <release version="f42">4.1.*</release>
-    <release version="f43">4.2.*</release>
+    <release version="f42">4.1.*,4.2.*</release>
+    <release version="f43">4.1.*,4.2.*</release>
   </project>
 </projects>
