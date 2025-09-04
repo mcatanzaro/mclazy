@@ -32,7 +32,7 @@ class ModulesItem(object):
         self.release_glob = {}
 
         # add the default gnome release numbers
-        self.release_glob['f41'] = "47.*"
+        self.release_glob['f41'] = "40.*,41.*,42.*,43.*,44.*,45.*,46.*,47.*"
         self.release_glob['f42'] = self.release_glob['f41'] + ",48.*"
         self.release_glob['f43'] = self.release_glob['f42'] + ",49.*"
         self.release_glob['rawhide'] = "*"
