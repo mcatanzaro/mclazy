@@ -474,6 +474,10 @@ def main():
         print_info("Summary of updated modules:")
         for (module, oldver, newver) in updates:
             print_info(f"{module}: {oldver} -> {newver}")
+        if args.simulate:
+            print_info("(This is a simulation. Nothing was actually updated.)")
+        else:
+            print_info("You must check koji yourself to look for build failures.")
 
     if (len(errors) == 0):
         print_info("Completed processing without any errors")
