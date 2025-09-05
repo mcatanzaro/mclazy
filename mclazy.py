@@ -424,7 +424,7 @@ def main():
             # push the changes
             if args.simulate:
                 print_debug("Not pushing as simulating")
-                updates.append((module, version, new_version))
+                updates.append((module, version, new_version_tilde))
                 continue
 
             rc = run_command (pkg_cache, ['git', 'push'])
@@ -465,7 +465,7 @@ def main():
                     continue
 
             # success!
-            updates.append((module, version, new_version))
+            updates.append((module, version, new_version_tilde))
             print_info("Done")
 
     if (len(updates) == 0):
