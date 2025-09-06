@@ -264,8 +264,7 @@ def main():
             if not success:
                 continue
 
-            default_gnome_branch = release_version[args.fedora_branch]
-            gnome_branch = default_gnome_branch
+            gnome_branch = release_version[args.fedora_branch]
             local_json_file = f"{args.cache}/{pkg}/cache.json"
             with open(local_json_file, 'r') as f:
 
@@ -298,7 +297,7 @@ def main():
                     if rc > 0:
                         newest_remote_version = remote_ver
                         newest_remote_version_tilde = remote_ver_tilde
-            if newest_remote_version == '0' and gnome_branch != default_gnome_branch:
+            if newest_remote_version == '0':
                 log_error(module, f"No remote versions matching the gnome branch {gnome_branch}")
                 log_error(module, "Check modules.xml is looking at the correct branch")
                 continue
