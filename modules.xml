@@ -485,11 +485,7 @@
     <release version="f42">3.6.*</release>
     <release version="f43">3.6.*</release>
   </project>
-  <project name="libspelling">
-    <release version="f41">0.4.*</release>
-    <release version="f42">0.4.*</release>
-    <release version="f43">0.4.*</release>
-  </project>
+  <!-- libspelling does not support direct push to its git repo. -->
   <project name="libwnck" pkgname="libwnck3"/>
   <project name="lightsoff"/>
   <project name="localsearch">
