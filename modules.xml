@@ -537,7 +537,7 @@
   </project>
   <project name="pygobject" pkgname="pygobject3">
     <release version="f41">3.50.*</release>
-    <release version="f42">3.52.*</release>
+    <release version="f42">3.50.*</release>
     <release version="f43">3.53.*,3.54.*</release>
   </project>
   <project name="quadrapassel"/>
