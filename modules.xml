@@ -130,7 +130,7 @@
     <release version="f42">2025.4</release>
     <release version="f43">2025.4</release>
   </project>
-  <project name="gitg"/>
+  <project name="gitg">
     <release version="f41">44</release>
     <release version="f42">44</release>
     <release version="f43">44</release>
