@@ -239,6 +239,7 @@ def main():
     # parse the configuration file
     modules = []
     data = ModulesXml(args.modules)
+    enabled_one = False
     for item in data.items:
         if item.disabled:
             continue
@@ -247,12 +248,17 @@ def main():
         # build just this
         if args.buildone == item.name:
             enabled = True
+            enabled_one = True
 
         # build everything
         if args.buildone == None:
             enabled = True
         if enabled:
             modules.append((item.name, item.pkgname, item.version_limit))
+
+    if args.buildone and enabled_one is False:
+        print_fail(f"Invalid module name {args.buildone} passed to --buildone")
+        return
 
     # create the cache directory if it's not already existing
     if not os.path.isdir(args.cache):
