@@ -29,13 +29,14 @@ class ModulesItem(object):
         self.pkgname = None
         self.release = None
         self.disabled = False
-        self.release_glob = {}
+        self.version_limit = {}
 
-        # add the default gnome release numbers
-        self.release_glob['f41'] = "40.*,41.*,42.*,43.*,44.*,45.*,46.*,47.*"
-        self.release_glob['f42'] = self.release_glob['f41'] + ",48.*"
-        self.release_glob['f43'] = self.release_glob['f42'] + ",49.*"
-        self.release_glob['rawhide'] = "*"
+        # Add the default GNOME version limits.
+        # E.g. 48 means "update to latest GNOME 47 version."
+        self.version_limit['f41'] = "48"
+        self.version_limit['f42'] = "49"
+        self.version_limit['f43'] = "50"
+        self.version_limit['rawhide'] = None
 
 class ModulesXml(object):
     """ Parses the modules.xml file """
@@ -57,7 +58,7 @@ class ModulesXml(object):
             for data in project:
                 if data.tag == 'release':
                     version = data.get('version')
-                    item.release_glob[version] = data.text
+                    item.version_limit[version] = data.text
             item.releases = []
             if project.get('releases'):
                 for release in project.get('releases').split(','):

@@ -110,6 +110,78 @@ def release_series(ver):
     else:
         return f"{v[0]}.{v[1]}"
 
+re_version = re.compile(r'([-.]|\d+|[^-.\d]+)')
+
+# https://docs.python.org/3.0/whatsnew/3.0.html#ordering-comparisons
+def cmp(a, b):
+    return (a > b) - (a < b)
+
+def version_cmp(a, b):
+    """Compares two versions
+
+    Returns
+    -1 if a < b
+    0  if a == b
+    1  if a > b
+
+    Logic from Bugzilla::Install::Util::vers_cmp
+
+    Logic actually carbon copied from ftpadmin
+    https://gitlab.gnome.org/Infrastructure/sysadmin-bin/-/blob/78880cd100f6a73acc9dbd8c0dc3cb9a52e6fc23/ftpadmin#L88-141
+
+    And copied once more into mclazy from:
+    https://gitlab.gnome.org/GNOME/releng/-/blob/70e85ee60bc5165ec1b5f52d229a61d2676e4f39/tools/smoketesting/downloadsites.py#L187
+    """
+    assert(a is not None)
+    assert(b is not None)
+
+    A = re_version.findall(a.lstrip('0'))
+    B = re_version.findall(b.lstrip('0'))
+
+    while A and B:
+        a = A.pop(0)
+        b = B.pop(0)
+
+        if a == b:
+            continue
+        elif a == '-':
+            return -1
+        elif b == '-':
+            return 1
+        elif a == '.':
+            return -1
+        elif b == '.':
+            return 1
+        elif a.isdigit() and b.isdigit():
+            c = cmp(a, b) if (a.startswith('0') or b.startswith('0')) else cmp(int(a, 10), int(b, 10))
+            if c:
+                return c
+        elif a.isalpha() and b.isdigit():
+            if a == 'alpha' or a == 'beta' or a == 'rc':
+                return -1
+        elif a.isdigit() and b.isalpha():
+            if b == 'alpha' or b == 'beta' or b == 'rc':
+                return 1
+        else:
+            c = cmp(a.upper(), b.upper())
+            if c:
+                return c
+
+    return cmp(len(A), len(B))
+
+def get_latest_version(versions, max_version=None):
+    """Gets the latest version number
+
+    if max_version is specified, gets the latest version number before
+    max_version"""
+    latest = None
+    versions = [v.rstrip(os.path.sep) for v in versions]
+    for version in versions:
+        if (latest is None or version_cmp(version, latest) > 0) \
+           and (max_version is None or version_cmp(version, max_version) < 0):
+            latest = version
+    return latest
+
 # https://stackoverflow.com/a/5020214
 @contextmanager
 def create_lock_file(filename):
@@ -180,7 +252,7 @@ def main():
         if args.buildone == None:
             enabled = True
         if enabled:
-            modules.append((item.name, item.pkgname, item.release_glob))
+            modules.append((item.name, item.pkgname, item.version_limit))
 
     # create the cache directory if it's not already existing
     if not os.path.isdir(args.cache):
@@ -190,7 +262,7 @@ def main():
     for module, pkg, release_version in modules:
         print_info(f"Loading {module}")
         print_debug(f"Package name: {pkg}")
-        print_debug(f"Version glob: {release_version[args.fedora_branch]}")
+        print_debug(f"Version limit: {release_version[args.fedora_branch]}")
 
         # ensure we've not locked this build in another instance
         lock_filename = f"{args.cache}/{pkg}-{lockfile}"
@@ -264,7 +336,7 @@ def main():
             if not success:
                 continue
 
-            gnome_branch = release_version[args.fedora_branch]
+            max_version = release_version[args.fedora_branch]
             local_json_file = f"{args.cache}/{pkg}/cache.json"
             with open(local_json_file, 'r') as f:
 
@@ -282,24 +354,10 @@ def main():
                     continue
 
                 # find the newest version
-                newest_remote_version = '0'
-                newest_remote_version_tilde = '0'
-                for remote_ver in j[2][module]:
-                    remote_ver_tilde = re.sub('([0-9]+).(alpha|beta|rc)', r'\1~\2', remote_ver)
-                    version_valid = False
-                    for b in gnome_branch.split(','):
-                        if fnmatch.fnmatch(remote_ver, b):
-                            version_valid = True
-                            break
-                    if not version_valid:
-                        continue
-                    rc = rpm.labelCompare((None, remote_ver_tilde, None), (None, newest_remote_version_tilde, None))
-                    if rc > 0:
-                        newest_remote_version = remote_ver
-                        newest_remote_version_tilde = remote_ver_tilde
-            if newest_remote_version == '0':
-                log_error(module, f"No remote versions matching the gnome branch {gnome_branch}")
-                log_error(module, "Check modules.xml is looking at the correct branch")
+                newest_remote_version = get_latest_version(j[2][module], max_version)
+                newest_remote_version_tilde = re.sub('([0-9]+).(alpha|beta|rc)', r'\1~\2', newest_remote_version)
+            if newest_remote_version is None:
+                log_error(module, f"No remote versions less than the version limit {version_limit}")
                 continue
 
 
