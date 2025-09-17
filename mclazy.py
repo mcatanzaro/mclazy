@@ -212,7 +212,7 @@ def main():
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
     parser.add_argument('--buildone', default=None, help='Only build one specific package')
     parser.add_argument('--side-tag', default=None, help='Specify side tag to use for build')
-    parser.add_argument('--no-side-tag', default=False, help='Build without any side tag')
+    parser.add_argument('--no-side-tag', action='store_true', default=False, help='Build without any side tag')
     args = parser.parse_args()
 
     if args.simulate and args.no_simulate:
