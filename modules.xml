@@ -12,6 +12,9 @@
   version that is LESS THAN the specified limit. E.g. 2.31 means "update to
   2.30.99 but never to 2.31.0."
 
+  You can use the special version "ignore" to specify that a particular branch
+  not be updated. This is necessary when new packages are added.
+
   If the package name differs from the upstream tarball name, then do
   something like this:
 
@@ -198,9 +201,9 @@
   <project name="gnome-control-center"/>
   <project name="gnome-desktop" pkgname="gnome-desktop3"/>
   <project name="gnome-desktop-testing">
-    <release version="f41">2018.2</release>
-    <release version="f42">2018.2</release>
-    <release version="f43">2021.2</release>
+    <release version="f41">ignore</release>
+    <release version="f42">ignore</release>
+    <release version="f43">ignore</release>
   </project>
   <project name="gnome-devel-docs"/>
   <project name="gnome-disk-utility"/>
@@ -459,8 +462,8 @@
     <release version="f43">2.3</release>
   </project>
   <project name="librest" pkgname="rest">
-    <release version="f41">0.10</release>
-    <release version="f42">0.10</release>
+    <release version="f41">ignore</release>
+    <release version="f42">ignore</release>
     <release version="f43">0.11</release>
   </project>
   <!-- librsvg is a Rust package, which we do not update automatically. -->

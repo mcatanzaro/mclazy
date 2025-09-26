@@ -270,6 +270,11 @@ def main():
         print_debug(f"Package name: {pkg}")
         print_debug(f"Version limit: {release_version[args.fedora_branch]}")
 
+        max_version = release_version[args.fedora_branch]
+        if max_version == "ignore":
+            print_debug("Skipping because configuration says to ignore this package")
+            continue
+
         # ensure we've not locked this build in another instance
         lock_filename = f"{args.cache}/{pkg}-{lockfile}"
         if os.path.exists(lock_filename):
@@ -342,7 +347,6 @@ def main():
             if not success:
                 continue
 
-            max_version = release_version[args.fedora_branch]
             local_json_file = f"{args.cache}/{pkg}/cache.json"
             with open(local_json_file, 'r') as f:
 
