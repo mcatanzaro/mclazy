@@ -38,7 +38,9 @@
     <release version="f42">3.47</release>
     <release version="f43">3.47</release>
   </project>
-  <project name="adwaita-fonts"/>
+  <project name="adwaita-fonts">
+    <release version="f41">ignore</release>
+  </project>
   <project name="adwaita-icon-theme"/>
   <project name="adwaita-icon-theme-legacy"/>
   <project name="aisleriot">
@@ -65,8 +67,8 @@
   <project name="baobab"/>
   <project name="bijiben"/>
   <project name="blueprint-compiler">
-    <release version="f41">0.17</release>
-    <release version="f42">0.17</release>
+    <release version="f41">ignore</release>
+    <release version="f42">ignore</release>
     <release version="f43">0.19</release>
   </project>
   <project name="brasero">
@@ -81,7 +83,9 @@
     <release version="f43">0.41</release>
   </project>
   <project name="dconf-editor"/>
-  <project name="decibels"/>
+  <project name="decibels">
+    <release version="f41">ignore</release>
+  </project>
   <project name="devhelp"/>
   <project name="d-spy"/>
   <project name="eog"/>
@@ -498,6 +502,7 @@
   <project name="libwnck" pkgname="libwnck3"/>
   <project name="lightsoff"/>
   <project name="localsearch">
+    <release version="f41">ignore</release>
     <release version="f42">3.10</release>
     <release version="f43">3.11</release>
   </project>
@@ -570,7 +575,9 @@
     <release version="f42">0.33</release>
     <release version="f43">0.33</release>
   </project>
-  <project name="showtime"/>
+  <project name="showtime">
+    <release version="f41">ignore</release>
+  </project>
   <project name="simple-scan"/>
   <!-- snapshot is a Rust package, which we do not update automatically. -->
   <project name="sound-juicer">
@@ -589,6 +596,7 @@
     <release version="f43">3.39</release>
   </project>
   <project name="tinysparql">
+    <release version="f41">ignore</release>
     <release version="f42">3.10</release>
     <release version="f43">3.11</release>
   </project>
