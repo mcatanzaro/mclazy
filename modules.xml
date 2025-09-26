@@ -98,6 +98,11 @@
     <release version="f42">0.16</release>
     <release version="f43">0.16</release>
   </project>
+  <project name="foundry">
+    <release version="f41">ignore</release>
+    <release version="f42">ignore</release>
+    <release version="f43">1.1</release>
+  </project>
   <project name="four-in-a-row">
     <release version="f41">3.39</release>
     <release version="f42">3.39</release>
@@ -497,6 +502,10 @@
     <release version="f43">3.11</release>
   </project>
   <!-- loupe is a Rust package, which we do not update automatically. -->
+  <project name="manuals" pkgname="gnome-manuals">
+    <release version="f41">ignore</release>
+    <release version="f42">ignore</release>
+  </project>
   <project name="mm-common">
     <release version="f41">1.1</release>
     <release version="f42">1.1</release>
