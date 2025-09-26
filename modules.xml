@@ -198,8 +198,8 @@
   <project name="gnome-control-center"/>
   <project name="gnome-desktop" pkgname="gnome-desktop3"/>
   <project name="gnome-desktop-testing">
-    <release version="f41">2021.2</release>
-    <release version="f42">2021.2</release>
+    <release version="f41">2018.2</release>
+    <release version="f42">2018.2</release>
     <release version="f43">2021.2</release>
   </project>
   <project name="gnome-devel-docs"/>
