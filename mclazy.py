@@ -361,9 +361,8 @@ def main():
 
                 # find the newest version
                 newest_remote_version = get_latest_version(j[2][module], max_version)
-                newest_remote_version_tilde = re.sub('([0-9]+).(alpha|beta|rc)', r'\1~\2', newest_remote_version)
             if newest_remote_version is None:
-                log_error(module, f"No remote versions less than the version limit {version_limit}")
+                log_error(module, f"No remote versions less than the version limit {max_version}")
                 continue
 
 
