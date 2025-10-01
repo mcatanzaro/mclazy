@@ -331,11 +331,6 @@
     <release version="f42">4.19</release>
     <release version="f43">4.21</release>
   </project>
-  <project name="gtk-doc">
-    <release version="f41">1.35</release>
-    <release version="f42">1.35</release>
-    <release version="f43">1.35</release>
-  </project>
   <project name="gtkmm" pkgname="gtkmm3.0">
     <release version="f41">3.25</release>
     <release version="f42">3.25</release>
