@@ -124,8 +124,6 @@
   </project>
   <project name="gdm"/>
   <project name="geary"/>
-  <project name="gedit"/>
-  <!-- gnome-sig is not allowed to commit to gedit-plugins. -->
   <project name="geocode-glib">
     <release version="f41">3.27</release>
     <release version="f42">3.27</release>
@@ -304,11 +302,6 @@
     <release version="f41">1.1</release>
     <release version="f42">1.1</release>
     <release version="f43">1.1</release>
-  </project>
-  <project name="gspell">
-    <release version="f41">1.15</release>
-    <release version="f42">1.15</release>
-    <release version="f43">1.15</release>
   </project>
   <project name="gssdp">
     <release version="f41">1.7</release>
