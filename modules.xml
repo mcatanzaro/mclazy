@@ -303,6 +303,11 @@
     <release version="f42">1.1</release>
     <release version="f43">1.1</release>
   </project>
+  <project name="gspell">
+    <release version="f41">1.15</release>
+    <release version="f42">1.15</release>
+    <release version="f43">1.15</release>
+  </project>
   <project name="gssdp">
     <release version="f41">1.7</release>
     <release version="f42">1.7</release>
