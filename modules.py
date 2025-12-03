@@ -31,17 +31,10 @@ class ModulesItem(object):
         self.disabled = False
         self.version_limit = {}
 
-        # Add the default GNOME version limits.
-        # E.g. 48 means "update to latest GNOME 47 version."
-        self.version_limit['f41'] = "48"
-        self.version_limit['f42'] = "49"
-        self.version_limit['f43'] = "50"
-        self.version_limit['rawhide'] = None
-
 class ModulesXml(object):
     """ Parses the modules.xml file """
 
-    def __init__(self, filename):
+    def __init__(self, filename, branches):
         self.items = []
         tree = ElementTree()
         tree.parse(filename)
@@ -55,18 +48,14 @@ class ModulesXml(object):
                 item.pkgname = item.name
             if project.get('disabled') == "True":
                 item.disabled = True
+
+            version_limits = branches.default_version_limits()
             for data in project:
                 if data.tag == 'release':
                     version = data.get('version')
-                    item.version_limit[version] = data.text
-            item.releases = []
-            if project.get('releases'):
-                for release in project.get('releases').split(','):
-                    item.releases.append(release)
-            else:
-                item.releases.append('f41')
-                item.releases.append('f42')
-                item.releases.append('f43')
+                    version_limits[version] = data.text
+            item.version_limit = version_limits
+
             self.items.append(item)
 
     def _print(self):
