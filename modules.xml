@@ -20,17 +20,8 @@
 
   <project name="gnome-desktop" pkgname="gnome-desktop3"/>
 
-  By default, the following limits are assumed:
-    f41     = 48 (do not update past GNOME 47)
-    f42     = 49 (do not update past GNOME 48)
-    f43     = 50 (do not upadte past GNOME 49)
-    rawhide = None (the newest upstream version)
-
-   *** IMPORTANT: *** You must update modules.py and also pkg_release_tag in
-   mclazy.py in order to add a new Fedora/GNOME version.
-
-   If adding or removing a package, also update Red Hat's internal
-   "Fedora Packaging Duties - Package Overview" spreadsheet.
+  If adding or removing a package, also update Red Hat's internal
+  "Fedora Packaging Duties - Package Overview" spreadsheet.
 -->
 <projects>
   <project name="accerciser">

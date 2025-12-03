@@ -33,6 +33,7 @@ import sys
 from contextlib import contextmanager
 
 # internal
+from branches import BranchesXml
 from modules import ModulesXml
 from log import print_debug, print_info, print_fail
 
@@ -210,6 +211,7 @@ def main():
     parser.add_argument('--no-rawhide-sync', action='store_true', help='Do not push the same changes to git rawhide branch')
     parser.add_argument('--cache', default="cache", help='The cache of checked out packages')
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
+    parser.add_argument('--branches', default="branches.xml", help='The branches to use')
     parser.add_argument('--buildone', default=None, help='Only build one specific package')
     parser.add_argument('--side-tag', default=None, help='Specify side tag to use for build')
     parser.add_argument('--no-side-tag', action='store_true', default=False, help='Build without any side tag')
@@ -232,9 +234,17 @@ def main():
             installed_pkgs[h['name']] = h['version']
         print_debug(f"Loaded rpmdb with {len(installed_pkgs)} items")
 
-    # parse the configuration file
+    # parse the branches.xml file
+    branches = BranchesXml(args.branches)
+
+    if args.fedora_branch not in branches:
+        print_fail(f"Unknown branch: {args.fedora_branch}")
+        return
+    args.fedora_branch = branches[args.fedora_branch].name
+
+    # parse the configuration modules.xml file
     modules = []
-    data = ModulesXml(args.modules)
+    data = ModulesXml(args.modules, branches)
     enabled_one = False
     for item in data.items:
         if item.disabled:
@@ -499,21 +509,9 @@ def main():
                 sync_to_rawhide_branch (module, pkg_cache, args)
                 run_command (pkg_cache, ['git', 'checkout', args.fedora_branch])
 
-            # work out release tag
-            if args.fedora_branch == "f41":
-                pkg_release_tag = 'fc41'
-            elif args.fedora_branch == "f42":
-                pkg_release_tag = 'fc42'
-            elif args.fedora_branch == "f43":
-                pkg_release_tag = 'fc43'
-            elif args.fedora_branch == "rawhide":
-                pkg_release_tag = 'fc44'
-            else:
-                log_error(module, "Failed to get release tag for", args.fedora_branch)
-                continue
-
             # build package
             if not args.no_build:
+                pkg_release_tag = branches[args.fedora_branch].release_tag
                 if new_version_tilde:
                     print_info(f"Building {pkg}-{new_version_tilde}-1.{pkg_release_tag}")
                 else:
