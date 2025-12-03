@@ -209,7 +209,7 @@ def main():
     parser.add_argument('--no-build', action='store_true', help='Do not actually build, e.g. for rawhide')
     parser.add_argument('--mockbuild', default=None, action='store_true', help='Do a local mock build (default when --no-simulate is specified)')
     parser.add_argument('--no-mockbuild', action='store_false', dest='mockbuild', help='Do not do a local mock build (default)')
-    parser.add_argument('--no-rawhide-sync', action='store_true', help='Do not push the same changes to git rawhide branch')
+    parser.add_argument('--no-rawhide-sync', action='store_true', help='Do not push the same changes to git rawhide branch (default whenever appropriate)')
     parser.add_argument('--cache', default="cache", help='The cache of checked out packages')
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
     parser.add_argument('--branches', default="branches.xml", help='The branches to use')
@@ -246,6 +246,17 @@ def main():
     if branches[args.fedora_branch].eol and not args.allow_eol:
         print_fail(f"Branch {args.fedora_branch} is EOL")
         return
+
+    if not args.no_rawhide_sync:
+        rawhide_rel = branches['rawhide'].gnome_version
+        newstable_rel = branches['newstable'].gnome_version
+        selected_rel = branches[args.fedora_branch].gnome_version
+
+        if args.fedora_branch == 'rawhide' and newstable_rel == rawhide_rel:
+            print_fail(f"rawhide and newstable are currently using the same GNOME release. Run mclazy for newstable instead, or pass --no-rawhide-sync")
+            return
+
+        args.no_rawhide_sync = rawhide_rel != selected_rel
 
     # parse the configuration modules.xml file
     modules = []
@@ -510,7 +521,7 @@ def main():
                 continue
 
             # Try to push the same change to rawhide branch
-            if not args.no_rawhide_sync and args.fedora_branch != 'rawhide':
+            if args.rawhide_sync and args.fedora_branch != 'rawhide':
                 sync_to_rawhide_branch (module, pkg_cache, args)
                 run_command (pkg_cache, ['git', 'checkout', args.fedora_branch])
 
