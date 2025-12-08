@@ -205,7 +205,8 @@ def main():
     parser.add_argument('--check-installed', action='store_true', help='Check installed version against built version')
     parser.add_argument('--relax-version-checks', action='store_true', help='Relax checks on the version numbering')
     parser.add_argument('--no-build', action='store_true', help='Do not actually build, e.g. for rawhide')
-    parser.add_argument('--no-mockbuild', action='store_true', help='Do not do a local mock build')
+    parser.add_argument('--mockbuild', default=None, action='store_true', help='Do a local mock build (default when --no-simulate is specified)')
+    parser.add_argument('--no-mockbuild', action='store_false', dest='mockbuild', help='Do not do a local mock build (default)')
     parser.add_argument('--no-rawhide-sync', action='store_true', help='Do not push the same changes to git rawhide branch')
     parser.add_argument('--cache', default="cache", help='The cache of checked out packages')
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
@@ -217,6 +218,9 @@ def main():
     if args.side_tag == None and not args.no_side_tag and not args.simulate:
         print_fail('Must use either --side-tag or --no-side-tag')
         return
+
+    if args.mockbuild is None:
+        args.mockbuild = not args.simulate
 
     # use rpm to check the installed version
     installed_pkgs = {}
@@ -462,7 +466,7 @@ def main():
                 log_error(module, f"package {pkg} failed prep (do the patches not apply?)")
                 continue
 
-            if not args.no_mockbuild:
+            if args.mockbuild:
                 rc = run_command (pkg_cache, ['fedpkg', 'mockbuild'])
                 if rc != 0:
                     log_error(module, f"package {pkg} failed mock test build")
