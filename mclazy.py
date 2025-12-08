@@ -201,8 +201,7 @@ def main():
     # read defaults from command line arguments
     parser = argparse.ArgumentParser(description='Automatically build Fedora packages for a GNOME release')
     parser.add_argument('--fedora-branch', default="rawhide", help='The fedora release to target (default: rawhide)')
-    parser.add_argument('--simulate', action='store_true', help='Do not push any changes')
-    parser.add_argument('--no-simulate', action='store_true', help='Push changes')
+    parser.add_argument('--no-simulate', action='store_false', dest='simulate', help='Push the changes this tool makes')
     parser.add_argument('--check-installed', action='store_true', help='Check installed version against built version')
     parser.add_argument('--relax-version-checks', action='store_true', help='Relax checks on the version numbering')
     parser.add_argument('--no-build', action='store_true', help='Do not actually build, e.g. for rawhide')
@@ -214,13 +213,6 @@ def main():
     parser.add_argument('--side-tag', default=None, help='Specify side tag to use for build')
     parser.add_argument('--no-side-tag', action='store_true', default=False, help='Build without any side tag')
     args = parser.parse_args()
-
-    if args.simulate and args.no_simulate:
-        print_fail('Cannot use both --simulate and --no-simulate')
-        return
-    if not args.simulate and not args.no_simulate:
-        print_fail('Must use either --simulate or --no-simulate')
-        return
 
     if args.side_tag == None and not args.no_side_tag and not args.simulate:
         print_fail('Must use either --side-tag or --no-side-tag')
@@ -541,7 +533,7 @@ def main():
         for (module, oldver, newver) in updates:
             print_info(f"{module}: {oldver} -> {newver}")
         if args.simulate:
-            print_info("(This is a simulation. Nothing was actually updated.)")
+            print_info("(This is a simulation so nothing was actually updated. Pass --no-simulate to apply this update)")
         else:
             print_info("You must check koji yourself to look for build failures.")
 
