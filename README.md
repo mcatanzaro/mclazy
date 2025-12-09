@@ -63,6 +63,8 @@ Generally, to use mclazy you should follow this procedure:
 1. Packages that need some sort of manual intervention will fail to build. You'll
    need to update and fix these packages manually. Make sure to attach these manual
    builds to your side tag!
+    - It may be convenient to do this directly from mclazy's checkout, because mclazy
+      will leave the package partially updated for you. See the instructions below.
     - Don't forget to sync your changes to Rawhide if necessary!
 1. Monitor Koji to ensure that your builds succeed. You will need to manually
    intervene if things go wrong.
@@ -75,3 +77,46 @@ can usually turn off a guardrail by specifying some additional option (check the
 output of `./mclazy.py --help` for a list). Otherwise feel free to ask for help
 in [#workstation:fedoraproject.org](https://matrix.to/#/#workstation:fedoraproject.org)
 on Matrix.
+
+## What is mclazy doing?
+
+For each package, mclazy is doing the following sequence of events:
+
+1. Obtains the package's dist-git repo
+   - If necessary, checks out the package with `fedpkg co`
+   - Fetches the latest state from the remote
+   - Switches branches to the branch you've specified
+   - Forcibly resets the branch to match the remote branch
+1. Decides if there's an update
+   - Compares the upstream information at [GNOME's FTP](https://download.gnome.org)
+     with the .spec file's `Version` field, after applying version limits
+   - If there's no update, skip to the next package
+1. Fetches the new source tarball from GNOME's FTP
+1. Runs `fedpkg new-sources` to push the new tarball to the lookaside cache
+1. Edits the .spec file to accomodate for the update
+   - Updates the `Version` field to the new version
+   - Updates the `Source`/`Source0` field to point at the new tarball version
+   - Resets the `Release` field
+   - Updates the changelog
+1. Runs `fedpkg prep` to ensure that patches still apply
+1. Runs `fedpkg mockbuild` to do a local test build
+1. Makes a local git commit, named `Update to <version>`
+1. Pushes the commit to the dist-git remote
+1. Syncs to rawhide if appropriate:
+    1. Switches to the `rawhide` branch, and force resets to match the remote
+    1. Tries to fast-forward merge the selected branch into rawhide
+    1. If the fast-forward merge fails (i.e. rawhide has diverged from newstable),
+       it instead cherry-picks the commit into Rawhide
+    1. If cherry-picking fails, Rawhide has _really_ diverged and mclazy gives
+       up on the Rawhide update.
+    1. Pushes the changes to the dist-git remote
+    1. Starts a Koji build for Rawhide (using the rawhide side-tag if provided)
+1. Starts a Koji build for your selected branch (using side-tag if provided)
+
+If a package build fails, it may be convenient to go into mclazy's checkout
+(found in `cache/`) and manually update the package from there. mclazy will leave
+the package in a partially-updated state, depending on where in the above sequence
+it has failed. You can apply the correction, and then manually step through the
+rest of the procedure to update the package. Note that re-running mclazy will
+reset everything to match the state in dist-git, and if you've already pushed
+to dist-git then mclazy will not know to start a Koji update for you!
