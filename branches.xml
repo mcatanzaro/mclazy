@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This is a list of the Fedora release branches -->
+<!--
+  This is a list of the Fedora release branches. Each branch looks something
+  like this:
+
+  <branch name="fXX">       The name of the branch in dist-git
+    <tag>fcXX</tag>         The tag used in the RPM NEVRA (i.e. hello-1.0-1.fcXX.rpm)
+    <gnome>XX</gnome>       The GNOME version used in this release
+    <alias>foo</alias>      (optional) Adds an alternative name for this branch. Repeatable
+    <alias>bar</alias>      (the <alias> tag can be repeated)
+    <eol/>                  (optional) Marks this branch as end-of-life
+  </branch>
+
+  Aliases make it convenient to refer to branches without needing to remember
+  where exactly we are in the Fedora release cycle. This is helpful if, for
+  instance, mclazy is being run in CI or via some other kind of automation. It's
+  also used to implement some of mclazy's guardrails. At most one branch can use
+  any given alias.
+
+  mclazy is hard-coded to look up some branches. These branches should exist,
+  either with a matching canonical name or alias:
+  - "rawhide": Fedora Rawhide
+  - "newstable": The current latest stable release
+  - "oldstable": The previous still-supported stable release
+-->
 <branches>
   <branch name="rawhide">
     <tag>fc44</tag>
