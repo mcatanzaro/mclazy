@@ -35,7 +35,7 @@ from contextlib import contextmanager
 # internal
 from branches import BranchesXml
 from modules import ModulesXml
-from log import print_debug, print_info, print_fail
+from log import print_debug, print_info, print_fail, print_warning
 
 errors = []
 updates = []
@@ -100,7 +100,10 @@ def sync_to_rawhide_branch(module, pkg_cache, args):
 
     # Build the package
     if not args.no_build:
-        rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
+        if args.rawhide_side_tag != None:
+            rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait', '--target', args.rawhide_side_tag])
+        else:
+            rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
         if rc != 0:
             log_error(module, "build")
             return
@@ -215,7 +218,8 @@ def main():
     parser.add_argument('--modules', default="modules.xml", help='The modules to search')
     parser.add_argument('--branches', default="branches.xml", help='The branches to use')
     parser.add_argument('--buildone', default=None, help='Only build one specific package')
-    parser.add_argument('--side-tag', default=None, help='Specify side tag to use for build')
+    parser.add_argument('--side-tag', default=None, help='Specify side tag to use for builds on specified branch')
+    parser.add_argument('--rawhide-side-tag', default=None, help='Specify side tag to use for builds on Rawhide')
     parser.add_argument('--no-side-tag', action='store_true', default=False, help='Build without any side tag')
     args = parser.parse_args()
 
@@ -258,6 +262,19 @@ def main():
             return
 
         args.no_rawhide_sync = rawhide_rel != selected_rel
+
+    if args.rawhide_side_tag != None:
+        if args.fedora_branch == 'rawhide':
+            if args.side_tag != None:
+                print_warning('Ignoring value of --side-tag because --rawhide-side-tag was specified')
+            args.side_tag = args.rawhide_side_tag
+            # Note that we don't return here!
+        elif args.side_tag == None:
+            print_fail('Cannot specify --rawhide-side-tag without --side-tag')
+            return
+    elif not args.no_rawhide_sync and args.side_tag != None and args.fedora_branch != 'rawhide':
+        print_fail('This branch syncs with rawhide and you specified a --side-tag, so you must also specify --rawhide-side-tag')
+        return
 
     # parse the configuration modules.xml file
     modules = []
