@@ -99,10 +99,11 @@ def sync_to_rawhide_branch(module, pkg_cache, args):
         return
 
     # Build the package
-    rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
-    if rc != 0:
-        log_error(module, "build")
-        return
+    if not args.no_build:
+        rc = run_command (pkg_cache, ['fedpkg', 'build', '--nowait'])
+        if rc != 0:
+            log_error(module, "build")
+            return
 
 def release_series(ver):
     v = ver.split('.')
