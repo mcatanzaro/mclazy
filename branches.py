@@ -21,6 +21,7 @@
 
 from xml.etree.ElementTree import ElementTree
 from enum import StrEnum, auto
+from log import print_warning
 
 class Branch(object):
     """ Represents a branch in the branches.xml file """
@@ -48,6 +49,9 @@ class BranchesXml(dict):
                 elif data.tag == 'gnome':
                     item.gnome_version = int(data.text)
                 elif data.tag == 'alias':
+                    if data.text in self:
+                        print_warning("Duplicated <alias> in branches.xml, skipping")
+                        continue
                     self[data.text] = item
                 elif data.tag == 'eol':
                     item.eol = True

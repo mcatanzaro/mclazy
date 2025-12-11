@@ -30,6 +30,10 @@ def print_info(text):
     """ Logs some info text """
     print(COLOR_OKBLUE + "    INFO: " + text + COLOR_ENDC)
 
+def print_warning(text):
+    """ Logs some warning text """
+    print(COLOR_WARNING + " WARNING: " + text + COLOR_ENDC)
+
 def print_fail(text):
     """ Logs some failure text """
     print(COLOR_FAIL + "  FAILED: " + text + COLOR_ENDC)
