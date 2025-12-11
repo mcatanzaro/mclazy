@@ -539,7 +539,7 @@ def main():
                 continue
 
             # Try to push the same change to rawhide branch
-            if args.rawhide_sync and args.fedora_branch != 'rawhide':
+            if not args.no_rawhide_sync and args.fedora_branch != 'rawhide':
                 sync_to_rawhide_branch (module, pkg_cache, args)
                 run_command (pkg_cache, ['git', 'checkout', args.fedora_branch])
 
