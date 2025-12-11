@@ -534,7 +534,6 @@
     <release version="f42">2.57</release>
     <release version="f43">2.57</release>
   </project>
-  <project name="papers"/>
   <project name="polari"/>
   <project name="ptyxis"/>
   <project name="pyatspi">
